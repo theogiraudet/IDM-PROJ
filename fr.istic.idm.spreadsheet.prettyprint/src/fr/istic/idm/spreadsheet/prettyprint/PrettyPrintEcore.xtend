@@ -15,19 +15,4 @@ class PrettyPrintEcore
 	def void printFlatShort(EPackage pkg) {
 		throw new UnsupportedOperationException
 	}
-
-	def static void main(String[] args) {
-		val ppe = new PrettyPrintEcore
-		val pkg = EcoreLoader::loadEcore(
-			"../fr.istic.idm.spreadsheet.model/model/spreadsheet.ecore")
-
-		println('''printFlat(«pkg.name»):''')
-		ppe.printFlat(pkg)
-
-		println('''printShort(«pkg.name»):''')
-		ppe.printShort(pkg)
-
-		println('''printFlatShort(«pkg.name»):''')
-		ppe.printFlatShort(pkg)
-	}
 }
