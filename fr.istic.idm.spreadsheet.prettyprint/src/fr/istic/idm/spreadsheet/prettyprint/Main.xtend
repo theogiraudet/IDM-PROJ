@@ -7,7 +7,7 @@ class Main {
 		val pkg = EcoreLoader::loadEcore(
 			"../fr.istic.idm.spreadsheet.model/model/spreadsheet.ecore")
 
-		/* Pretty-printing with PrettyPrintEcore */
+		/* 1: Pretty-printing with PrettyPrintEcore */
 		val ppe = new PrettyPrintEcore
 		println('''printFlat(«pkg.name»):''')
 		ppe.printFlat(pkg)
@@ -22,12 +22,16 @@ class Main {
 		println("=============================")
 		println
 
-		/* Pretty-printing with aspects */
+		/* 2: Pretty-printing with aspects */
 		pkg.printHash
 
 		// The following methods must be implemented using @Aspect
 		//     pkg.printFlat
 		//     pkg.printShort
 		//     pkg.printFlatShort
+
+
+		/* 3: You may now try your pretty-printers on more realistic
+		 *    Ecore files, such as Ecore.ecore itself */
 	}
 }
