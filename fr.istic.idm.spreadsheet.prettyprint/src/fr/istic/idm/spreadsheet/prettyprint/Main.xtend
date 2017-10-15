@@ -1,7 +1,5 @@
 package fr.istic.idm.spreadsheet.prettyprint
 
-import static extension fr.istic.idm.spreadsheet.prettyprint.DummyEPackageAspect.*
-
 class Main {
 	def static void main(String[] args) {
 		val pkg = EcoreLoader::loadEcore(
@@ -22,16 +20,10 @@ class Main {
 		println("=============================")
 		println
 
-		/* 2: Pretty-printing with aspects */
-		pkg.printHash
-
-		// The following methods must be implemented using @Aspect
-		//     pkg.printFlat
-		//     pkg.printShort
-		//     pkg.printFlatShort
+	
 
 
-		/* 3: You may now try your pretty-printers on more realistic
+		/* 2: You may now try your pretty-printers on more realistic
 		 *    Ecore files, such as Ecore.ecore itself */
 	}
 }
