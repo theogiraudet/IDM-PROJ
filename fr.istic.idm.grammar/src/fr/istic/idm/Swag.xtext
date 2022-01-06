@@ -1,0 +1,72 @@
+grammar fr.istic.idm.Swag with org.eclipse.xtext.common.Terminals
+
+generate swag "http://www.istic.fr/idm/Swag"
+	
+Path: {Path} 
+	(node+=Node ('.' nodes+=Node)*)?
+;	
+
+Node:
+	ArrayNode | BasicNode;
+	
+BasicNode: {BasicNode}
+	str=(ID | STRING)
+;
+
+ArrayNode: {ArrayNode}
+	str=(ID | STRING) '['filter=ListFilter? ']' 
+;
+
+Filter:
+	BoundFilter | IndexFilter | PathFilter | AllFilter
+;
+
+AllFilter: {AllFilter}
+	'*'
+;
+
+PathFilter:
+	=> ExistFilter | EqualFilter
+;
+
+EqualFilter: {EqualFilter}
+	path=Path '=' value=JsonValue
+;
+
+ExistFilter: {ExistFilter}
+	path=Path '?'
+;
+
+IndexFilter: {IndexFilter}
+	index=INT
+;
+
+BoundFilter: {BoundFilter}
+	(min=INT ".." (max=INT)?) | (".." max=INT)
+;
+
+// foo[1..] foo[..1] foo[1..2] foo[1]
+
+ListFilter: {ListFilter}
+	filter+=Filter (',' filter+=Filter)*
+;
+
+JsonValue:
+	JsonBoolean | JsonNumber | JsonNull | JsonString
+;
+
+JsonNull: {JsonNull}
+	"null"
+;
+
+JsonNumber: {JsonNumber}
+	number=INT ('.' INT)?
+;
+
+JsonBoolean: {JsonBoolean}
+	bool=("true" | "false")
+;
+
+JsonString: {JsonString}
+	value=STRING
+;
