@@ -74,9 +74,9 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
       case SwagPackage.PATH_FILTER: return createPathFilter();
       case SwagPackage.EQUAL_FILTER: return createEqualFilter();
       case SwagPackage.EXIST_FILTER: return createExistFilter();
+      case SwagPackage.INDEX_FILTER: return createIndexFilter();
       case SwagPackage.BOUND_FILTER: return createBoundFilter();
       case SwagPackage.LIST_FILTER: return createListFilter();
-      case SwagPackage.NULLABLE_INT: return createNullableInt();
       case SwagPackage.JSON_VALUE: return createJsonValue();
       case SwagPackage.JSON_NULL: return createJsonNull();
       case SwagPackage.JSON_NUMBER: return createJsonNumber();
@@ -201,6 +201,18 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
    * @generated
    */
   @Override
+  public IndexFilter createIndexFilter()
+  {
+    IndexFilterImpl indexFilter = new IndexFilterImpl();
+    return indexFilter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public BoundFilter createBoundFilter()
   {
     BoundFilterImpl boundFilter = new BoundFilterImpl();
@@ -217,18 +229,6 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
   {
     ListFilterImpl listFilter = new ListFilterImpl();
     return listFilter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NullableInt createNullableInt()
-  {
-    NullableIntImpl nullableInt = new NullableIntImpl();
-    return nullableInt;
   }
 
   /**

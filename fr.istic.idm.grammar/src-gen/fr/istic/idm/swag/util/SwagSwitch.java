@@ -144,6 +144,14 @@ public class SwagSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SwagPackage.INDEX_FILTER:
+      {
+        IndexFilter indexFilter = (IndexFilter)theEObject;
+        T result = caseIndexFilter(indexFilter);
+        if (result == null) result = caseFilter(indexFilter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SwagPackage.BOUND_FILTER:
       {
         BoundFilter boundFilter = (BoundFilter)theEObject;
@@ -156,13 +164,6 @@ public class SwagSwitch<T> extends Switch<T>
       {
         ListFilter listFilter = (ListFilter)theEObject;
         T result = caseListFilter(listFilter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SwagPackage.NULLABLE_INT:
-      {
-        NullableInt nullableInt = (NullableInt)theEObject;
-        T result = caseNullableInt(nullableInt);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -354,6 +355,22 @@ public class SwagSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Index Filter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Index Filter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIndexFilter(IndexFilter object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Bound Filter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -381,22 +398,6 @@ public class SwagSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseListFilter(ListFilter object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Nullable Int</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Nullable Int</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNullableInt(NullableInt object)
   {
     return null;
   }

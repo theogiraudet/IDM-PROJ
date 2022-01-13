@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.istic.idm.swag.Path#getNode <em>Node</em>}</li>
  *   <li>{@link fr.istic.idm.swag.Path#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
@@ -26,18 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Path extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Node</b></em>' containment reference list.
-   * The list contents are of type {@link fr.istic.idm.swag.Node}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Node</em>' containment reference list.
-   * @see fr.istic.idm.swag.SwagPackage#getPath_Node()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Node> getNode();
-
   /**
    * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
    * The list contents are of type {@link fr.istic.idm.swag.Node}.

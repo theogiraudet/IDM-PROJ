@@ -3,7 +3,7 @@ grammar fr.istic.idm.Swag with org.eclipse.xtext.common.Terminals
 generate swag "http://www.istic.fr/idm/Swag"
 	
 Path: {Path} 
-	(node+=Node ('.' nodes+=Node)*)?
+	(nodes+=Node ('.' nodes+=Node)*)?
 ;	
 
 Node:

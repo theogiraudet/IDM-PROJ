@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import fr.istic.idm.swag.Path
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +17,12 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class SwagGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		var foo = resource.allContents
+		fsa.generateFile('greetings.txt', 'People to greet: ' + 
+			resource.allContents
+				.filter(Path)
+				.flatMap[nodes.iterator]
+				.map[getStr]
+				.join(', '))
 	}
 }

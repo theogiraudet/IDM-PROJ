@@ -7,7 +7,6 @@
   <genPackages prefix="Swag" basePackage="fr.istic.idm" disposableProviderFactory="true"
       fileExtensions="swag" ecorePackage="Swag.ecore#/">
     <genClasses ecoreClass="Swag.ecore#//Path">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//Path/node"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//Path/nodes"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//Node">
@@ -26,15 +25,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//EqualFilter/value"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//ExistFilter"/>
+    <genClasses ecoreClass="Swag.ecore#//IndexFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//IndexFilter/index"/>
+    </genClasses>
     <genClasses ecoreClass="Swag.ecore#//BoundFilter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//BoundFilter/min"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//BoundFilter/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//BoundFilter/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//BoundFilter/max"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//ListFilter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//ListFilter/filter"/>
-    </genClasses>
-    <genClasses ecoreClass="Swag.ecore#//NullableInt">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//NullableInt/value"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//JsonValue"/>
     <genClasses ecoreClass="Swag.ecore#//JsonNull"/>

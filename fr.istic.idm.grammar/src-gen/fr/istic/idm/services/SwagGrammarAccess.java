@@ -28,33 +28,33 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPathAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cNodeAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cNodeNodeParserRuleCall_1_0_0 = (RuleCall)cNodeAssignment_1_0.eContents().get(0);
+		private final Assignment cNodesAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cNodesNodeParserRuleCall_1_0_0 = (RuleCall)cNodesAssignment_1_0.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final Keyword cFullStopKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Assignment cNodesAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cNodesNodeParserRuleCall_1_1_1_0 = (RuleCall)cNodesAssignment_1_1_1.eContents().get(0);
 		
 		//Path: {Path}
-		//    (node+=Node ('.' nodes+=Node)*)?
+		//    (nodes+=Node ('.' nodes+=Node)*)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Path}
-		//   (node+=Node ('.' nodes+=Node)*)?
+		//   (nodes+=Node ('.' nodes+=Node)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Path}
 		public Action getPathAction_0() { return cPathAction_0; }
 		
-		//(node+=Node ('.' nodes+=Node)*)?
+		//(nodes+=Node ('.' nodes+=Node)*)?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//node+=Node
-		public Assignment getNodeAssignment_1_0() { return cNodeAssignment_1_0; }
+		//nodes+=Node
+		public Assignment getNodesAssignment_1_0() { return cNodesAssignment_1_0; }
 		
 		//Node
-		public RuleCall getNodeNodeParserRuleCall_1_0_0() { return cNodeNodeParserRuleCall_1_0_0; }
+		public RuleCall getNodesNodeParserRuleCall_1_0_0() { return cNodesNodeParserRuleCall_1_0_0; }
 		
 		//('.' nodes+=Node)*
 		public Group getGroup_1_1() { return cGroup_1_1; }
@@ -173,25 +173,29 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.Filter");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBoundFilterParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cPathFilterParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAllFilterParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cIndexFilterParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPathFilterParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cAllFilterParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Filter:
-		//    BoundFilter | PathFilter | AllFilter
+		//    BoundFilter | IndexFilter | PathFilter | AllFilter
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//BoundFilter | PathFilter | AllFilter
+		//BoundFilter | IndexFilter | PathFilter | AllFilter
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//BoundFilter
 		public RuleCall getBoundFilterParserRuleCall_0() { return cBoundFilterParserRuleCall_0; }
 		
+		//IndexFilter
+		public RuleCall getIndexFilterParserRuleCall_1() { return cIndexFilterParserRuleCall_1; }
+		
 		//PathFilter
-		public RuleCall getPathFilterParserRuleCall_1() { return cPathFilterParserRuleCall_1; }
+		public RuleCall getPathFilterParserRuleCall_2() { return cPathFilterParserRuleCall_2; }
 		
 		//AllFilter
-		public RuleCall getAllFilterParserRuleCall_2() { return cAllFilterParserRuleCall_2; }
+		public RuleCall getAllFilterParserRuleCall_3() { return cAllFilterParserRuleCall_3; }
 	}
 	public class AllFilterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.AllFilter");
@@ -300,6 +304,31 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'?'
 		public Keyword getQuestionMarkKeyword_2() { return cQuestionMarkKeyword_2; }
 	}
+	public class IndexFilterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.IndexFilter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIndexFilterAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cIndexAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIndexINTTerminalRuleCall_1_0 = (RuleCall)cIndexAssignment_1.eContents().get(0);
+		
+		//IndexFilter: {IndexFilter}
+		//    index=INT
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{IndexFilter}
+		//   index=INT
+		public Group getGroup() { return cGroup; }
+		
+		//{IndexFilter}
+		public Action getIndexFilterAction_0() { return cIndexFilterAction_0; }
+		
+		//index=INT
+		public Assignment getIndexAssignment_1() { return cIndexAssignment_1; }
+		
+		//INT
+		public RuleCall getIndexINTTerminalRuleCall_1_0() { return cIndexINTTerminalRuleCall_1_0; }
+	}
 	public class BoundFilterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.BoundFilter");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -307,76 +336,60 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Action cBoundFilterAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
 		private final Assignment cMinAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final RuleCall cMinNullableIntParserRuleCall_0_1_0_0 = (RuleCall)cMinAssignment_0_1_0.eContents().get(0);
+		private final RuleCall cMinINTTerminalRuleCall_0_1_0_0 = (RuleCall)cMinAssignment_0_1_0.eContents().get(0);
 		private final Keyword cFullStopFullStopKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
 		private final Assignment cMaxAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
-		private final RuleCall cMaxNullableIntParserRuleCall_0_1_2_0 = (RuleCall)cMaxAssignment_0_1_2.eContents().get(0);
+		private final RuleCall cMaxINTTerminalRuleCall_0_1_2_0 = (RuleCall)cMaxAssignment_0_1_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cFullStopFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cMaxAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMaxNullableIntParserRuleCall_1_1_0 = (RuleCall)cMaxAssignment_1_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Assignment cMinAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cMinNullableIntParserRuleCall_2_0_0 = (RuleCall)cMinAssignment_2_0.eContents().get(0);
-		private final Action cBoundFilterMaxAction_2_1 = (Action)cGroup_2.eContents().get(1);
+		private final RuleCall cMaxINTTerminalRuleCall_1_1_0 = (RuleCall)cMaxAssignment_1_1.eContents().get(0);
 		
 		//BoundFilter: {BoundFilter}
-		//    (min=NullableInt ".." (max=NullableInt)?) | (".." max=NullableInt) | (min=NullableInt {BoundFilter.max=current})
+		//    (min=INT ".." (max=INT)?) | (".." max=INT)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{BoundFilter}
-		//   (min=NullableInt ".." (max=NullableInt)?) | (".." max=NullableInt) | (min=NullableInt {BoundFilter.max=current})
+		//   (min=INT ".." (max=INT)?) | (".." max=INT)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{BoundFilter}
-		//   (min=NullableInt ".." (max=NullableInt)?)
+		//   (min=INT ".." (max=INT)?)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{BoundFilter}
 		public Action getBoundFilterAction_0_0() { return cBoundFilterAction_0_0; }
 		
-		//(min=NullableInt ".." (max=NullableInt)?)
+		//(min=INT ".." (max=INT)?)
 		public Group getGroup_0_1() { return cGroup_0_1; }
 		
-		//min=NullableInt
+		//min=INT
 		public Assignment getMinAssignment_0_1_0() { return cMinAssignment_0_1_0; }
 		
-		//NullableInt
-		public RuleCall getMinNullableIntParserRuleCall_0_1_0_0() { return cMinNullableIntParserRuleCall_0_1_0_0; }
+		//INT
+		public RuleCall getMinINTTerminalRuleCall_0_1_0_0() { return cMinINTTerminalRuleCall_0_1_0_0; }
 		
 		//".."
 		public Keyword getFullStopFullStopKeyword_0_1_1() { return cFullStopFullStopKeyword_0_1_1; }
 		
-		//(max=NullableInt)?
+		//(max=INT)?
 		public Assignment getMaxAssignment_0_1_2() { return cMaxAssignment_0_1_2; }
 		
-		//NullableInt
-		public RuleCall getMaxNullableIntParserRuleCall_0_1_2_0() { return cMaxNullableIntParserRuleCall_0_1_2_0; }
+		//INT
+		public RuleCall getMaxINTTerminalRuleCall_0_1_2_0() { return cMaxINTTerminalRuleCall_0_1_2_0; }
 		
-		//(".." max=NullableInt)
+		//(".." max=INT)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//".."
 		public Keyword getFullStopFullStopKeyword_1_0() { return cFullStopFullStopKeyword_1_0; }
 		
-		//max=NullableInt
+		//max=INT
 		public Assignment getMaxAssignment_1_1() { return cMaxAssignment_1_1; }
 		
-		//NullableInt
-		public RuleCall getMaxNullableIntParserRuleCall_1_1_0() { return cMaxNullableIntParserRuleCall_1_1_0; }
-		
-		//(min=NullableInt {BoundFilter.max=current})
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//min=NullableInt
-		public Assignment getMinAssignment_2_0() { return cMinAssignment_2_0; }
-		
-		//NullableInt
-		public RuleCall getMinNullableIntParserRuleCall_2_0_0() { return cMinNullableIntParserRuleCall_2_0_0; }
-		
-		//{BoundFilter.max=current}
-		public Action getBoundFilterMaxAction_2_1() { return cBoundFilterMaxAction_2_1; }
+		//INT
+		public RuleCall getMaxINTTerminalRuleCall_1_1_0() { return cMaxINTTerminalRuleCall_1_1_0; }
 	}
 	public class ListFilterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.ListFilter");
@@ -419,22 +432,6 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//Filter
 		public RuleCall getFilterFilterParserRuleCall_2_1_0() { return cFilterFilterParserRuleCall_2_1_0; }
-	}
-	public class NullableIntElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.NullableInt");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//NullableInt:
-		//    value=INT
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=INT
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
 	}
 	public class JsonValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.JsonValue");
@@ -591,9 +588,9 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final PathFilterElements pPathFilter;
 	private final EqualFilterElements pEqualFilter;
 	private final ExistFilterElements pExistFilter;
+	private final IndexFilterElements pIndexFilter;
 	private final BoundFilterElements pBoundFilter;
 	private final ListFilterElements pListFilter;
-	private final NullableIntElements pNullableInt;
 	private final JsonValueElements pJsonValue;
 	private final JsonNullElements pJsonNull;
 	private final JsonNumberElements pJsonNumber;
@@ -618,9 +615,9 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pPathFilter = new PathFilterElements();
 		this.pEqualFilter = new EqualFilterElements();
 		this.pExistFilter = new ExistFilterElements();
+		this.pIndexFilter = new IndexFilterElements();
 		this.pBoundFilter = new BoundFilterElements();
 		this.pListFilter = new ListFilterElements();
-		this.pNullableInt = new NullableIntElements();
 		this.pJsonValue = new JsonValueElements();
 		this.pJsonNull = new JsonNullElements();
 		this.pJsonNumber = new JsonNumberElements();
@@ -656,7 +653,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
 	
 	//Path: {Path}
-	//    (node+=Node ('.' nodes+=Node)*)?
+	//    (nodes+=Node ('.' nodes+=Node)*)?
 	//;
 	public PathElements getPathAccess() {
 		return pPath;
@@ -699,7 +696,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Filter:
-	//    BoundFilter | PathFilter | AllFilter
+	//    BoundFilter | IndexFilter | PathFilter | AllFilter
 	//;
 	public FilterElements getFilterAccess() {
 		return pFilter;
@@ -753,8 +750,19 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getExistFilterAccess().getRule();
 	}
 	
+	//IndexFilter: {IndexFilter}
+	//    index=INT
+	//;
+	public IndexFilterElements getIndexFilterAccess() {
+		return pIndexFilter;
+	}
+	
+	public ParserRule getIndexFilterRule() {
+		return getIndexFilterAccess().getRule();
+	}
+	
 	//BoundFilter: {BoundFilter}
-	//    (min=NullableInt ".." (max=NullableInt)?) | (".." max=NullableInt) | (min=NullableInt {BoundFilter.max=current})
+	//    (min=INT ".." (max=INT)?) | (".." max=INT)
 	//;
 	public BoundFilterElements getBoundFilterAccess() {
 		return pBoundFilter;
@@ -774,17 +782,6 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getListFilterRule() {
 		return getListFilterAccess().getRule();
-	}
-	
-	//NullableInt:
-	//    value=INT
-	//;
-	public NullableIntElements getNullableIntAccess() {
-		return pNullableInt;
-	}
-	
-	public ParserRule getNullableIntRule() {
-		return getNullableIntAccess().getRule();
 	}
 	
 	//JsonValue:

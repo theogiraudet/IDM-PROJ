@@ -4,15 +4,11 @@
 package fr.istic.idm.swag.impl;
 
 import fr.istic.idm.swag.BoundFilter;
-import fr.istic.idm.swag.NullableInt;
 import fr.istic.idm.swag.SwagPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -33,24 +29,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class BoundFilterImpl extends FilterImpl implements BoundFilter
 {
   /**
-   * The cached value of the '{@link #getMin() <em>Min</em>}' containment reference.
+   * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMin()
    * @generated
    * @ordered
    */
-  protected NullableInt min;
+  protected static final int MIN_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getMax() <em>Max</em>}' containment reference.
+   * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMin()
+   * @generated
+   * @ordered
+   */
+  protected int min = MIN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMax()
    * @generated
    * @ordered
    */
-  protected EObject max;
+  protected static final int MAX_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMax()
+   * @generated
+   * @ordered
+   */
+  protected int max = MAX_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,7 +95,7 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
    * @generated
    */
   @Override
-  public NullableInt getMin()
+  public int getMin()
   {
     return min;
   }
@@ -89,16 +105,13 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMin(NullableInt newMin, NotificationChain msgs)
+  @Override
+  public void setMin(int newMin)
   {
-    NullableInt oldMin = min;
+    int oldMin = min;
     min = newMin;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SwagPackage.BOUND_FILTER__MIN, oldMin, newMin);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.BOUND_FILTER__MIN, oldMin, min));
   }
 
   /**
@@ -107,29 +120,7 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
    * @generated
    */
   @Override
-  public void setMin(NullableInt newMin)
-  {
-    if (newMin != min)
-    {
-      NotificationChain msgs = null;
-      if (min != null)
-        msgs = ((InternalEObject)min).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SwagPackage.BOUND_FILTER__MIN, null, msgs);
-      if (newMin != null)
-        msgs = ((InternalEObject)newMin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SwagPackage.BOUND_FILTER__MIN, null, msgs);
-      msgs = basicSetMin(newMin, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.BOUND_FILTER__MIN, newMin, newMin));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EObject getMax()
+  public int getMax()
   {
     return max;
   }
@@ -139,56 +130,13 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMax(EObject newMax, NotificationChain msgs)
+  @Override
+  public void setMax(int newMax)
   {
-    EObject oldMax = max;
+    int oldMax = max;
     max = newMax;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SwagPackage.BOUND_FILTER__MAX, oldMax, newMax);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMax(EObject newMax)
-  {
-    if (newMax != max)
-    {
-      NotificationChain msgs = null;
-      if (max != null)
-        msgs = ((InternalEObject)max).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SwagPackage.BOUND_FILTER__MAX, null, msgs);
-      if (newMax != null)
-        msgs = ((InternalEObject)newMax).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SwagPackage.BOUND_FILTER__MAX, null, msgs);
-      msgs = basicSetMax(newMax, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.BOUND_FILTER__MAX, newMax, newMax));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case SwagPackage.BOUND_FILTER__MIN:
-        return basicSetMin(null, msgs);
-      case SwagPackage.BOUND_FILTER__MAX:
-        return basicSetMax(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.BOUND_FILTER__MAX, oldMax, max));
   }
 
   /**
@@ -220,10 +168,10 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
     switch (featureID)
     {
       case SwagPackage.BOUND_FILTER__MIN:
-        setMin((NullableInt)newValue);
+        setMin((Integer)newValue);
         return;
       case SwagPackage.BOUND_FILTER__MAX:
-        setMax((EObject)newValue);
+        setMax((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,10 +188,10 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
     switch (featureID)
     {
       case SwagPackage.BOUND_FILTER__MIN:
-        setMin((NullableInt)null);
+        setMin(MIN_EDEFAULT);
         return;
       case SwagPackage.BOUND_FILTER__MAX:
-        setMax((EObject)null);
+        setMax(MAX_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -260,11 +208,30 @@ public class BoundFilterImpl extends FilterImpl implements BoundFilter
     switch (featureID)
     {
       case SwagPackage.BOUND_FILTER__MIN:
-        return min != null;
+        return min != MIN_EDEFAULT;
       case SwagPackage.BOUND_FILTER__MAX:
-        return max != null;
+        return max != MAX_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (min: ");
+    result.append(min);
+    result.append(", max: ");
+    result.append(max);
+    result.append(')');
+    return result.toString();
   }
 
 } //BoundFilterImpl

@@ -105,6 +105,15 @@ public interface SwagFactory extends EFactory
   ExistFilter createExistFilter();
 
   /**
+   * Returns a new object of class '<em>Index Filter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Index Filter</em>'.
+   * @generated
+   */
+  IndexFilter createIndexFilter();
+
+  /**
    * Returns a new object of class '<em>Bound Filter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,15 +130,6 @@ public interface SwagFactory extends EFactory
    * @generated
    */
   ListFilter createListFilter();
-
-  /**
-   * Returns a new object of class '<em>Nullable Int</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Nullable Int</em>'.
-   * @generated
-   */
-  NullableInt createNullableInt();
 
   /**
    * Returns a new object of class '<em>Json Value</em>'.
