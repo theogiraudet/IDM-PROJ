@@ -3,7 +3,7 @@
  */
 package fr.istic.idm.swag.impl;
 
-import fr.istic.idm.swag.NullableInt;
+import fr.istic.idm.swag.IndexFilter;
 import fr.istic.idm.swag.SwagPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -11,49 +11,48 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Nullable Int</b></em>'.
+ * An implementation of the model object '<em><b>Index Filter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.istic.idm.swag.impl.NullableIntImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.istic.idm.swag.impl.IndexFilterImpl#getIndex <em>Index</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NullableIntImpl extends MinimalEObjectImpl.Container implements NullableInt
+public class IndexFilterImpl extends FilterImpl implements IndexFilter
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getIndex()
    * @generated
    * @ordered
    */
-  protected static final int VALUE_EDEFAULT = 0;
+  protected static final int INDEX_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getIndex()
    * @generated
    * @ordered
    */
-  protected int value = VALUE_EDEFAULT;
+  protected int index = INDEX_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NullableIntImpl()
+  protected IndexFilterImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
   @Override
   protected EClass eStaticClass()
   {
-    return SwagPackage.Literals.NULLABLE_INT;
+    return SwagPackage.Literals.INDEX_FILTER;
   }
 
   /**
@@ -75,9 +74,9 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
    * @generated
    */
   @Override
-  public int getValue()
+  public int getIndex()
   {
-    return value;
+    return index;
   }
 
   /**
@@ -86,12 +85,12 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
    * @generated
    */
   @Override
-  public void setValue(int newValue)
+  public void setIndex(int newIndex)
   {
-    int oldValue = value;
-    value = newValue;
+    int oldIndex = index;
+    index = newIndex;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.NULLABLE_INT__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.INDEX_FILTER__INDEX, oldIndex, index));
   }
 
   /**
@@ -104,8 +103,8 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
   {
     switch (featureID)
     {
-      case SwagPackage.NULLABLE_INT__VALUE:
-        return getValue();
+      case SwagPackage.INDEX_FILTER__INDEX:
+        return getIndex();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +119,8 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
   {
     switch (featureID)
     {
-      case SwagPackage.NULLABLE_INT__VALUE:
-        setValue((Integer)newValue);
+      case SwagPackage.INDEX_FILTER__INDEX:
+        setIndex((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +136,8 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
   {
     switch (featureID)
     {
-      case SwagPackage.NULLABLE_INT__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case SwagPackage.INDEX_FILTER__INDEX:
+        setIndex(INDEX_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +153,8 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
   {
     switch (featureID)
     {
-      case SwagPackage.NULLABLE_INT__VALUE:
-        return value != VALUE_EDEFAULT;
+      case SwagPackage.INDEX_FILTER__INDEX:
+        return index != INDEX_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +170,10 @@ public class NullableIntImpl extends MinimalEObjectImpl.Container implements Nul
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (index: ");
+    result.append(index);
     result.append(')');
     return result.toString();
   }
 
-} //NullableIntImpl
+} //IndexFilterImpl

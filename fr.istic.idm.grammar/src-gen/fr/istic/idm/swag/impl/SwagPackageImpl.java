@@ -10,6 +10,7 @@ import fr.istic.idm.swag.BoundFilter;
 import fr.istic.idm.swag.EqualFilter;
 import fr.istic.idm.swag.ExistFilter;
 import fr.istic.idm.swag.Filter;
+import fr.istic.idm.swag.IndexFilter;
 import fr.istic.idm.swag.JsonBoolean;
 import fr.istic.idm.swag.JsonNull;
 import fr.istic.idm.swag.JsonNumber;
@@ -17,7 +18,6 @@ import fr.istic.idm.swag.JsonString;
 import fr.istic.idm.swag.JsonValue;
 import fr.istic.idm.swag.ListFilter;
 import fr.istic.idm.swag.Node;
-import fr.istic.idm.swag.NullableInt;
 import fr.istic.idm.swag.Path;
 import fr.istic.idm.swag.PathFilter;
 import fr.istic.idm.swag.SwagFactory;
@@ -106,6 +106,13 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass indexFilterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass boundFilterEClass = null;
 
   /**
@@ -114,13 +121,6 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
    * @generated
    */
   private EClass listFilterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass nullableIntEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -237,20 +237,9 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
    * @generated
    */
   @Override
-  public EReference getPath_Node()
-  {
-    return (EReference)pathEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getPath_Nodes()
   {
-    return (EReference)pathEClass.getEStructuralFeatures().get(1);
+    return (EReference)pathEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -391,6 +380,28 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
    * @generated
    */
   @Override
+  public EClass getIndexFilter()
+  {
+    return indexFilterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIndexFilter_Index()
+  {
+    return (EAttribute)indexFilterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getBoundFilter()
   {
     return boundFilterEClass;
@@ -402,9 +413,9 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
    * @generated
    */
   @Override
-  public EReference getBoundFilter_Min()
+  public EAttribute getBoundFilter_Min()
   {
-    return (EReference)boundFilterEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)boundFilterEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -413,9 +424,9 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
    * @generated
    */
   @Override
-  public EReference getBoundFilter_Max()
+  public EAttribute getBoundFilter_Max()
   {
-    return (EReference)boundFilterEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)boundFilterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -438,28 +449,6 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
   public EReference getListFilter_Filter()
   {
     return (EReference)listFilterEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getNullableInt()
-  {
-    return nullableIntEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getNullableInt_Value()
-  {
-    return (EAttribute)nullableIntEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -582,7 +571,6 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
 
     // Create classes and their features
     pathEClass = createEClass(PATH);
-    createEReference(pathEClass, PATH__NODE);
     createEReference(pathEClass, PATH__NODES);
 
     nodeEClass = createEClass(NODE);
@@ -605,15 +593,15 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
 
     existFilterEClass = createEClass(EXIST_FILTER);
 
+    indexFilterEClass = createEClass(INDEX_FILTER);
+    createEAttribute(indexFilterEClass, INDEX_FILTER__INDEX);
+
     boundFilterEClass = createEClass(BOUND_FILTER);
-    createEReference(boundFilterEClass, BOUND_FILTER__MIN);
-    createEReference(boundFilterEClass, BOUND_FILTER__MAX);
+    createEAttribute(boundFilterEClass, BOUND_FILTER__MIN);
+    createEAttribute(boundFilterEClass, BOUND_FILTER__MAX);
 
     listFilterEClass = createEClass(LIST_FILTER);
     createEReference(listFilterEClass, LIST_FILTER__FILTER);
-
-    nullableIntEClass = createEClass(NULLABLE_INT);
-    createEAttribute(nullableIntEClass, NULLABLE_INT__VALUE);
 
     jsonValueEClass = createEClass(JSON_VALUE);
 
@@ -664,6 +652,7 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
     pathFilterEClass.getESuperTypes().add(this.getFilter());
     equalFilterEClass.getESuperTypes().add(this.getPathFilter());
     existFilterEClass.getESuperTypes().add(this.getPathFilter());
+    indexFilterEClass.getESuperTypes().add(this.getFilter());
     boundFilterEClass.getESuperTypes().add(this.getFilter());
     jsonNullEClass.getESuperTypes().add(this.getJsonValue());
     jsonNumberEClass.getESuperTypes().add(this.getJsonValue());
@@ -672,7 +661,6 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPath_Node(), this.getNode(), null, "node", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPath_Nodes(), this.getNode(), null, "nodes", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -695,15 +683,15 @@ public class SwagPackageImpl extends EPackageImpl implements SwagPackage
 
     initEClass(existFilterEClass, ExistFilter.class, "ExistFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(indexFilterEClass, IndexFilter.class, "IndexFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIndexFilter_Index(), ecorePackage.getEInt(), "index", null, 0, 1, IndexFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(boundFilterEClass, BoundFilter.class, "BoundFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBoundFilter_Min(), this.getNullableInt(), null, "min", null, 0, 1, BoundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBoundFilter_Max(), ecorePackage.getEObject(), null, "max", null, 0, 1, BoundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBoundFilter_Min(), ecorePackage.getEInt(), "min", null, 0, 1, BoundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBoundFilter_Max(), ecorePackage.getEInt(), "max", null, 0, 1, BoundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listFilterEClass, ListFilter.class, "ListFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListFilter_Filter(), this.getFilter(), null, "filter", null, 0, -1, ListFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(nullableIntEClass, NullableInt.class, "NullableInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNullableInt_Value(), ecorePackage.getEInt(), "value", null, 0, 1, NullableInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonValueEClass, JsonValue.class, "JsonValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

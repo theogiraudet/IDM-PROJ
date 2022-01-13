@@ -11,12 +11,12 @@ import fr.istic.idm.swag.BasicNode;
 import fr.istic.idm.swag.BoundFilter;
 import fr.istic.idm.swag.EqualFilter;
 import fr.istic.idm.swag.ExistFilter;
+import fr.istic.idm.swag.IndexFilter;
 import fr.istic.idm.swag.JsonBoolean;
 import fr.istic.idm.swag.JsonNull;
 import fr.istic.idm.swag.JsonNumber;
 import fr.istic.idm.swag.JsonString;
 import fr.istic.idm.swag.ListFilter;
-import fr.istic.idm.swag.NullableInt;
 import fr.istic.idm.swag.Path;
 import fr.istic.idm.swag.SwagPackage;
 import java.util.Set;
@@ -54,21 +54,16 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_BasicNode(context, (BasicNode) semanticObject); 
 				return; 
 			case SwagPackage.BOUND_FILTER:
-				if (rule == grammarAccess.getFilterRule()
-						|| rule == grammarAccess.getBoundFilterRule()) {
-					sequence_BoundFilter(context, (BoundFilter) semanticObject); 
-					return; 
-				}
-				else if (action == grammarAccess.getBoundFilterAccess().getBoundFilterMaxAction_2_1()) {
-					sequence_BoundFilter_BoundFilter_2_1(context, (BoundFilter) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_BoundFilter(context, (BoundFilter) semanticObject); 
+				return; 
 			case SwagPackage.EQUAL_FILTER:
 				sequence_EqualFilter(context, (EqualFilter) semanticObject); 
 				return; 
 			case SwagPackage.EXIST_FILTER:
 				sequence_ExistFilter(context, (ExistFilter) semanticObject); 
+				return; 
+			case SwagPackage.INDEX_FILTER:
+				sequence_IndexFilter(context, (IndexFilter) semanticObject); 
 				return; 
 			case SwagPackage.JSON_BOOLEAN:
 				sequence_JsonBoolean(context, (JsonBoolean) semanticObject); 
@@ -84,9 +79,6 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case SwagPackage.LIST_FILTER:
 				sequence_ListFilter(context, (ListFilter) semanticObject); 
-				return; 
-			case SwagPackage.NULLABLE_INT:
-				sequence_NullableInt(context, (NullableInt) semanticObject); 
 				return; 
 			case SwagPackage.PATH:
 				sequence_Path(context, (Path) semanticObject); 
@@ -141,28 +133,10 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BoundFilter returns BoundFilter
 	 *
 	 * Constraint:
-	 *     ((min=NullableInt max=NullableInt?) | max=NullableInt | max=BoundFilter_BoundFilter_2_1)
+	 *     ((min=INT max=INT?) | max=INT)
 	 */
 	protected void sequence_BoundFilter(ISerializationContext context, BoundFilter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     BoundFilter.BoundFilter_2_1 returns BoundFilter
-	 *
-	 * Constraint:
-	 *     min=NullableInt
-	 */
-	protected void sequence_BoundFilter_BoundFilter_2_1(ISerializationContext context, BoundFilter semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SwagPackage.Literals.BOUND_FILTER__MIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.BOUND_FILTER__MIN));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_2_0_0(), semanticObject.getMin());
-		feeder.finish();
 	}
 	
 	
@@ -205,6 +179,25 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getExistFilterAccess().getPathPathParserRuleCall_1_0(), semanticObject.getPath());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Filter returns IndexFilter
+	 *     IndexFilter returns IndexFilter
+	 *
+	 * Constraint:
+	 *     index=INT
+	 */
+	protected void sequence_IndexFilter(ISerializationContext context, IndexFilter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SwagPackage.Literals.INDEX_FILTER__INDEX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.INDEX_FILTER__INDEX));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0(), semanticObject.getIndex());
 		feeder.finish();
 	}
 	
@@ -287,28 +280,10 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     NullableInt returns NullableInt
-	 *
-	 * Constraint:
-	 *     value=INT
-	 */
-	protected void sequence_NullableInt(ISerializationContext context, NullableInt semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SwagPackage.Literals.NULLABLE_INT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.NULLABLE_INT__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNullableIntAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Path returns Path
 	 *
 	 * Constraint:
-	 *     (node+=Node nodes+=Node*)?
+	 *     (nodes+=Node nodes+=Node*)?
 	 */
 	protected void sequence_Path(ISerializationContext context, Path semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

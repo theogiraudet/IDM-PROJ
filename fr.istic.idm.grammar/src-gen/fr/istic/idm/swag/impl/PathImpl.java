@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.istic.idm.swag.impl.PathImpl#getNode <em>Node</em>}</li>
  *   <li>{@link fr.istic.idm.swag.impl.PathImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
@@ -37,16 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class PathImpl extends MinimalEObjectImpl.Container implements Path
 {
-  /**
-   * The cached value of the '{@link #getNode() <em>Node</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNode()
-   * @generated
-   * @ordered
-   */
-  protected EList<Node> node;
-
   /**
    * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -84,21 +73,6 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path
    * @generated
    */
   @Override
-  public EList<Node> getNode()
-  {
-    if (node == null)
-    {
-      node = new EObjectContainmentEList<Node>(Node.class, this, SwagPackage.PATH__NODE);
-    }
-    return node;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<Node> getNodes()
   {
     if (nodes == null)
@@ -118,8 +92,6 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path
   {
     switch (featureID)
     {
-      case SwagPackage.PATH__NODE:
-        return ((InternalEList<?>)getNode()).basicRemove(otherEnd, msgs);
       case SwagPackage.PATH__NODES:
         return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
     }
@@ -136,8 +108,6 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path
   {
     switch (featureID)
     {
-      case SwagPackage.PATH__NODE:
-        return getNode();
       case SwagPackage.PATH__NODES:
         return getNodes();
     }
@@ -155,10 +125,6 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path
   {
     switch (featureID)
     {
-      case SwagPackage.PATH__NODE:
-        getNode().clear();
-        getNode().addAll((Collection<? extends Node>)newValue);
-        return;
       case SwagPackage.PATH__NODES:
         getNodes().clear();
         getNodes().addAll((Collection<? extends Node>)newValue);
@@ -177,9 +143,6 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path
   {
     switch (featureID)
     {
-      case SwagPackage.PATH__NODE:
-        getNode().clear();
-        return;
       case SwagPackage.PATH__NODES:
         getNodes().clear();
         return;
@@ -197,8 +160,6 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path
   {
     switch (featureID)
     {
-      case SwagPackage.PATH__NODE:
-        return node != null && !node.isEmpty();
       case SwagPackage.PATH__NODES:
         return nodes != null && !nodes.isEmpty();
     }

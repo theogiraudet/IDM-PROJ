@@ -845,12 +845,97 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleExistFilter"
 
 
+    // $ANTLR start "entryRuleIndexFilter"
+    // InternalSwag.g:279:1: entryRuleIndexFilter : ruleIndexFilter EOF ;
+    public final void entryRuleIndexFilter() throws RecognitionException {
+        try {
+            // InternalSwag.g:280:1: ( ruleIndexFilter EOF )
+            // InternalSwag.g:281:1: ruleIndexFilter EOF
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIndexFilterRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            ruleIndexFilter();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIndexFilterRule()); 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleIndexFilter"
+
+
+    // $ANTLR start "ruleIndexFilter"
+    // InternalSwag.g:288:1: ruleIndexFilter : ( ( rule__IndexFilter__Group__0 ) ) ;
+    public final void ruleIndexFilter() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSwag.g:292:2: ( ( ( rule__IndexFilter__Group__0 ) ) )
+            // InternalSwag.g:293:2: ( ( rule__IndexFilter__Group__0 ) )
+            {
+            // InternalSwag.g:293:2: ( ( rule__IndexFilter__Group__0 ) )
+            // InternalSwag.g:294:3: ( rule__IndexFilter__Group__0 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIndexFilterAccess().getGroup()); 
+            }
+            // InternalSwag.g:295:3: ( rule__IndexFilter__Group__0 )
+            // InternalSwag.g:295:4: rule__IndexFilter__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__IndexFilter__Group__0();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIndexFilterAccess().getGroup()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleIndexFilter"
+
+
     // $ANTLR start "entryRuleBoundFilter"
-    // InternalSwag.g:279:1: entryRuleBoundFilter : ruleBoundFilter EOF ;
+    // InternalSwag.g:304:1: entryRuleBoundFilter : ruleBoundFilter EOF ;
     public final void entryRuleBoundFilter() throws RecognitionException {
         try {
-            // InternalSwag.g:280:1: ( ruleBoundFilter EOF )
-            // InternalSwag.g:281:1: ruleBoundFilter EOF
+            // InternalSwag.g:305:1: ( ruleBoundFilter EOF )
+            // InternalSwag.g:306:1: ruleBoundFilter EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterRule()); 
@@ -880,23 +965,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleBoundFilter"
-    // InternalSwag.g:288:1: ruleBoundFilter : ( ( rule__BoundFilter__Alternatives ) ) ;
+    // InternalSwag.g:313:1: ruleBoundFilter : ( ( rule__BoundFilter__Alternatives ) ) ;
     public final void ruleBoundFilter() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:292:2: ( ( ( rule__BoundFilter__Alternatives ) ) )
-            // InternalSwag.g:293:2: ( ( rule__BoundFilter__Alternatives ) )
+            // InternalSwag.g:317:2: ( ( ( rule__BoundFilter__Alternatives ) ) )
+            // InternalSwag.g:318:2: ( ( rule__BoundFilter__Alternatives ) )
             {
-            // InternalSwag.g:293:2: ( ( rule__BoundFilter__Alternatives ) )
-            // InternalSwag.g:294:3: ( rule__BoundFilter__Alternatives )
+            // InternalSwag.g:318:2: ( ( rule__BoundFilter__Alternatives ) )
+            // InternalSwag.g:319:3: ( rule__BoundFilter__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getAlternatives()); 
             }
-            // InternalSwag.g:295:3: ( rule__BoundFilter__Alternatives )
-            // InternalSwag.g:295:4: rule__BoundFilter__Alternatives
+            // InternalSwag.g:320:3: ( rule__BoundFilter__Alternatives )
+            // InternalSwag.g:320:4: rule__BoundFilter__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__Alternatives();
@@ -931,11 +1016,11 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleListFilter"
-    // InternalSwag.g:304:1: entryRuleListFilter : ruleListFilter EOF ;
+    // InternalSwag.g:329:1: entryRuleListFilter : ruleListFilter EOF ;
     public final void entryRuleListFilter() throws RecognitionException {
         try {
-            // InternalSwag.g:305:1: ( ruleListFilter EOF )
-            // InternalSwag.g:306:1: ruleListFilter EOF
+            // InternalSwag.g:330:1: ( ruleListFilter EOF )
+            // InternalSwag.g:331:1: ruleListFilter EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getListFilterRule()); 
@@ -965,23 +1050,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleListFilter"
-    // InternalSwag.g:313:1: ruleListFilter : ( ( rule__ListFilter__Group__0 ) ) ;
+    // InternalSwag.g:338:1: ruleListFilter : ( ( rule__ListFilter__Group__0 ) ) ;
     public final void ruleListFilter() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:317:2: ( ( ( rule__ListFilter__Group__0 ) ) )
-            // InternalSwag.g:318:2: ( ( rule__ListFilter__Group__0 ) )
+            // InternalSwag.g:342:2: ( ( ( rule__ListFilter__Group__0 ) ) )
+            // InternalSwag.g:343:2: ( ( rule__ListFilter__Group__0 ) )
             {
-            // InternalSwag.g:318:2: ( ( rule__ListFilter__Group__0 ) )
-            // InternalSwag.g:319:3: ( rule__ListFilter__Group__0 )
+            // InternalSwag.g:343:2: ( ( rule__ListFilter__Group__0 ) )
+            // InternalSwag.g:344:3: ( rule__ListFilter__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getListFilterAccess().getGroup()); 
             }
-            // InternalSwag.g:320:3: ( rule__ListFilter__Group__0 )
-            // InternalSwag.g:320:4: rule__ListFilter__Group__0
+            // InternalSwag.g:345:3: ( rule__ListFilter__Group__0 )
+            // InternalSwag.g:345:4: rule__ListFilter__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ListFilter__Group__0();
@@ -1013,91 +1098,6 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleListFilter"
-
-
-    // $ANTLR start "entryRuleNullableInt"
-    // InternalSwag.g:329:1: entryRuleNullableInt : ruleNullableInt EOF ;
-    public final void entryRuleNullableInt() throws RecognitionException {
-        try {
-            // InternalSwag.g:330:1: ( ruleNullableInt EOF )
-            // InternalSwag.g:331:1: ruleNullableInt EOF
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getNullableIntRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            ruleNullableInt();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getNullableIntRule()); 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleNullableInt"
-
-
-    // $ANTLR start "ruleNullableInt"
-    // InternalSwag.g:338:1: ruleNullableInt : ( ( rule__NullableInt__ValueAssignment ) ) ;
-    public final void ruleNullableInt() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:342:2: ( ( ( rule__NullableInt__ValueAssignment ) ) )
-            // InternalSwag.g:343:2: ( ( rule__NullableInt__ValueAssignment ) )
-            {
-            // InternalSwag.g:343:2: ( ( rule__NullableInt__ValueAssignment ) )
-            // InternalSwag.g:344:3: ( rule__NullableInt__ValueAssignment )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getNullableIntAccess().getValueAssignment()); 
-            }
-            // InternalSwag.g:345:3: ( rule__NullableInt__ValueAssignment )
-            // InternalSwag.g:345:4: rule__NullableInt__ValueAssignment
-            {
-            pushFollow(FOLLOW_2);
-            rule__NullableInt__ValueAssignment();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getNullableIntAccess().getValueAssignment()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleNullableInt"
 
 
     // $ANTLR start "entryRuleJsonValue"
@@ -1802,33 +1802,50 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Filter__Alternatives"
-    // InternalSwag.g:541:1: rule__Filter__Alternatives : ( ( ruleBoundFilter ) | ( rulePathFilter ) | ( ruleAllFilter ) );
+    // InternalSwag.g:541:1: rule__Filter__Alternatives : ( ( ruleBoundFilter ) | ( ruleIndexFilter ) | ( rulePathFilter ) | ( ruleAllFilter ) );
     public final void rule__Filter__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:545:1: ( ( ruleBoundFilter ) | ( rulePathFilter ) | ( ruleAllFilter ) )
-            int alt4=3;
+            // InternalSwag.g:545:1: ( ( ruleBoundFilter ) | ( ruleIndexFilter ) | ( rulePathFilter ) | ( ruleAllFilter ) )
+            int alt4=4;
             switch ( input.LA(1) ) {
             case RULE_INT:
+                {
+                int LA4_1 = input.LA(2);
+
+                if ( (LA4_1==EOF||LA4_1==15||LA4_1==20) ) {
+                    alt4=2;
+                }
+                else if ( (LA4_1==19) ) {
+                    alt4=1;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return ;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 1, input);
+
+                    throw nvae;
+                }
+                }
+                break;
             case 19:
                 {
                 alt4=1;
                 }
                 break;
-            case EOF:
             case RULE_ID:
             case RULE_STRING:
             case 17:
             case 18:
                 {
-                alt4=2;
+                alt4=3;
                 }
                 break;
             case 16:
                 {
-                alt4=3;
+                alt4=4;
                 }
                 break;
             default:
@@ -1864,21 +1881,21 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSwag.g:552:2: ( rulePathFilter )
+                    // InternalSwag.g:552:2: ( ruleIndexFilter )
                     {
-                    // InternalSwag.g:552:2: ( rulePathFilter )
-                    // InternalSwag.g:553:3: rulePathFilter
+                    // InternalSwag.g:552:2: ( ruleIndexFilter )
+                    // InternalSwag.g:553:3: ruleIndexFilter
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getFilterAccess().getPathFilterParserRuleCall_1()); 
+                       before(grammarAccess.getFilterAccess().getIndexFilterParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
-                    rulePathFilter();
+                    ruleIndexFilter();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getFilterAccess().getPathFilterParserRuleCall_1()); 
+                       after(grammarAccess.getFilterAccess().getIndexFilterParserRuleCall_1()); 
                     }
 
                     }
@@ -1887,13 +1904,36 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSwag.g:558:2: ( ruleAllFilter )
+                    // InternalSwag.g:558:2: ( rulePathFilter )
                     {
-                    // InternalSwag.g:558:2: ( ruleAllFilter )
-                    // InternalSwag.g:559:3: ruleAllFilter
+                    // InternalSwag.g:558:2: ( rulePathFilter )
+                    // InternalSwag.g:559:3: rulePathFilter
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getFilterAccess().getAllFilterParserRuleCall_2()); 
+                       before(grammarAccess.getFilterAccess().getPathFilterParserRuleCall_2()); 
+                    }
+                    pushFollow(FOLLOW_2);
+                    rulePathFilter();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+                    if ( state.backtracking==0 ) {
+                       after(grammarAccess.getFilterAccess().getPathFilterParserRuleCall_2()); 
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSwag.g:564:2: ( ruleAllFilter )
+                    {
+                    // InternalSwag.g:564:2: ( ruleAllFilter )
+                    // InternalSwag.g:565:3: ruleAllFilter
+                    {
+                    if ( state.backtracking==0 ) {
+                       before(grammarAccess.getFilterAccess().getAllFilterParserRuleCall_3()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAllFilter();
@@ -1901,7 +1941,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getFilterAccess().getAllFilterParserRuleCall_2()); 
+                       after(grammarAccess.getFilterAccess().getAllFilterParserRuleCall_3()); 
                     }
 
                     }
@@ -1927,20 +1967,20 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PathFilter__Alternatives"
-    // InternalSwag.g:568:1: rule__PathFilter__Alternatives : ( ( ( ruleExistFilter ) ) | ( ruleEqualFilter ) );
+    // InternalSwag.g:574:1: rule__PathFilter__Alternatives : ( ( ( ruleExistFilter ) ) | ( ruleEqualFilter ) );
     public final void rule__PathFilter__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:572:1: ( ( ( ruleExistFilter ) ) | ( ruleEqualFilter ) )
+            // InternalSwag.g:578:1: ( ( ( ruleExistFilter ) ) | ( ruleEqualFilter ) )
             int alt5=2;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
                 int LA5_1 = input.LA(2);
 
-                if ( (synpred6_InternalSwag()) ) {
+                if ( (synpred7_InternalSwag()) ) {
                     alt5=1;
                 }
                 else if ( (true) ) {
@@ -1959,7 +1999,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                 {
                 int LA5_2 = input.LA(2);
 
-                if ( (synpred6_InternalSwag()) ) {
+                if ( (synpred7_InternalSwag()) ) {
                     alt5=1;
                 }
                 else if ( (true) ) {
@@ -1994,16 +2034,16 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
             switch (alt5) {
                 case 1 :
-                    // InternalSwag.g:573:2: ( ( ruleExistFilter ) )
+                    // InternalSwag.g:579:2: ( ( ruleExistFilter ) )
                     {
-                    // InternalSwag.g:573:2: ( ( ruleExistFilter ) )
-                    // InternalSwag.g:574:3: ( ruleExistFilter )
+                    // InternalSwag.g:579:2: ( ( ruleExistFilter ) )
+                    // InternalSwag.g:580:3: ( ruleExistFilter )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPathFilterAccess().getExistFilterParserRuleCall_0()); 
                     }
-                    // InternalSwag.g:575:3: ( ruleExistFilter )
-                    // InternalSwag.g:575:4: ruleExistFilter
+                    // InternalSwag.g:581:3: ( ruleExistFilter )
+                    // InternalSwag.g:581:4: ruleExistFilter
                     {
                     pushFollow(FOLLOW_2);
                     ruleExistFilter();
@@ -2023,10 +2063,10 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSwag.g:579:2: ( ruleEqualFilter )
+                    // InternalSwag.g:585:2: ( ruleEqualFilter )
                     {
-                    // InternalSwag.g:579:2: ( ruleEqualFilter )
-                    // InternalSwag.g:580:3: ruleEqualFilter
+                    // InternalSwag.g:585:2: ( ruleEqualFilter )
+                    // InternalSwag.g:586:3: ruleEqualFilter
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPathFilterAccess().getEqualFilterParserRuleCall_1()); 
@@ -2063,32 +2103,18 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Alternatives"
-    // InternalSwag.g:589:1: rule__BoundFilter__Alternatives : ( ( ( rule__BoundFilter__Group_0__0 ) ) | ( ( rule__BoundFilter__Group_1__0 ) ) | ( ( rule__BoundFilter__Group_2__0 ) ) );
+    // InternalSwag.g:595:1: rule__BoundFilter__Alternatives : ( ( ( rule__BoundFilter__Group_0__0 ) ) | ( ( rule__BoundFilter__Group_1__0 ) ) );
     public final void rule__BoundFilter__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:593:1: ( ( ( rule__BoundFilter__Group_0__0 ) ) | ( ( rule__BoundFilter__Group_1__0 ) ) | ( ( rule__BoundFilter__Group_2__0 ) ) )
-            int alt6=3;
+            // InternalSwag.g:599:1: ( ( ( rule__BoundFilter__Group_0__0 ) ) | ( ( rule__BoundFilter__Group_1__0 ) ) )
+            int alt6=2;
             int LA6_0 = input.LA(1);
 
             if ( (LA6_0==RULE_INT) ) {
-                int LA6_1 = input.LA(2);
-
-                if ( (LA6_1==EOF||LA6_1==15||LA6_1==20) ) {
-                    alt6=3;
-                }
-                else if ( (LA6_1==19) ) {
-                    alt6=1;
-                }
-                else {
-                    if (state.backtracking>0) {state.failed=true; return ;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 6, 1, input);
-
-                    throw nvae;
-                }
+                alt6=1;
             }
             else if ( (LA6_0==19) ) {
                 alt6=2;
@@ -2102,16 +2128,16 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSwag.g:594:2: ( ( rule__BoundFilter__Group_0__0 ) )
+                    // InternalSwag.g:600:2: ( ( rule__BoundFilter__Group_0__0 ) )
                     {
-                    // InternalSwag.g:594:2: ( ( rule__BoundFilter__Group_0__0 ) )
-                    // InternalSwag.g:595:3: ( rule__BoundFilter__Group_0__0 )
+                    // InternalSwag.g:600:2: ( ( rule__BoundFilter__Group_0__0 ) )
+                    // InternalSwag.g:601:3: ( rule__BoundFilter__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBoundFilterAccess().getGroup_0()); 
                     }
-                    // InternalSwag.g:596:3: ( rule__BoundFilter__Group_0__0 )
-                    // InternalSwag.g:596:4: rule__BoundFilter__Group_0__0
+                    // InternalSwag.g:602:3: ( rule__BoundFilter__Group_0__0 )
+                    // InternalSwag.g:602:4: rule__BoundFilter__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BoundFilter__Group_0__0();
@@ -2131,16 +2157,16 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSwag.g:600:2: ( ( rule__BoundFilter__Group_1__0 ) )
+                    // InternalSwag.g:606:2: ( ( rule__BoundFilter__Group_1__0 ) )
                     {
-                    // InternalSwag.g:600:2: ( ( rule__BoundFilter__Group_1__0 ) )
-                    // InternalSwag.g:601:3: ( rule__BoundFilter__Group_1__0 )
+                    // InternalSwag.g:606:2: ( ( rule__BoundFilter__Group_1__0 ) )
+                    // InternalSwag.g:607:3: ( rule__BoundFilter__Group_1__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBoundFilterAccess().getGroup_1()); 
                     }
-                    // InternalSwag.g:602:3: ( rule__BoundFilter__Group_1__0 )
-                    // InternalSwag.g:602:4: rule__BoundFilter__Group_1__0
+                    // InternalSwag.g:608:3: ( rule__BoundFilter__Group_1__0 )
+                    // InternalSwag.g:608:4: rule__BoundFilter__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BoundFilter__Group_1__0();
@@ -2152,35 +2178,6 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getBoundFilterAccess().getGroup_1()); 
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalSwag.g:606:2: ( ( rule__BoundFilter__Group_2__0 ) )
-                    {
-                    // InternalSwag.g:606:2: ( ( rule__BoundFilter__Group_2__0 ) )
-                    // InternalSwag.g:607:3: ( rule__BoundFilter__Group_2__0 )
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBoundFilterAccess().getGroup_2()); 
-                    }
-                    // InternalSwag.g:608:3: ( rule__BoundFilter__Group_2__0 )
-                    // InternalSwag.g:608:4: rule__BoundFilter__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__BoundFilter__Group_2__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBoundFilterAccess().getGroup_2()); 
                     }
 
                     }
@@ -2647,26 +2644,26 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Path__Group_1__0__Impl"
-    // InternalSwag.g:736:1: rule__Path__Group_1__0__Impl : ( ( rule__Path__NodeAssignment_1_0 ) ) ;
+    // InternalSwag.g:736:1: rule__Path__Group_1__0__Impl : ( ( rule__Path__NodesAssignment_1_0 ) ) ;
     public final void rule__Path__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:740:1: ( ( ( rule__Path__NodeAssignment_1_0 ) ) )
-            // InternalSwag.g:741:1: ( ( rule__Path__NodeAssignment_1_0 ) )
+            // InternalSwag.g:740:1: ( ( ( rule__Path__NodesAssignment_1_0 ) ) )
+            // InternalSwag.g:741:1: ( ( rule__Path__NodesAssignment_1_0 ) )
             {
-            // InternalSwag.g:741:1: ( ( rule__Path__NodeAssignment_1_0 ) )
-            // InternalSwag.g:742:2: ( rule__Path__NodeAssignment_1_0 )
+            // InternalSwag.g:741:1: ( ( rule__Path__NodesAssignment_1_0 ) )
+            // InternalSwag.g:742:2: ( rule__Path__NodesAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPathAccess().getNodeAssignment_1_0()); 
+               before(grammarAccess.getPathAccess().getNodesAssignment_1_0()); 
             }
-            // InternalSwag.g:743:2: ( rule__Path__NodeAssignment_1_0 )
-            // InternalSwag.g:743:3: rule__Path__NodeAssignment_1_0
+            // InternalSwag.g:743:2: ( rule__Path__NodesAssignment_1_0 )
+            // InternalSwag.g:743:3: rule__Path__NodesAssignment_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__Path__NodeAssignment_1_0();
+            rule__Path__NodesAssignment_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2674,7 +2671,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPathAccess().getNodeAssignment_1_0()); 
+               after(grammarAccess.getPathAccess().getNodesAssignment_1_0()); 
             }
 
             }
@@ -4272,15 +4269,178 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExistFilter__Group__2__Impl"
 
 
+    // $ANTLR start "rule__IndexFilter__Group__0"
+    // InternalSwag.g:1264:1: rule__IndexFilter__Group__0 : rule__IndexFilter__Group__0__Impl rule__IndexFilter__Group__1 ;
+    public final void rule__IndexFilter__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSwag.g:1268:1: ( rule__IndexFilter__Group__0__Impl rule__IndexFilter__Group__1 )
+            // InternalSwag.g:1269:2: rule__IndexFilter__Group__0__Impl rule__IndexFilter__Group__1
+            {
+            pushFollow(FOLLOW_12);
+            rule__IndexFilter__Group__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__IndexFilter__Group__1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IndexFilter__Group__0"
+
+
+    // $ANTLR start "rule__IndexFilter__Group__0__Impl"
+    // InternalSwag.g:1276:1: rule__IndexFilter__Group__0__Impl : ( () ) ;
+    public final void rule__IndexFilter__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSwag.g:1280:1: ( ( () ) )
+            // InternalSwag.g:1281:1: ( () )
+            {
+            // InternalSwag.g:1281:1: ( () )
+            // InternalSwag.g:1282:2: ()
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIndexFilterAccess().getIndexFilterAction_0()); 
+            }
+            // InternalSwag.g:1283:2: ()
+            // InternalSwag.g:1283:3: 
+            {
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIndexFilterAccess().getIndexFilterAction_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IndexFilter__Group__0__Impl"
+
+
+    // $ANTLR start "rule__IndexFilter__Group__1"
+    // InternalSwag.g:1291:1: rule__IndexFilter__Group__1 : rule__IndexFilter__Group__1__Impl ;
+    public final void rule__IndexFilter__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSwag.g:1295:1: ( rule__IndexFilter__Group__1__Impl )
+            // InternalSwag.g:1296:2: rule__IndexFilter__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IndexFilter__Group__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IndexFilter__Group__1"
+
+
+    // $ANTLR start "rule__IndexFilter__Group__1__Impl"
+    // InternalSwag.g:1302:1: rule__IndexFilter__Group__1__Impl : ( ( rule__IndexFilter__IndexAssignment_1 ) ) ;
+    public final void rule__IndexFilter__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSwag.g:1306:1: ( ( ( rule__IndexFilter__IndexAssignment_1 ) ) )
+            // InternalSwag.g:1307:1: ( ( rule__IndexFilter__IndexAssignment_1 ) )
+            {
+            // InternalSwag.g:1307:1: ( ( rule__IndexFilter__IndexAssignment_1 ) )
+            // InternalSwag.g:1308:2: ( rule__IndexFilter__IndexAssignment_1 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIndexFilterAccess().getIndexAssignment_1()); 
+            }
+            // InternalSwag.g:1309:2: ( rule__IndexFilter__IndexAssignment_1 )
+            // InternalSwag.g:1309:3: rule__IndexFilter__IndexAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__IndexFilter__IndexAssignment_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIndexFilterAccess().getIndexAssignment_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IndexFilter__Group__1__Impl"
+
+
     // $ANTLR start "rule__BoundFilter__Group_0__0"
-    // InternalSwag.g:1264:1: rule__BoundFilter__Group_0__0 : rule__BoundFilter__Group_0__0__Impl rule__BoundFilter__Group_0__1 ;
+    // InternalSwag.g:1318:1: rule__BoundFilter__Group_0__0 : rule__BoundFilter__Group_0__0__Impl rule__BoundFilter__Group_0__1 ;
     public final void rule__BoundFilter__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1268:1: ( rule__BoundFilter__Group_0__0__Impl rule__BoundFilter__Group_0__1 )
-            // InternalSwag.g:1269:2: rule__BoundFilter__Group_0__0__Impl rule__BoundFilter__Group_0__1
+            // InternalSwag.g:1322:1: ( rule__BoundFilter__Group_0__0__Impl rule__BoundFilter__Group_0__1 )
+            // InternalSwag.g:1323:2: rule__BoundFilter__Group_0__0__Impl rule__BoundFilter__Group_0__1
             {
             pushFollow(FOLLOW_12);
             rule__BoundFilter__Group_0__0__Impl();
@@ -4311,23 +4471,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0__0__Impl"
-    // InternalSwag.g:1276:1: rule__BoundFilter__Group_0__0__Impl : ( () ) ;
+    // InternalSwag.g:1330:1: rule__BoundFilter__Group_0__0__Impl : ( () ) ;
     public final void rule__BoundFilter__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1280:1: ( ( () ) )
-            // InternalSwag.g:1281:1: ( () )
+            // InternalSwag.g:1334:1: ( ( () ) )
+            // InternalSwag.g:1335:1: ( () )
             {
-            // InternalSwag.g:1281:1: ( () )
-            // InternalSwag.g:1282:2: ()
+            // InternalSwag.g:1335:1: ( () )
+            // InternalSwag.g:1336:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getBoundFilterAction_0_0()); 
             }
-            // InternalSwag.g:1283:2: ()
-            // InternalSwag.g:1283:3: 
+            // InternalSwag.g:1337:2: ()
+            // InternalSwag.g:1337:3: 
             {
             }
 
@@ -4352,14 +4512,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0__1"
-    // InternalSwag.g:1291:1: rule__BoundFilter__Group_0__1 : rule__BoundFilter__Group_0__1__Impl ;
+    // InternalSwag.g:1345:1: rule__BoundFilter__Group_0__1 : rule__BoundFilter__Group_0__1__Impl ;
     public final void rule__BoundFilter__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1295:1: ( rule__BoundFilter__Group_0__1__Impl )
-            // InternalSwag.g:1296:2: rule__BoundFilter__Group_0__1__Impl
+            // InternalSwag.g:1349:1: ( rule__BoundFilter__Group_0__1__Impl )
+            // InternalSwag.g:1350:2: rule__BoundFilter__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__Group_0__1__Impl();
@@ -4385,23 +4545,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0__1__Impl"
-    // InternalSwag.g:1302:1: rule__BoundFilter__Group_0__1__Impl : ( ( rule__BoundFilter__Group_0_1__0 ) ) ;
+    // InternalSwag.g:1356:1: rule__BoundFilter__Group_0__1__Impl : ( ( rule__BoundFilter__Group_0_1__0 ) ) ;
     public final void rule__BoundFilter__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1306:1: ( ( ( rule__BoundFilter__Group_0_1__0 ) ) )
-            // InternalSwag.g:1307:1: ( ( rule__BoundFilter__Group_0_1__0 ) )
+            // InternalSwag.g:1360:1: ( ( ( rule__BoundFilter__Group_0_1__0 ) ) )
+            // InternalSwag.g:1361:1: ( ( rule__BoundFilter__Group_0_1__0 ) )
             {
-            // InternalSwag.g:1307:1: ( ( rule__BoundFilter__Group_0_1__0 ) )
-            // InternalSwag.g:1308:2: ( rule__BoundFilter__Group_0_1__0 )
+            // InternalSwag.g:1361:1: ( ( rule__BoundFilter__Group_0_1__0 ) )
+            // InternalSwag.g:1362:2: ( rule__BoundFilter__Group_0_1__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getGroup_0_1()); 
             }
-            // InternalSwag.g:1309:2: ( rule__BoundFilter__Group_0_1__0 )
-            // InternalSwag.g:1309:3: rule__BoundFilter__Group_0_1__0
+            // InternalSwag.g:1363:2: ( rule__BoundFilter__Group_0_1__0 )
+            // InternalSwag.g:1363:3: rule__BoundFilter__Group_0_1__0
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__Group_0_1__0();
@@ -4436,14 +4596,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0_1__0"
-    // InternalSwag.g:1318:1: rule__BoundFilter__Group_0_1__0 : rule__BoundFilter__Group_0_1__0__Impl rule__BoundFilter__Group_0_1__1 ;
+    // InternalSwag.g:1372:1: rule__BoundFilter__Group_0_1__0 : rule__BoundFilter__Group_0_1__0__Impl rule__BoundFilter__Group_0_1__1 ;
     public final void rule__BoundFilter__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1322:1: ( rule__BoundFilter__Group_0_1__0__Impl rule__BoundFilter__Group_0_1__1 )
-            // InternalSwag.g:1323:2: rule__BoundFilter__Group_0_1__0__Impl rule__BoundFilter__Group_0_1__1
+            // InternalSwag.g:1376:1: ( rule__BoundFilter__Group_0_1__0__Impl rule__BoundFilter__Group_0_1__1 )
+            // InternalSwag.g:1377:2: rule__BoundFilter__Group_0_1__0__Impl rule__BoundFilter__Group_0_1__1
             {
             pushFollow(FOLLOW_13);
             rule__BoundFilter__Group_0_1__0__Impl();
@@ -4474,23 +4634,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0_1__0__Impl"
-    // InternalSwag.g:1330:1: rule__BoundFilter__Group_0_1__0__Impl : ( ( rule__BoundFilter__MinAssignment_0_1_0 ) ) ;
+    // InternalSwag.g:1384:1: rule__BoundFilter__Group_0_1__0__Impl : ( ( rule__BoundFilter__MinAssignment_0_1_0 ) ) ;
     public final void rule__BoundFilter__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1334:1: ( ( ( rule__BoundFilter__MinAssignment_0_1_0 ) ) )
-            // InternalSwag.g:1335:1: ( ( rule__BoundFilter__MinAssignment_0_1_0 ) )
+            // InternalSwag.g:1388:1: ( ( ( rule__BoundFilter__MinAssignment_0_1_0 ) ) )
+            // InternalSwag.g:1389:1: ( ( rule__BoundFilter__MinAssignment_0_1_0 ) )
             {
-            // InternalSwag.g:1335:1: ( ( rule__BoundFilter__MinAssignment_0_1_0 ) )
-            // InternalSwag.g:1336:2: ( rule__BoundFilter__MinAssignment_0_1_0 )
+            // InternalSwag.g:1389:1: ( ( rule__BoundFilter__MinAssignment_0_1_0 ) )
+            // InternalSwag.g:1390:2: ( rule__BoundFilter__MinAssignment_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getMinAssignment_0_1_0()); 
             }
-            // InternalSwag.g:1337:2: ( rule__BoundFilter__MinAssignment_0_1_0 )
-            // InternalSwag.g:1337:3: rule__BoundFilter__MinAssignment_0_1_0
+            // InternalSwag.g:1391:2: ( rule__BoundFilter__MinAssignment_0_1_0 )
+            // InternalSwag.g:1391:3: rule__BoundFilter__MinAssignment_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__MinAssignment_0_1_0();
@@ -4525,14 +4685,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0_1__1"
-    // InternalSwag.g:1345:1: rule__BoundFilter__Group_0_1__1 : rule__BoundFilter__Group_0_1__1__Impl rule__BoundFilter__Group_0_1__2 ;
+    // InternalSwag.g:1399:1: rule__BoundFilter__Group_0_1__1 : rule__BoundFilter__Group_0_1__1__Impl rule__BoundFilter__Group_0_1__2 ;
     public final void rule__BoundFilter__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1349:1: ( rule__BoundFilter__Group_0_1__1__Impl rule__BoundFilter__Group_0_1__2 )
-            // InternalSwag.g:1350:2: rule__BoundFilter__Group_0_1__1__Impl rule__BoundFilter__Group_0_1__2
+            // InternalSwag.g:1403:1: ( rule__BoundFilter__Group_0_1__1__Impl rule__BoundFilter__Group_0_1__2 )
+            // InternalSwag.g:1404:2: rule__BoundFilter__Group_0_1__1__Impl rule__BoundFilter__Group_0_1__2
             {
             pushFollow(FOLLOW_12);
             rule__BoundFilter__Group_0_1__1__Impl();
@@ -4563,17 +4723,17 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0_1__1__Impl"
-    // InternalSwag.g:1357:1: rule__BoundFilter__Group_0_1__1__Impl : ( '..' ) ;
+    // InternalSwag.g:1411:1: rule__BoundFilter__Group_0_1__1__Impl : ( '..' ) ;
     public final void rule__BoundFilter__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1361:1: ( ( '..' ) )
-            // InternalSwag.g:1362:1: ( '..' )
+            // InternalSwag.g:1415:1: ( ( '..' ) )
+            // InternalSwag.g:1416:1: ( '..' )
             {
-            // InternalSwag.g:1362:1: ( '..' )
-            // InternalSwag.g:1363:2: '..'
+            // InternalSwag.g:1416:1: ( '..' )
+            // InternalSwag.g:1417:2: '..'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_0_1_1()); 
@@ -4604,14 +4764,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0_1__2"
-    // InternalSwag.g:1372:1: rule__BoundFilter__Group_0_1__2 : rule__BoundFilter__Group_0_1__2__Impl ;
+    // InternalSwag.g:1426:1: rule__BoundFilter__Group_0_1__2 : rule__BoundFilter__Group_0_1__2__Impl ;
     public final void rule__BoundFilter__Group_0_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1376:1: ( rule__BoundFilter__Group_0_1__2__Impl )
-            // InternalSwag.g:1377:2: rule__BoundFilter__Group_0_1__2__Impl
+            // InternalSwag.g:1430:1: ( rule__BoundFilter__Group_0_1__2__Impl )
+            // InternalSwag.g:1431:2: rule__BoundFilter__Group_0_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__Group_0_1__2__Impl();
@@ -4637,22 +4797,22 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_0_1__2__Impl"
-    // InternalSwag.g:1383:1: rule__BoundFilter__Group_0_1__2__Impl : ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? ) ;
+    // InternalSwag.g:1437:1: rule__BoundFilter__Group_0_1__2__Impl : ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? ) ;
     public final void rule__BoundFilter__Group_0_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1387:1: ( ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? ) )
-            // InternalSwag.g:1388:1: ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? )
+            // InternalSwag.g:1441:1: ( ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? ) )
+            // InternalSwag.g:1442:1: ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? )
             {
-            // InternalSwag.g:1388:1: ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? )
-            // InternalSwag.g:1389:2: ( rule__BoundFilter__MaxAssignment_0_1_2 )?
+            // InternalSwag.g:1442:1: ( ( rule__BoundFilter__MaxAssignment_0_1_2 )? )
+            // InternalSwag.g:1443:2: ( rule__BoundFilter__MaxAssignment_0_1_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getMaxAssignment_0_1_2()); 
             }
-            // InternalSwag.g:1390:2: ( rule__BoundFilter__MaxAssignment_0_1_2 )?
+            // InternalSwag.g:1444:2: ( rule__BoundFilter__MaxAssignment_0_1_2 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -4661,7 +4821,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalSwag.g:1390:3: rule__BoundFilter__MaxAssignment_0_1_2
+                    // InternalSwag.g:1444:3: rule__BoundFilter__MaxAssignment_0_1_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__BoundFilter__MaxAssignment_0_1_2();
@@ -4699,14 +4859,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_1__0"
-    // InternalSwag.g:1399:1: rule__BoundFilter__Group_1__0 : rule__BoundFilter__Group_1__0__Impl rule__BoundFilter__Group_1__1 ;
+    // InternalSwag.g:1453:1: rule__BoundFilter__Group_1__0 : rule__BoundFilter__Group_1__0__Impl rule__BoundFilter__Group_1__1 ;
     public final void rule__BoundFilter__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1403:1: ( rule__BoundFilter__Group_1__0__Impl rule__BoundFilter__Group_1__1 )
-            // InternalSwag.g:1404:2: rule__BoundFilter__Group_1__0__Impl rule__BoundFilter__Group_1__1
+            // InternalSwag.g:1457:1: ( rule__BoundFilter__Group_1__0__Impl rule__BoundFilter__Group_1__1 )
+            // InternalSwag.g:1458:2: rule__BoundFilter__Group_1__0__Impl rule__BoundFilter__Group_1__1
             {
             pushFollow(FOLLOW_12);
             rule__BoundFilter__Group_1__0__Impl();
@@ -4737,17 +4897,17 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_1__0__Impl"
-    // InternalSwag.g:1411:1: rule__BoundFilter__Group_1__0__Impl : ( '..' ) ;
+    // InternalSwag.g:1465:1: rule__BoundFilter__Group_1__0__Impl : ( '..' ) ;
     public final void rule__BoundFilter__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1415:1: ( ( '..' ) )
-            // InternalSwag.g:1416:1: ( '..' )
+            // InternalSwag.g:1469:1: ( ( '..' ) )
+            // InternalSwag.g:1470:1: ( '..' )
             {
-            // InternalSwag.g:1416:1: ( '..' )
-            // InternalSwag.g:1417:2: '..'
+            // InternalSwag.g:1470:1: ( '..' )
+            // InternalSwag.g:1471:2: '..'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_1_0()); 
@@ -4778,14 +4938,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_1__1"
-    // InternalSwag.g:1426:1: rule__BoundFilter__Group_1__1 : rule__BoundFilter__Group_1__1__Impl ;
+    // InternalSwag.g:1480:1: rule__BoundFilter__Group_1__1 : rule__BoundFilter__Group_1__1__Impl ;
     public final void rule__BoundFilter__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1430:1: ( rule__BoundFilter__Group_1__1__Impl )
-            // InternalSwag.g:1431:2: rule__BoundFilter__Group_1__1__Impl
+            // InternalSwag.g:1484:1: ( rule__BoundFilter__Group_1__1__Impl )
+            // InternalSwag.g:1485:2: rule__BoundFilter__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__Group_1__1__Impl();
@@ -4811,23 +4971,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__Group_1__1__Impl"
-    // InternalSwag.g:1437:1: rule__BoundFilter__Group_1__1__Impl : ( ( rule__BoundFilter__MaxAssignment_1_1 ) ) ;
+    // InternalSwag.g:1491:1: rule__BoundFilter__Group_1__1__Impl : ( ( rule__BoundFilter__MaxAssignment_1_1 ) ) ;
     public final void rule__BoundFilter__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:1441:1: ( ( ( rule__BoundFilter__MaxAssignment_1_1 ) ) )
-            // InternalSwag.g:1442:1: ( ( rule__BoundFilter__MaxAssignment_1_1 ) )
+            // InternalSwag.g:1495:1: ( ( ( rule__BoundFilter__MaxAssignment_1_1 ) ) )
+            // InternalSwag.g:1496:1: ( ( rule__BoundFilter__MaxAssignment_1_1 ) )
             {
-            // InternalSwag.g:1442:1: ( ( rule__BoundFilter__MaxAssignment_1_1 ) )
-            // InternalSwag.g:1443:2: ( rule__BoundFilter__MaxAssignment_1_1 )
+            // InternalSwag.g:1496:1: ( ( rule__BoundFilter__MaxAssignment_1_1 ) )
+            // InternalSwag.g:1497:2: ( rule__BoundFilter__MaxAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getMaxAssignment_1_1()); 
             }
-            // InternalSwag.g:1444:2: ( rule__BoundFilter__MaxAssignment_1_1 )
-            // InternalSwag.g:1444:3: rule__BoundFilter__MaxAssignment_1_1
+            // InternalSwag.g:1498:2: ( rule__BoundFilter__MaxAssignment_1_1 )
+            // InternalSwag.g:1498:3: rule__BoundFilter__MaxAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__BoundFilter__MaxAssignment_1_1();
@@ -4859,169 +5019,6 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__BoundFilter__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__BoundFilter__Group_2__0"
-    // InternalSwag.g:1453:1: rule__BoundFilter__Group_2__0 : rule__BoundFilter__Group_2__0__Impl rule__BoundFilter__Group_2__1 ;
-    public final void rule__BoundFilter__Group_2__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:1457:1: ( rule__BoundFilter__Group_2__0__Impl rule__BoundFilter__Group_2__1 )
-            // InternalSwag.g:1458:2: rule__BoundFilter__Group_2__0__Impl rule__BoundFilter__Group_2__1
-            {
-            pushFollow(FOLLOW_1);
-            rule__BoundFilter__Group_2__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_2);
-            rule__BoundFilter__Group_2__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BoundFilter__Group_2__0"
-
-
-    // $ANTLR start "rule__BoundFilter__Group_2__0__Impl"
-    // InternalSwag.g:1465:1: rule__BoundFilter__Group_2__0__Impl : ( ( rule__BoundFilter__MinAssignment_2_0 ) ) ;
-    public final void rule__BoundFilter__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:1469:1: ( ( ( rule__BoundFilter__MinAssignment_2_0 ) ) )
-            // InternalSwag.g:1470:1: ( ( rule__BoundFilter__MinAssignment_2_0 ) )
-            {
-            // InternalSwag.g:1470:1: ( ( rule__BoundFilter__MinAssignment_2_0 ) )
-            // InternalSwag.g:1471:2: ( rule__BoundFilter__MinAssignment_2_0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBoundFilterAccess().getMinAssignment_2_0()); 
-            }
-            // InternalSwag.g:1472:2: ( rule__BoundFilter__MinAssignment_2_0 )
-            // InternalSwag.g:1472:3: rule__BoundFilter__MinAssignment_2_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__BoundFilter__MinAssignment_2_0();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBoundFilterAccess().getMinAssignment_2_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BoundFilter__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__BoundFilter__Group_2__1"
-    // InternalSwag.g:1480:1: rule__BoundFilter__Group_2__1 : rule__BoundFilter__Group_2__1__Impl ;
-    public final void rule__BoundFilter__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:1484:1: ( rule__BoundFilter__Group_2__1__Impl )
-            // InternalSwag.g:1485:2: rule__BoundFilter__Group_2__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__BoundFilter__Group_2__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BoundFilter__Group_2__1"
-
-
-    // $ANTLR start "rule__BoundFilter__Group_2__1__Impl"
-    // InternalSwag.g:1491:1: rule__BoundFilter__Group_2__1__Impl : ( () ) ;
-    public final void rule__BoundFilter__Group_2__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:1495:1: ( ( () ) )
-            // InternalSwag.g:1496:1: ( () )
-            {
-            // InternalSwag.g:1496:1: ( () )
-            // InternalSwag.g:1497:2: ()
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBoundFilterAccess().getBoundFilterMaxAction_2_1()); 
-            }
-            // InternalSwag.g:1498:2: ()
-            // InternalSwag.g:1498:3: 
-            {
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBoundFilterAccess().getBoundFilterMaxAction_2_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BoundFilter__Group_2__1__Impl"
 
 
     // $ANTLR start "rule__ListFilter__Group__0"
@@ -6352,9 +6349,9 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__JsonString__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Path__NodeAssignment_1_0"
-    // InternalSwag.g:1939:1: rule__Path__NodeAssignment_1_0 : ( ruleNode ) ;
-    public final void rule__Path__NodeAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__Path__NodesAssignment_1_0"
+    // InternalSwag.g:1939:1: rule__Path__NodesAssignment_1_0 : ( ruleNode ) ;
+    public final void rule__Path__NodesAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6366,7 +6363,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             // InternalSwag.g:1945:3: ruleNode
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPathAccess().getNodeNodeParserRuleCall_1_0_0()); 
+               before(grammarAccess.getPathAccess().getNodesNodeParserRuleCall_1_0_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleNode();
@@ -6374,7 +6371,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPathAccess().getNodeNodeParserRuleCall_1_0_0()); 
+               after(grammarAccess.getPathAccess().getNodesNodeParserRuleCall_1_0_0()); 
             }
 
             }
@@ -6394,7 +6391,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Path__NodeAssignment_1_0"
+    // $ANTLR end "rule__Path__NodesAssignment_1_0"
 
 
     // $ANTLR start "rule__Path__NodesAssignment_1_1_1"
@@ -6724,29 +6721,66 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExistFilter__PathAssignment_1"
 
 
+    // $ANTLR start "rule__IndexFilter__IndexAssignment_1"
+    // InternalSwag.g:2059:1: rule__IndexFilter__IndexAssignment_1 : ( RULE_INT ) ;
+    public final void rule__IndexFilter__IndexAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSwag.g:2063:1: ( ( RULE_INT ) )
+            // InternalSwag.g:2064:2: ( RULE_INT )
+            {
+            // InternalSwag.g:2064:2: ( RULE_INT )
+            // InternalSwag.g:2065:3: RULE_INT
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0()); 
+            }
+            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IndexFilter__IndexAssignment_1"
+
+
     // $ANTLR start "rule__BoundFilter__MinAssignment_0_1_0"
-    // InternalSwag.g:2059:1: rule__BoundFilter__MinAssignment_0_1_0 : ( ruleNullableInt ) ;
+    // InternalSwag.g:2074:1: rule__BoundFilter__MinAssignment_0_1_0 : ( RULE_INT ) ;
     public final void rule__BoundFilter__MinAssignment_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2063:1: ( ( ruleNullableInt ) )
-            // InternalSwag.g:2064:2: ( ruleNullableInt )
+            // InternalSwag.g:2078:1: ( ( RULE_INT ) )
+            // InternalSwag.g:2079:2: ( RULE_INT )
             {
-            // InternalSwag.g:2064:2: ( ruleNullableInt )
-            // InternalSwag.g:2065:3: ruleNullableInt
+            // InternalSwag.g:2079:2: ( RULE_INT )
+            // InternalSwag.g:2080:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_0_1_0_0()); 
+               before(grammarAccess.getBoundFilterAccess().getMinINTTerminalRuleCall_0_1_0_0()); 
             }
-            pushFollow(FOLLOW_2);
-            ruleNullableInt();
-
-            state._fsp--;
-            if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_0_1_0_0()); 
+               after(grammarAccess.getBoundFilterAccess().getMinINTTerminalRuleCall_0_1_0_0()); 
             }
 
             }
@@ -6770,28 +6804,24 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__MaxAssignment_0_1_2"
-    // InternalSwag.g:2074:1: rule__BoundFilter__MaxAssignment_0_1_2 : ( ruleNullableInt ) ;
+    // InternalSwag.g:2089:1: rule__BoundFilter__MaxAssignment_0_1_2 : ( RULE_INT ) ;
     public final void rule__BoundFilter__MaxAssignment_0_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2078:1: ( ( ruleNullableInt ) )
-            // InternalSwag.g:2079:2: ( ruleNullableInt )
+            // InternalSwag.g:2093:1: ( ( RULE_INT ) )
+            // InternalSwag.g:2094:2: ( RULE_INT )
             {
-            // InternalSwag.g:2079:2: ( ruleNullableInt )
-            // InternalSwag.g:2080:3: ruleNullableInt
+            // InternalSwag.g:2094:2: ( RULE_INT )
+            // InternalSwag.g:2095:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBoundFilterAccess().getMaxNullableIntParserRuleCall_0_1_2_0()); 
+               before(grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_0_1_2_0()); 
             }
-            pushFollow(FOLLOW_2);
-            ruleNullableInt();
-
-            state._fsp--;
-            if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBoundFilterAccess().getMaxNullableIntParserRuleCall_0_1_2_0()); 
+               after(grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_0_1_2_0()); 
             }
 
             }
@@ -6815,28 +6845,24 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BoundFilter__MaxAssignment_1_1"
-    // InternalSwag.g:2089:1: rule__BoundFilter__MaxAssignment_1_1 : ( ruleNullableInt ) ;
+    // InternalSwag.g:2104:1: rule__BoundFilter__MaxAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__BoundFilter__MaxAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2093:1: ( ( ruleNullableInt ) )
-            // InternalSwag.g:2094:2: ( ruleNullableInt )
+            // InternalSwag.g:2108:1: ( ( RULE_INT ) )
+            // InternalSwag.g:2109:2: ( RULE_INT )
             {
-            // InternalSwag.g:2094:2: ( ruleNullableInt )
-            // InternalSwag.g:2095:3: ruleNullableInt
+            // InternalSwag.g:2109:2: ( RULE_INT )
+            // InternalSwag.g:2110:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBoundFilterAccess().getMaxNullableIntParserRuleCall_1_1_0()); 
+               before(grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_2);
-            ruleNullableInt();
-
-            state._fsp--;
-            if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBoundFilterAccess().getMaxNullableIntParserRuleCall_1_1_0()); 
+               after(grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_1_1_0()); 
             }
 
             }
@@ -6857,51 +6883,6 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__BoundFilter__MaxAssignment_1_1"
-
-
-    // $ANTLR start "rule__BoundFilter__MinAssignment_2_0"
-    // InternalSwag.g:2104:1: rule__BoundFilter__MinAssignment_2_0 : ( ruleNullableInt ) ;
-    public final void rule__BoundFilter__MinAssignment_2_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:2108:1: ( ( ruleNullableInt ) )
-            // InternalSwag.g:2109:2: ( ruleNullableInt )
-            {
-            // InternalSwag.g:2109:2: ( ruleNullableInt )
-            // InternalSwag.g:2110:3: ruleNullableInt
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_2_0_0()); 
-            }
-            pushFollow(FOLLOW_2);
-            ruleNullableInt();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_2_0_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BoundFilter__MinAssignment_2_0"
 
 
     // $ANTLR start "rule__ListFilter__FilterAssignment_1"
@@ -6994,9 +6975,9 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ListFilter__FilterAssignment_2_1"
 
 
-    // $ANTLR start "rule__NullableInt__ValueAssignment"
-    // InternalSwag.g:2149:1: rule__NullableInt__ValueAssignment : ( RULE_INT ) ;
-    public final void rule__NullableInt__ValueAssignment() throws RecognitionException {
+    // $ANTLR start "rule__JsonNumber__NumberAssignment_1"
+    // InternalSwag.g:2149:1: rule__JsonNumber__NumberAssignment_1 : ( RULE_INT ) ;
+    public final void rule__JsonNumber__NumberAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7006,47 +6987,6 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             {
             // InternalSwag.g:2154:2: ( RULE_INT )
             // InternalSwag.g:2155:3: RULE_INT
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getNullableIntAccess().getValueINTTerminalRuleCall_0()); 
-            }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getNullableIntAccess().getValueINTTerminalRuleCall_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NullableInt__ValueAssignment"
-
-
-    // $ANTLR start "rule__JsonNumber__NumberAssignment_1"
-    // InternalSwag.g:2164:1: rule__JsonNumber__NumberAssignment_1 : ( RULE_INT ) ;
-    public final void rule__JsonNumber__NumberAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSwag.g:2168:1: ( ( RULE_INT ) )
-            // InternalSwag.g:2169:2: ( RULE_INT )
-            {
-            // InternalSwag.g:2169:2: ( RULE_INT )
-            // InternalSwag.g:2170:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0()); 
@@ -7077,23 +7017,23 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonBoolean__BoolAssignment_1"
-    // InternalSwag.g:2179:1: rule__JsonBoolean__BoolAssignment_1 : ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) ) ;
+    // InternalSwag.g:2164:1: rule__JsonBoolean__BoolAssignment_1 : ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) ) ;
     public final void rule__JsonBoolean__BoolAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2183:1: ( ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) ) )
-            // InternalSwag.g:2184:2: ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) )
+            // InternalSwag.g:2168:1: ( ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) ) )
+            // InternalSwag.g:2169:2: ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) )
             {
-            // InternalSwag.g:2184:2: ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) )
-            // InternalSwag.g:2185:3: ( rule__JsonBoolean__BoolAlternatives_1_0 )
+            // InternalSwag.g:2169:2: ( ( rule__JsonBoolean__BoolAlternatives_1_0 ) )
+            // InternalSwag.g:2170:3: ( rule__JsonBoolean__BoolAlternatives_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJsonBooleanAccess().getBoolAlternatives_1_0()); 
             }
-            // InternalSwag.g:2186:3: ( rule__JsonBoolean__BoolAlternatives_1_0 )
-            // InternalSwag.g:2186:4: rule__JsonBoolean__BoolAlternatives_1_0
+            // InternalSwag.g:2171:3: ( rule__JsonBoolean__BoolAlternatives_1_0 )
+            // InternalSwag.g:2171:4: rule__JsonBoolean__BoolAlternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__JsonBoolean__BoolAlternatives_1_0();
@@ -7128,17 +7068,17 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonString__ValueAssignment_1"
-    // InternalSwag.g:2194:1: rule__JsonString__ValueAssignment_1 : ( RULE_STRING ) ;
+    // InternalSwag.g:2179:1: rule__JsonString__ValueAssignment_1 : ( RULE_STRING ) ;
     public final void rule__JsonString__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2198:1: ( ( RULE_STRING ) )
-            // InternalSwag.g:2199:2: ( RULE_STRING )
+            // InternalSwag.g:2183:1: ( ( RULE_STRING ) )
+            // InternalSwag.g:2184:2: ( RULE_STRING )
             {
-            // InternalSwag.g:2199:2: ( RULE_STRING )
-            // InternalSwag.g:2200:3: RULE_STRING
+            // InternalSwag.g:2184:2: ( RULE_STRING )
+            // InternalSwag.g:2185:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJsonStringAccess().getValueSTRINGTerminalRuleCall_1_0()); 
@@ -7167,19 +7107,19 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__JsonString__ValueAssignment_1"
 
-    // $ANTLR start synpred6_InternalSwag
-    public final void synpred6_InternalSwag_fragment() throws RecognitionException {   
-        // InternalSwag.g:573:2: ( ( ( ruleExistFilter ) ) )
-        // InternalSwag.g:573:2: ( ( ruleExistFilter ) )
+    // $ANTLR start synpred7_InternalSwag
+    public final void synpred7_InternalSwag_fragment() throws RecognitionException {   
+        // InternalSwag.g:579:2: ( ( ( ruleExistFilter ) ) )
+        // InternalSwag.g:579:2: ( ( ruleExistFilter ) )
         {
-        // InternalSwag.g:573:2: ( ( ruleExistFilter ) )
-        // InternalSwag.g:574:3: ( ruleExistFilter )
+        // InternalSwag.g:579:2: ( ( ruleExistFilter ) )
+        // InternalSwag.g:580:3: ( ruleExistFilter )
         {
         if ( state.backtracking==0 ) {
            before(grammarAccess.getPathFilterAccess().getExistFilterParserRuleCall_0()); 
         }
-        // InternalSwag.g:575:3: ( ruleExistFilter )
-        // InternalSwag.g:575:4: ruleExistFilter
+        // InternalSwag.g:581:3: ( ruleExistFilter )
+        // InternalSwag.g:581:4: ruleExistFilter
         {
         pushFollow(FOLLOW_2);
         ruleExistFilter();
@@ -7195,15 +7135,15 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
         }
     }
-    // $ANTLR end synpred6_InternalSwag
+    // $ANTLR end synpred7_InternalSwag
 
     // Delegated rules
 
-    public final boolean synpred6_InternalSwag() {
+    public final boolean synpred7_InternalSwag() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred6_InternalSwag_fragment(); // can never throw exception
+            synpred7_InternalSwag_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

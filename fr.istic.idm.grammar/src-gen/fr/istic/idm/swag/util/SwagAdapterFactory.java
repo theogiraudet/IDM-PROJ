@@ -121,6 +121,11 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
         return createExistFilterAdapter();
       }
       @Override
+      public Adapter caseIndexFilter(IndexFilter object)
+      {
+        return createIndexFilterAdapter();
+      }
+      @Override
       public Adapter caseBoundFilter(BoundFilter object)
       {
         return createBoundFilterAdapter();
@@ -129,11 +134,6 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
       public Adapter caseListFilter(ListFilter object)
       {
         return createListFilterAdapter();
-      }
-      @Override
-      public Adapter caseNullableInt(NullableInt object)
-      {
-        return createNullableIntAdapter();
       }
       @Override
       public Adapter caseJsonValue(JsonValue object)
@@ -318,6 +318,21 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link fr.istic.idm.swag.IndexFilter <em>Index Filter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.istic.idm.swag.IndexFilter
+   * @generated
+   */
+  public Adapter createIndexFilterAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link fr.istic.idm.swag.BoundFilter <em>Bound Filter</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -343,21 +358,6 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createListFilterAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link fr.istic.idm.swag.NullableInt <em>Nullable Int</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see fr.istic.idm.swag.NullableInt
-   * @generated
-   */
-  public Adapter createNullableIntAdapter()
   {
     return null;
   }

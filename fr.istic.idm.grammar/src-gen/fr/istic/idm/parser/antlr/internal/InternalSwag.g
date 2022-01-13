@@ -87,17 +87,17 @@ rulePath returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPathAccess().getNodeNodeParserRuleCall_1_0_0());
+						newCompositeNode(grammarAccess.getPathAccess().getNodesNodeParserRuleCall_1_0_0());
 					}
-					lv_node_1_0=ruleNode
+					lv_nodes_1_0=ruleNode
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPathRule());
 						}
 						add(
 							$current,
-							"node",
-							lv_node_1_0,
+							"nodes",
+							lv_nodes_1_0,
 							"fr.istic.idm.Swag.Node");
 						afterParserOrEnumRuleCall();
 					}
@@ -343,20 +343,29 @@ ruleFilter returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getFilterAccess().getPathFilterParserRuleCall_1());
+			newCompositeNode(grammarAccess.getFilterAccess().getIndexFilterParserRuleCall_1());
 		}
-		this_PathFilter_1=rulePathFilter
+		this_IndexFilter_1=ruleIndexFilter
 		{
-			$current = $this_PathFilter_1.current;
+			$current = $this_IndexFilter_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getFilterAccess().getAllFilterParserRuleCall_2());
+			newCompositeNode(grammarAccess.getFilterAccess().getPathFilterParserRuleCall_2());
 		}
-		this_AllFilter_2=ruleAllFilter
+		this_PathFilter_2=rulePathFilter
 		{
-			$current = $this_AllFilter_2.current;
+			$current = $this_PathFilter_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFilterAccess().getAllFilterParserRuleCall_3());
+		}
+		this_AllFilter_3=ruleAllFilter
+		{
+			$current = $this_AllFilter_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -548,6 +557,50 @@ ruleExistFilter returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleIndexFilter
+entryRuleIndexFilter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIndexFilterRule()); }
+	iv_ruleIndexFilter=ruleIndexFilter
+	{ $current=$iv_ruleIndexFilter.current; }
+	EOF;
+
+// Rule IndexFilter
+ruleIndexFilter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIndexFilterAccess().getIndexFilterAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_index_1_0=RULE_INT
+				{
+					newLeafNode(lv_index_1_0, grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIndexFilterRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"index",
+						lv_index_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleBoundFilter
 entryRuleBoundFilter returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getBoundFilterRule()); }
@@ -575,20 +628,19 @@ ruleBoundFilter returns [EObject current=null]
 			(
 				(
 					(
+						lv_min_1_0=RULE_INT
 						{
-							newCompositeNode(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_0_1_0_0());
+							newLeafNode(lv_min_1_0, grammarAccess.getBoundFilterAccess().getMinINTTerminalRuleCall_0_1_0_0());
 						}
-						lv_min_1_0=ruleNullableInt
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
+								$current = createModelElement(grammarAccess.getBoundFilterRule());
 							}
-							set(
+							setWithLastConsumed(
 								$current,
 								"min",
 								lv_min_1_0,
-								"fr.istic.idm.Swag.NullableInt");
-							afterParserOrEnumRuleCall();
+								"org.eclipse.xtext.common.Terminals.INT");
 						}
 					)
 				)
@@ -598,20 +650,19 @@ ruleBoundFilter returns [EObject current=null]
 				}
 				(
 					(
+						lv_max_3_0=RULE_INT
 						{
-							newCompositeNode(grammarAccess.getBoundFilterAccess().getMaxNullableIntParserRuleCall_0_1_2_0());
+							newLeafNode(lv_max_3_0, grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_0_1_2_0());
 						}
-						lv_max_3_0=ruleNullableInt
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
+								$current = createModelElement(grammarAccess.getBoundFilterRule());
 							}
-							set(
+							setWithLastConsumed(
 								$current,
 								"max",
 								lv_max_3_0,
-								"fr.istic.idm.Swag.NullableInt");
-							afterParserOrEnumRuleCall();
+								"org.eclipse.xtext.common.Terminals.INT");
 						}
 					)
 				)?
@@ -625,51 +676,21 @@ ruleBoundFilter returns [EObject current=null]
 			}
 			(
 				(
+					lv_max_5_0=RULE_INT
 					{
-						newCompositeNode(grammarAccess.getBoundFilterAccess().getMaxNullableIntParserRuleCall_1_1_0());
+						newLeafNode(lv_max_5_0, grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_1_1_0());
 					}
-					lv_max_5_0=ruleNullableInt
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
+							$current = createModelElement(grammarAccess.getBoundFilterRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"max",
 							lv_max_5_0,
-							"fr.istic.idm.Swag.NullableInt");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
-			)
-		)
-		    |
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getBoundFilterAccess().getMinNullableIntParserRuleCall_2_0_0());
-					}
-					lv_min_6_0=ruleNullableInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
-						}
-						set(
-							$current,
-							"min",
-							lv_min_6_0,
-							"fr.istic.idm.Swag.NullableInt");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				{
-					$current = forceCreateModelElementAndSet(
-						grammarAccess.getBoundFilterAccess().getBoundFilterMaxAction_2_1(),
-						$current);
-				}
 			)
 		)
 	)
@@ -742,41 +763,6 @@ ruleListFilter returns [EObject current=null]
 				)
 			)
 		)*
-	)
-;
-
-// Entry rule entryRuleNullableInt
-entryRuleNullableInt returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNullableIntRule()); }
-	iv_ruleNullableInt=ruleNullableInt
-	{ $current=$iv_ruleNullableInt.current; }
-	EOF;
-
-// Rule NullableInt
-ruleNullableInt returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_value_0_0=RULE_INT
-			{
-				newLeafNode(lv_value_0_0, grammarAccess.getNullableIntAccess().getValueINTTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getNullableIntRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"value",
-					lv_value_0_0,
-					"org.eclipse.xtext.common.Terminals.INT");
-			}
-		)
 	)
 ;
 

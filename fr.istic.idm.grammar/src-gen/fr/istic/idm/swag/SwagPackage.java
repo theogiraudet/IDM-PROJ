@@ -68,22 +68,13 @@ public interface SwagPackage extends EPackage
   int PATH = 0;
 
   /**
-   * The feature id for the '<em><b>Node</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PATH__NODE = 0;
-
-  /**
    * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PATH__NODES = 1;
+  int PATH__NODES = 0;
 
   /**
    * The number of structural features of the '<em>Path</em>' class.
@@ -92,7 +83,7 @@ public interface SwagPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PATH_FEATURE_COUNT = 2;
+  int PATH_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link fr.istic.idm.swag.impl.NodeImpl <em>Node</em>}' class.
@@ -319,6 +310,34 @@ public interface SwagPackage extends EPackage
   int EXIST_FILTER_FEATURE_COUNT = PATH_FILTER_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link fr.istic.idm.swag.impl.IndexFilterImpl <em>Index Filter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.istic.idm.swag.impl.IndexFilterImpl
+   * @see fr.istic.idm.swag.impl.SwagPackageImpl#getIndexFilter()
+   * @generated
+   */
+  int INDEX_FILTER = 9;
+
+  /**
+   * The feature id for the '<em><b>Index</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INDEX_FILTER__INDEX = FILTER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Index Filter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INDEX_FILTER_FEATURE_COUNT = FILTER_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link fr.istic.idm.swag.impl.BoundFilterImpl <em>Bound Filter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -326,10 +345,10 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getBoundFilter()
    * @generated
    */
-  int BOUND_FILTER = 9;
+  int BOUND_FILTER = 10;
 
   /**
-   * The feature id for the '<em><b>Min</b></em>' containment reference.
+   * The feature id for the '<em><b>Min</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -338,7 +357,7 @@ public interface SwagPackage extends EPackage
   int BOUND_FILTER__MIN = FILTER_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Max</b></em>' containment reference.
+   * The feature id for the '<em><b>Max</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -363,7 +382,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getListFilter()
    * @generated
    */
-  int LIST_FILTER = 10;
+  int LIST_FILTER = 11;
 
   /**
    * The feature id for the '<em><b>Filter</b></em>' containment reference list.
@@ -382,34 +401,6 @@ public interface SwagPackage extends EPackage
    * @ordered
    */
   int LIST_FILTER_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link fr.istic.idm.swag.impl.NullableIntImpl <em>Nullable Int</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see fr.istic.idm.swag.impl.NullableIntImpl
-   * @see fr.istic.idm.swag.impl.SwagPackageImpl#getNullableInt()
-   * @generated
-   */
-  int NULLABLE_INT = 11;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NULLABLE_INT__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Nullable Int</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NULLABLE_INT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link fr.istic.idm.swag.impl.JsonValueImpl <em>Json Value</em>}' class.
@@ -543,17 +534,6 @@ public interface SwagPackage extends EPackage
    * @generated
    */
   EClass getPath();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link fr.istic.idm.swag.Path#getNode <em>Node</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Node</em>'.
-   * @see fr.istic.idm.swag.Path#getNode()
-   * @see #getPath()
-   * @generated
-   */
-  EReference getPath_Node();
 
   /**
    * Returns the meta object for the containment reference list '{@link fr.istic.idm.swag.Path#getNodes <em>Nodes</em>}'.
@@ -691,6 +671,27 @@ public interface SwagPackage extends EPackage
   EClass getExistFilter();
 
   /**
+   * Returns the meta object for class '{@link fr.istic.idm.swag.IndexFilter <em>Index Filter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Index Filter</em>'.
+   * @see fr.istic.idm.swag.IndexFilter
+   * @generated
+   */
+  EClass getIndexFilter();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.IndexFilter#getIndex <em>Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Index</em>'.
+   * @see fr.istic.idm.swag.IndexFilter#getIndex()
+   * @see #getIndexFilter()
+   * @generated
+   */
+  EAttribute getIndexFilter_Index();
+
+  /**
    * Returns the meta object for class '{@link fr.istic.idm.swag.BoundFilter <em>Bound Filter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -701,26 +702,26 @@ public interface SwagPackage extends EPackage
   EClass getBoundFilter();
 
   /**
-   * Returns the meta object for the containment reference '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}'.
+   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Min</em>'.
+   * @return the meta object for the attribute '<em>Min</em>'.
    * @see fr.istic.idm.swag.BoundFilter#getMin()
    * @see #getBoundFilter()
    * @generated
    */
-  EReference getBoundFilter_Min();
+  EAttribute getBoundFilter_Min();
 
   /**
-   * Returns the meta object for the containment reference '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}'.
+   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Max</em>'.
+   * @return the meta object for the attribute '<em>Max</em>'.
    * @see fr.istic.idm.swag.BoundFilter#getMax()
    * @see #getBoundFilter()
    * @generated
    */
-  EReference getBoundFilter_Max();
+  EAttribute getBoundFilter_Max();
 
   /**
    * Returns the meta object for class '{@link fr.istic.idm.swag.ListFilter <em>List Filter</em>}'.
@@ -742,27 +743,6 @@ public interface SwagPackage extends EPackage
    * @generated
    */
   EReference getListFilter_Filter();
-
-  /**
-   * Returns the meta object for class '{@link fr.istic.idm.swag.NullableInt <em>Nullable Int</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Nullable Int</em>'.
-   * @see fr.istic.idm.swag.NullableInt
-   * @generated
-   */
-  EClass getNullableInt();
-
-  /**
-   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.NullableInt#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see fr.istic.idm.swag.NullableInt#getValue()
-   * @see #getNullableInt()
-   * @generated
-   */
-  EAttribute getNullableInt_Value();
 
   /**
    * Returns the meta object for class '{@link fr.istic.idm.swag.JsonValue <em>Json Value</em>}'.
@@ -879,14 +859,6 @@ public interface SwagPackage extends EPackage
      * @generated
      */
     EClass PATH = eINSTANCE.getPath();
-
-    /**
-     * The meta object literal for the '<em><b>Node</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PATH__NODE = eINSTANCE.getPath_Node();
 
     /**
      * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
@@ -1009,6 +981,24 @@ public interface SwagPackage extends EPackage
     EClass EXIST_FILTER = eINSTANCE.getExistFilter();
 
     /**
+     * The meta object literal for the '{@link fr.istic.idm.swag.impl.IndexFilterImpl <em>Index Filter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.istic.idm.swag.impl.IndexFilterImpl
+     * @see fr.istic.idm.swag.impl.SwagPackageImpl#getIndexFilter()
+     * @generated
+     */
+    EClass INDEX_FILTER = eINSTANCE.getIndexFilter();
+
+    /**
+     * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INDEX_FILTER__INDEX = eINSTANCE.getIndexFilter_Index();
+
+    /**
      * The meta object literal for the '{@link fr.istic.idm.swag.impl.BoundFilterImpl <em>Bound Filter</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1019,20 +1009,20 @@ public interface SwagPackage extends EPackage
     EClass BOUND_FILTER = eINSTANCE.getBoundFilter();
 
     /**
-     * The meta object literal for the '<em><b>Min</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOUND_FILTER__MIN = eINSTANCE.getBoundFilter_Min();
+    EAttribute BOUND_FILTER__MIN = eINSTANCE.getBoundFilter_Min();
 
     /**
-     * The meta object literal for the '<em><b>Max</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOUND_FILTER__MAX = eINSTANCE.getBoundFilter_Max();
+    EAttribute BOUND_FILTER__MAX = eINSTANCE.getBoundFilter_Max();
 
     /**
      * The meta object literal for the '{@link fr.istic.idm.swag.impl.ListFilterImpl <em>List Filter</em>}' class.
@@ -1051,24 +1041,6 @@ public interface SwagPackage extends EPackage
      * @generated
      */
     EReference LIST_FILTER__FILTER = eINSTANCE.getListFilter_Filter();
-
-    /**
-     * The meta object literal for the '{@link fr.istic.idm.swag.impl.NullableIntImpl <em>Nullable Int</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see fr.istic.idm.swag.impl.NullableIntImpl
-     * @see fr.istic.idm.swag.impl.SwagPackageImpl#getNullableInt()
-     * @generated
-     */
-    EClass NULLABLE_INT = eINSTANCE.getNullableInt();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NULLABLE_INT__VALUE = eINSTANCE.getNullableInt_Value();
 
     /**
      * The meta object literal for the '{@link fr.istic.idm.swag.impl.JsonValueImpl <em>Json Value</em>}' class.

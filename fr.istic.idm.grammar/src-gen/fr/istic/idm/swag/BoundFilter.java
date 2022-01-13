@@ -3,7 +3,6 @@
  */
 package fr.istic.idm.swag;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,47 +24,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface BoundFilter extends Filter
 {
   /**
-   * Returns the value of the '<em><b>Min</b></em>' containment reference.
+   * Returns the value of the '<em><b>Min</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Min</em>' containment reference.
-   * @see #setMin(NullableInt)
+   * @return the value of the '<em>Min</em>' attribute.
+   * @see #setMin(int)
    * @see fr.istic.idm.swag.SwagPackage#getBoundFilter_Min()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  NullableInt getMin();
+  int getMin();
 
   /**
-   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}' containment reference.
+   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Min</em>' containment reference.
+   * @param value the new value of the '<em>Min</em>' attribute.
    * @see #getMin()
    * @generated
    */
-  void setMin(NullableInt value);
+  void setMin(int value);
 
   /**
-   * Returns the value of the '<em><b>Max</b></em>' containment reference.
+   * Returns the value of the '<em><b>Max</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Max</em>' containment reference.
-   * @see #setMax(EObject)
+   * @return the value of the '<em>Max</em>' attribute.
+   * @see #setMax(int)
    * @see fr.istic.idm.swag.SwagPackage#getBoundFilter_Max()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EObject getMax();
+  int getMax();
 
   /**
-   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}' containment reference.
+   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Max</em>' containment reference.
+   * @param value the new value of the '<em>Max</em>' attribute.
    * @see #getMax()
    * @generated
    */
-  void setMax(EObject value);
+  void setMax(int value);
 
 } // BoundFilter
