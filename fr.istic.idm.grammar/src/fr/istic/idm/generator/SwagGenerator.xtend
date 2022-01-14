@@ -8,6 +8,7 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import fr.istic.idm.swag.Path
+import fr.istic.idm.generator.compilers.JqCompiler
 
 /**
  * Generates code from your model files on save.
@@ -17,12 +18,10 @@ import fr.istic.idm.swag.Path
 class SwagGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		val compiler = new JqCompiler()
 		var foo = resource.allContents
 		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-			resource.allContents
-				.filter(Path)
-				.flatMap[nodes.iterator]
-				.map[getStr]
-				.join(', '))
+			compiler.compile(resource.allContents.filter(Path).head)
+			)
 	}
 }
