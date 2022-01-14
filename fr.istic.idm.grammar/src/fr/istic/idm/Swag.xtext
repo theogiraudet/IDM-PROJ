@@ -42,7 +42,7 @@ IndexFilter: {IndexFilter}
 ;
 
 BoundFilter: {BoundFilter}
-	(min=INT ".." (max=INT)?) | (".." max=INT)
+	(min=WrappedInt ".." (max=WrappedInt)?) | (".." max=WrappedInt)
 ;
 
 // foo[1..] foo[..1] foo[1..2] foo[1]
@@ -69,4 +69,8 @@ JsonBoolean: {JsonBoolean}
 
 JsonString: {JsonString}
 	value=STRING
+;
+
+WrappedInt: {WrappedInt}
+	number=INT
 ;
