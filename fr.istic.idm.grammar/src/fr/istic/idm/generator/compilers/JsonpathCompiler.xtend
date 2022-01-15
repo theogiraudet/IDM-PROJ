@@ -8,6 +8,13 @@ import fr.istic.idm.swag.ListFilter
 import fr.istic.idm.swag.IndexFilter
 import fr.istic.idm.swag.AllFilter
 import fr.istic.idm.swag.BoundFilter
+import fr.istic.idm.swag.ExistFilter
+import fr.istic.idm.swag.EqualFilter
+import fr.istic.idm.swag.JsonBoolean
+import fr.istic.idm.swag.JsonValue
+import fr.istic.idm.swag.JsonNumber
+import fr.istic.idm.swag.JsonNull
+import fr.istic.idm.swag.JsonString
 
 class JsonpathCompiler implements Compiler {
 
@@ -32,8 +39,10 @@ class JsonpathCompiler implements Compiler {
 		for (filter : listFilter.filter) {
 			switch (filter) {
 				AllFilter: rtn += "*"
-				IndexFilter: rtn += filter.index
 				BoundFilter: rtn += compileBoundFilter(filter)
+				EqualFilter: rtn += compileEqualFilter(filter)
+				ExistFilter: rtn += compileExistFilter(filter)
+				IndexFilter: rtn += filter.index
 				default: rtn += ""
 			}
 		}
@@ -48,6 +57,25 @@ class JsonpathCompiler implements Compiler {
 		if(boundFilter.max !== null)
 			rtn += boundFilter.max.number
 		return rtn
+	}
+	
+	private def String compileEqualFilter(EqualFilter equalFilter) {
+		val String path = compile(equalFilter.path).substring(1)
+		var rtn = "?(@" + path + " == "
+		val JsonValue value = equalFilter.value
+		switch (value) {
+			JsonBoolean: rtn += value.bool
+			JsonNumber: rtn += value.number
+			JsonNull: rtn += "null"
+			JsonString: rtn += "'" + value.value + "'"
+			default: rtn += ""
+		}
+		return rtn + ")"
+	}
+	
+	private def String compileExistFilter(ExistFilter existFilter) {
+		val String path = compile(existFilter.path).substring(1)
+		return "?(@" + path + ")"
 	}
 
 }
