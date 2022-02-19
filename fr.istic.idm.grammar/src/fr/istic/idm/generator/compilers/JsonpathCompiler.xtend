@@ -29,13 +29,13 @@ class JsonpathCompiler implements Compiler {
 	}
 
 	private def String compilePath(Path path) {
-		"$." + path.nodes.map[compileNode].join(".")
+		"$" + path.nodes.map[compileNode].join("")
 	}
 
 	private def String compileNode(Node node) {
 		return switch (node) {
-			BasicNode: node.str
-			ArrayNode: node.str + compileFilter(node.filter)
+			BasicNode: "['" + node.str + "']"
+			ArrayNode: "['" + node.str + "']" + compileFilter(node.filter)
 			default: ""
 		}
 	}
@@ -45,7 +45,7 @@ class JsonpathCompiler implements Compiler {
 		for (filter : listFilter.filter) {
 			if(filter != listFilter.filter.head) {
 				piped = true
-				rtn += "\n$."
+				rtn += "\n$"
 			}
 			rtn += "["
 			switch (filter) {
@@ -74,7 +74,17 @@ class JsonpathCompiler implements Compiler {
 	private def String compileEqualFilter(EqualFilter equalFilter) {
 		val String path = compilePath(equalFilter.path).substring(1)
 		var rtn = "?(@" + path + " == "
-		val JsonValue value = equalFilter.value
+		rtn += compileValue(equalFilter.value) + ")"
+		return rtn 
+	}
+	
+	private def String compileExistFilter(ExistFilter existFilter) {
+		val String path = compilePath(existFilter.path).substring(1)
+		return "?(@" + path + ")"
+	}
+	
+	private def String compileValue(JsonValue value) {
+		var String rtn = ""
 		switch (value) {
 			JsonBoolean: rtn += value.bool
 			JsonNumber: rtn += value.number
@@ -82,12 +92,7 @@ class JsonpathCompiler implements Compiler {
 			JsonString: rtn += "'" + value.value + "'"
 			default: rtn += ""
 		}
-		return rtn + ")"
-	}
-	
-	private def String compileExistFilter(ExistFilter existFilter) {
-		val String path = compilePath(existFilter.path).substring(1)
-		return "?(@" + path + ")"
+		return rtn
 	}
 	
 	override getExtension() {
