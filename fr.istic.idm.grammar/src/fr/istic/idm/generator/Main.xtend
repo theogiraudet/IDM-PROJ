@@ -14,6 +14,8 @@ import org.eclipse.xtext.generator.JavaIoFileSystemAccess
 import org.eclipse.xtext.util.CancelIndicator
 import org.eclipse.xtext.validation.CheckMode
 import org.eclipse.xtext.validation.IResourceValidator
+import fr.istic.idm.generator.compilers.JqCompiler
+import fr.istic.idm.generator.compilers.JsonpathCompiler
 
 class Main {
 
@@ -21,6 +23,13 @@ class Main {
 		if (args.empty) {
 			System::err.println('Aborting: no path to EMF resource provided!')
 			return
+		}
+		if (args.length > 1) {
+			if (args.get(1) == 'jq') {
+				SwagGenerator.compiler = new JqCompiler
+			} else if (args.get(1) == 'jsonpath') {
+				SwagGenerator.compiler = new JsonpathCompiler
+			}
 		}
 		val injector = new SwagStandaloneSetup().createInjectorAndDoEMFRegistration
 		val main = injector.getInstance(Main)
