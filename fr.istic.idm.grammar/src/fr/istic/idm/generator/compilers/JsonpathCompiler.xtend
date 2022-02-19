@@ -15,6 +15,8 @@ import fr.istic.idm.swag.JsonValue
 import fr.istic.idm.swag.JsonNumber
 import fr.istic.idm.swag.JsonNull
 import fr.istic.idm.swag.JsonString
+import fr.istic.idm.swag.ComplexPath
+import fr.istic.idm.swag.RootPath
 
 class JsonpathCompiler implements Compiler {
 
@@ -27,8 +29,15 @@ class JsonpathCompiler implements Compiler {
 		}
 		return rtn
 	}
-
+	
 	private def String compilePath(Path path) {
+		return switch(path) {
+			RootPath: "$"
+			ComplexPath: compileComplexPath(path)
+		}
+	}
+
+	private def String compileComplexPath(ComplexPath path) {
 		"$" + path.nodes.map[compileNode].join("")
 	}
 

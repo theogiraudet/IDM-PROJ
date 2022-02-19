@@ -25,7 +25,7 @@ class SwagGenerator extends AbstractGenerator {
 			compiler = new JqCompiler()
 		}
 		fsa.generateFile(
-			'result' + compiler.extension,
+			'result.' + compiler.extension,
 			compiler.compile(resource.allContents.filter(Path).head)
 		)
 	}
