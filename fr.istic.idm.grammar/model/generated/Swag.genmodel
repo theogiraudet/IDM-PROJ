@@ -6,8 +6,10 @@
     copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="Swag" basePackage="fr.istic.idm" disposableProviderFactory="true"
       fileExtensions="swag" ecorePackage="Swag.ecore#/">
-    <genClasses ecoreClass="Swag.ecore#//Path">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//Path/nodes"/>
+    <genClasses ecoreClass="Swag.ecore#//Path"/>
+    <genClasses ecoreClass="Swag.ecore#//RootPath"/>
+    <genClasses ecoreClass="Swag.ecore#//ComplexPath">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//ComplexPath/nodes"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//Node/str"/>
@@ -29,8 +31,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//IndexFilter/index"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//BoundFilter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//BoundFilter/min"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//BoundFilter/max"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//BoundFilter/min"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//BoundFilter/max"/>
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//ListFilter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Swag.ecore#//ListFilter/filter"/>
@@ -45,6 +47,9 @@
     </genClasses>
     <genClasses ecoreClass="Swag.ecore#//JsonString">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//JsonString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Swag.ecore#//WrappedInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Swag.ecore#//WrappedInt/number"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

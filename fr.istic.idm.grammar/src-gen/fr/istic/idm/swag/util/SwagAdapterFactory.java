@@ -81,6 +81,16 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
         return createPathAdapter();
       }
       @Override
+      public Adapter caseRootPath(RootPath object)
+      {
+        return createRootPathAdapter();
+      }
+      @Override
+      public Adapter caseComplexPath(ComplexPath object)
+      {
+        return createComplexPathAdapter();
+      }
+      @Override
       public Adapter caseNode(Node object)
       {
         return createNodeAdapter();
@@ -161,6 +171,11 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
         return createJsonStringAdapter();
       }
       @Override
+      public Adapter caseWrappedInt(WrappedInt object)
+      {
+        return createWrappedIntAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -193,6 +208,36 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPathAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.istic.idm.swag.RootPath <em>Root Path</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.istic.idm.swag.RootPath
+   * @generated
+   */
+  public Adapter createRootPathAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.istic.idm.swag.ComplexPath <em>Complex Path</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.istic.idm.swag.ComplexPath
+   * @generated
+   */
+  public Adapter createComplexPathAdapter()
   {
     return null;
   }
@@ -433,6 +478,21 @@ public class SwagAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createJsonStringAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.istic.idm.swag.WrappedInt <em>Wrapped Int</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.istic.idm.swag.WrappedInt
+   * @generated
+   */
+  public Adapter createWrappedIntAdapter()
   {
     return null;
   }

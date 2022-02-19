@@ -25,8 +25,49 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public class PathElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.Path");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRootPathParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cComplexPathParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Path:
+		//    RootPath | ComplexPath
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//RootPath | ComplexPath
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//RootPath
+		public RuleCall getRootPathParserRuleCall_0() { return cRootPathParserRuleCall_0; }
+		
+		//ComplexPath
+		public RuleCall getComplexPathParserRuleCall_1() { return cComplexPathParserRuleCall_1; }
+	}
+	public class RootPathElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.RootPath");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cPathAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cRootPathAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//RootPath: {RootPath}
+		//    '.'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RootPath}
+		//   '.'
+		public Group getGroup() { return cGroup; }
+		
+		//{RootPath}
+		public Action getRootPathAction_0() { return cRootPathAction_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+	}
+	public class ComplexPathElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.ComplexPath");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cComplexPathAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Assignment cNodesAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cNodesNodeParserRuleCall_1_0_0 = (RuleCall)cNodesAssignment_1_0.eContents().get(0);
@@ -35,17 +76,17 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cNodesAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cNodesNodeParserRuleCall_1_1_1_0 = (RuleCall)cNodesAssignment_1_1_1.eContents().get(0);
 		
-		//Path: {Path}
+		//ComplexPath: {ComplexPath}
 		//    (nodes+=Node ('.' nodes+=Node)*)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Path}
+		//{ComplexPath}
 		//   (nodes+=Node ('.' nodes+=Node)*)?
 		public Group getGroup() { return cGroup; }
 		
-		//{Path}
-		public Action getPathAction_0() { return cPathAction_0; }
+		//{ComplexPath}
+		public Action getComplexPathAction_0() { return cComplexPathAction_0; }
 		
 		//(nodes+=Node ('.' nodes+=Node)*)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -336,60 +377,60 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Action cBoundFilterAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
 		private final Assignment cMinAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final RuleCall cMinINTTerminalRuleCall_0_1_0_0 = (RuleCall)cMinAssignment_0_1_0.eContents().get(0);
+		private final RuleCall cMinWrappedIntParserRuleCall_0_1_0_0 = (RuleCall)cMinAssignment_0_1_0.eContents().get(0);
 		private final Keyword cFullStopFullStopKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
 		private final Assignment cMaxAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
-		private final RuleCall cMaxINTTerminalRuleCall_0_1_2_0 = (RuleCall)cMaxAssignment_0_1_2.eContents().get(0);
+		private final RuleCall cMaxWrappedIntParserRuleCall_0_1_2_0 = (RuleCall)cMaxAssignment_0_1_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cFullStopFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cMaxAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMaxINTTerminalRuleCall_1_1_0 = (RuleCall)cMaxAssignment_1_1.eContents().get(0);
+		private final RuleCall cMaxWrappedIntParserRuleCall_1_1_0 = (RuleCall)cMaxAssignment_1_1.eContents().get(0);
 		
 		//BoundFilter: {BoundFilter}
-		//    (min=INT ".." (max=INT)?) | (".." max=INT)
+		//    (min=WrappedInt ".." (max=WrappedInt)?) | (".." max=WrappedInt)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{BoundFilter}
-		//   (min=INT ".." (max=INT)?) | (".." max=INT)
+		//   (min=WrappedInt ".." (max=WrappedInt)?) | (".." max=WrappedInt)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{BoundFilter}
-		//   (min=INT ".." (max=INT)?)
+		//   (min=WrappedInt ".." (max=WrappedInt)?)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{BoundFilter}
 		public Action getBoundFilterAction_0_0() { return cBoundFilterAction_0_0; }
 		
-		//(min=INT ".." (max=INT)?)
+		//(min=WrappedInt ".." (max=WrappedInt)?)
 		public Group getGroup_0_1() { return cGroup_0_1; }
 		
-		//min=INT
+		//min=WrappedInt
 		public Assignment getMinAssignment_0_1_0() { return cMinAssignment_0_1_0; }
 		
-		//INT
-		public RuleCall getMinINTTerminalRuleCall_0_1_0_0() { return cMinINTTerminalRuleCall_0_1_0_0; }
+		//WrappedInt
+		public RuleCall getMinWrappedIntParserRuleCall_0_1_0_0() { return cMinWrappedIntParserRuleCall_0_1_0_0; }
 		
 		//".."
 		public Keyword getFullStopFullStopKeyword_0_1_1() { return cFullStopFullStopKeyword_0_1_1; }
 		
-		//(max=INT)?
+		//(max=WrappedInt)?
 		public Assignment getMaxAssignment_0_1_2() { return cMaxAssignment_0_1_2; }
 		
-		//INT
-		public RuleCall getMaxINTTerminalRuleCall_0_1_2_0() { return cMaxINTTerminalRuleCall_0_1_2_0; }
+		//WrappedInt
+		public RuleCall getMaxWrappedIntParserRuleCall_0_1_2_0() { return cMaxWrappedIntParserRuleCall_0_1_2_0; }
 		
-		//(".." max=INT)
+		//(".." max=WrappedInt)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//".."
 		public Keyword getFullStopFullStopKeyword_1_0() { return cFullStopFullStopKeyword_1_0; }
 		
-		//max=INT
+		//max=WrappedInt
 		public Assignment getMaxAssignment_1_1() { return cMaxAssignment_1_1; }
 		
-		//INT
-		public RuleCall getMaxINTTerminalRuleCall_1_1_0() { return cMaxINTTerminalRuleCall_1_1_0; }
+		//WrappedInt
+		public RuleCall getMaxWrappedIntParserRuleCall_1_1_0() { return cMaxWrappedIntParserRuleCall_1_1_0; }
 	}
 	public class ListFilterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.ListFilter");
@@ -577,9 +618,36 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 	}
+	public class WrappedIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.WrappedInt");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cWrappedIntAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNumberINTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
+		
+		//WrappedInt: {WrappedInt}
+		//    number=INT
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{WrappedInt}
+		//   number=INT
+		public Group getGroup() { return cGroup; }
+		
+		//{WrappedInt}
+		public Action getWrappedIntAction_0() { return cWrappedIntAction_0; }
+		
+		//number=INT
+		public Assignment getNumberAssignment_1() { return cNumberAssignment_1; }
+		
+		//INT
+		public RuleCall getNumberINTTerminalRuleCall_1_0() { return cNumberINTTerminalRuleCall_1_0; }
+	}
 	
 	
 	private final PathElements pPath;
+	private final RootPathElements pRootPath;
+	private final ComplexPathElements pComplexPath;
 	private final NodeElements pNode;
 	private final BasicNodeElements pBasicNode;
 	private final ArrayNodeElements pArrayNode;
@@ -596,6 +664,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final JsonNumberElements pJsonNumber;
 	private final JsonBooleanElements pJsonBoolean;
 	private final JsonStringElements pJsonString;
+	private final WrappedIntElements pWrappedInt;
 	
 	private final Grammar grammar;
 	
@@ -607,6 +676,8 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pPath = new PathElements();
+		this.pRootPath = new RootPathElements();
+		this.pComplexPath = new ComplexPathElements();
 		this.pNode = new NodeElements();
 		this.pBasicNode = new BasicNodeElements();
 		this.pArrayNode = new ArrayNodeElements();
@@ -623,6 +694,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pJsonNumber = new JsonNumberElements();
 		this.pJsonBoolean = new JsonBooleanElements();
 		this.pJsonString = new JsonStringElements();
+		this.pWrappedInt = new WrappedIntElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -652,8 +724,8 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 
 	
-	//Path: {Path}
-	//    (nodes+=Node ('.' nodes+=Node)*)?
+	//Path:
+	//    RootPath | ComplexPath
 	//;
 	public PathElements getPathAccess() {
 		return pPath;
@@ -661,6 +733,28 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getPathRule() {
 		return getPathAccess().getRule();
+	}
+	
+	//RootPath: {RootPath}
+	//    '.'
+	//;
+	public RootPathElements getRootPathAccess() {
+		return pRootPath;
+	}
+	
+	public ParserRule getRootPathRule() {
+		return getRootPathAccess().getRule();
+	}
+	
+	//ComplexPath: {ComplexPath}
+	//    (nodes+=Node ('.' nodes+=Node)*)?
+	//;
+	public ComplexPathElements getComplexPathAccess() {
+		return pComplexPath;
+	}
+	
+	public ParserRule getComplexPathRule() {
+		return getComplexPathAccess().getRule();
 	}
 	
 	//Node:
@@ -762,7 +856,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//BoundFilter: {BoundFilter}
-	//    (min=INT ".." (max=INT)?) | (".." max=INT)
+	//    (min=WrappedInt ".." (max=WrappedInt)?) | (".." max=WrappedInt)
 	//;
 	public BoundFilterElements getBoundFilterAccess() {
 		return pBoundFilter;
@@ -837,6 +931,17 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getJsonStringRule() {
 		return getJsonStringAccess().getRule();
+	}
+	
+	//WrappedInt: {WrappedInt}
+	//    number=INT
+	//;
+	public WrappedIntElements getWrappedIntAccess() {
+		return pWrappedInt;
+	}
+	
+	public ParserRule getWrappedIntRule() {
+		return getWrappedIntAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

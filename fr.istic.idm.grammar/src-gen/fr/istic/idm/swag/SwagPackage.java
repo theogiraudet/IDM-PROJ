@@ -68,22 +68,60 @@ public interface SwagPackage extends EPackage
   int PATH = 0;
 
   /**
-   * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PATH__NODES = 0;
-
-  /**
    * The number of structural features of the '<em>Path</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PATH_FEATURE_COUNT = 1;
+  int PATH_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link fr.istic.idm.swag.impl.RootPathImpl <em>Root Path</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.istic.idm.swag.impl.RootPathImpl
+   * @see fr.istic.idm.swag.impl.SwagPackageImpl#getRootPath()
+   * @generated
+   */
+  int ROOT_PATH = 1;
+
+  /**
+   * The number of structural features of the '<em>Root Path</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_PATH_FEATURE_COUNT = PATH_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link fr.istic.idm.swag.impl.ComplexPathImpl <em>Complex Path</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.istic.idm.swag.impl.ComplexPathImpl
+   * @see fr.istic.idm.swag.impl.SwagPackageImpl#getComplexPath()
+   * @generated
+   */
+  int COMPLEX_PATH = 2;
+
+  /**
+   * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPLEX_PATH__NODES = PATH_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Complex Path</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPLEX_PATH_FEATURE_COUNT = PATH_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link fr.istic.idm.swag.impl.NodeImpl <em>Node</em>}' class.
@@ -93,7 +131,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getNode()
    * @generated
    */
-  int NODE = 1;
+  int NODE = 3;
 
   /**
    * The feature id for the '<em><b>Str</b></em>' attribute.
@@ -121,7 +159,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getBasicNode()
    * @generated
    */
-  int BASIC_NODE = 2;
+  int BASIC_NODE = 4;
 
   /**
    * The feature id for the '<em><b>Str</b></em>' attribute.
@@ -149,7 +187,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getArrayNode()
    * @generated
    */
-  int ARRAY_NODE = 3;
+  int ARRAY_NODE = 5;
 
   /**
    * The feature id for the '<em><b>Str</b></em>' attribute.
@@ -186,7 +224,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getFilter()
    * @generated
    */
-  int FILTER = 4;
+  int FILTER = 6;
 
   /**
    * The number of structural features of the '<em>Filter</em>' class.
@@ -205,7 +243,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getAllFilter()
    * @generated
    */
-  int ALL_FILTER = 5;
+  int ALL_FILTER = 7;
 
   /**
    * The number of structural features of the '<em>All Filter</em>' class.
@@ -224,7 +262,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getPathFilter()
    * @generated
    */
-  int PATH_FILTER = 6;
+  int PATH_FILTER = 8;
 
   /**
    * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -252,7 +290,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getEqualFilter()
    * @generated
    */
-  int EQUAL_FILTER = 7;
+  int EQUAL_FILTER = 9;
 
   /**
    * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -289,7 +327,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getExistFilter()
    * @generated
    */
-  int EXIST_FILTER = 8;
+  int EXIST_FILTER = 10;
 
   /**
    * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -317,7 +355,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getIndexFilter()
    * @generated
    */
-  int INDEX_FILTER = 9;
+  int INDEX_FILTER = 11;
 
   /**
    * The feature id for the '<em><b>Index</b></em>' attribute.
@@ -345,10 +383,10 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getBoundFilter()
    * @generated
    */
-  int BOUND_FILTER = 10;
+  int BOUND_FILTER = 12;
 
   /**
-   * The feature id for the '<em><b>Min</b></em>' attribute.
+   * The feature id for the '<em><b>Min</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -357,7 +395,7 @@ public interface SwagPackage extends EPackage
   int BOUND_FILTER__MIN = FILTER_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Max</b></em>' attribute.
+   * The feature id for the '<em><b>Max</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -382,7 +420,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getListFilter()
    * @generated
    */
-  int LIST_FILTER = 11;
+  int LIST_FILTER = 13;
 
   /**
    * The feature id for the '<em><b>Filter</b></em>' containment reference list.
@@ -410,7 +448,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getJsonValue()
    * @generated
    */
-  int JSON_VALUE = 12;
+  int JSON_VALUE = 14;
 
   /**
    * The number of structural features of the '<em>Json Value</em>' class.
@@ -429,7 +467,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getJsonNull()
    * @generated
    */
-  int JSON_NULL = 13;
+  int JSON_NULL = 15;
 
   /**
    * The number of structural features of the '<em>Json Null</em>' class.
@@ -448,7 +486,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getJsonNumber()
    * @generated
    */
-  int JSON_NUMBER = 14;
+  int JSON_NUMBER = 16;
 
   /**
    * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -476,7 +514,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getJsonBoolean()
    * @generated
    */
-  int JSON_BOOLEAN = 15;
+  int JSON_BOOLEAN = 17;
 
   /**
    * The feature id for the '<em><b>Bool</b></em>' attribute.
@@ -504,7 +542,7 @@ public interface SwagPackage extends EPackage
    * @see fr.istic.idm.swag.impl.SwagPackageImpl#getJsonString()
    * @generated
    */
-  int JSON_STRING = 16;
+  int JSON_STRING = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -524,6 +562,34 @@ public interface SwagPackage extends EPackage
    */
   int JSON_STRING_FEATURE_COUNT = JSON_VALUE_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link fr.istic.idm.swag.impl.WrappedIntImpl <em>Wrapped Int</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.istic.idm.swag.impl.WrappedIntImpl
+   * @see fr.istic.idm.swag.impl.SwagPackageImpl#getWrappedInt()
+   * @generated
+   */
+  int WRAPPED_INT = 19;
+
+  /**
+   * The feature id for the '<em><b>Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WRAPPED_INT__NUMBER = 0;
+
+  /**
+   * The number of structural features of the '<em>Wrapped Int</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WRAPPED_INT_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link fr.istic.idm.swag.Path <em>Path</em>}'.
@@ -536,15 +602,35 @@ public interface SwagPackage extends EPackage
   EClass getPath();
 
   /**
-   * Returns the meta object for the containment reference list '{@link fr.istic.idm.swag.Path#getNodes <em>Nodes</em>}'.
+   * Returns the meta object for class '{@link fr.istic.idm.swag.RootPath <em>Root Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Root Path</em>'.
+   * @see fr.istic.idm.swag.RootPath
+   * @generated
+   */
+  EClass getRootPath();
+
+  /**
+   * Returns the meta object for class '{@link fr.istic.idm.swag.ComplexPath <em>Complex Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Complex Path</em>'.
+   * @see fr.istic.idm.swag.ComplexPath
+   * @generated
+   */
+  EClass getComplexPath();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link fr.istic.idm.swag.ComplexPath#getNodes <em>Nodes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Nodes</em>'.
-   * @see fr.istic.idm.swag.Path#getNodes()
-   * @see #getPath()
+   * @see fr.istic.idm.swag.ComplexPath#getNodes()
+   * @see #getComplexPath()
    * @generated
    */
-  EReference getPath_Nodes();
+  EReference getComplexPath_Nodes();
 
   /**
    * Returns the meta object for class '{@link fr.istic.idm.swag.Node <em>Node</em>}'.
@@ -702,26 +788,26 @@ public interface SwagPackage extends EPackage
   EClass getBoundFilter();
 
   /**
-   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}'.
+   * Returns the meta object for the containment reference '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Min</em>'.
+   * @return the meta object for the containment reference '<em>Min</em>'.
    * @see fr.istic.idm.swag.BoundFilter#getMin()
    * @see #getBoundFilter()
    * @generated
    */
-  EAttribute getBoundFilter_Min();
+  EReference getBoundFilter_Min();
 
   /**
-   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}'.
+   * Returns the meta object for the containment reference '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max</em>'.
+   * @return the meta object for the containment reference '<em>Max</em>'.
    * @see fr.istic.idm.swag.BoundFilter#getMax()
    * @see #getBoundFilter()
    * @generated
    */
-  EAttribute getBoundFilter_Max();
+  EReference getBoundFilter_Max();
 
   /**
    * Returns the meta object for class '{@link fr.istic.idm.swag.ListFilter <em>List Filter</em>}'.
@@ -828,6 +914,27 @@ public interface SwagPackage extends EPackage
   EAttribute getJsonString_Value();
 
   /**
+   * Returns the meta object for class '{@link fr.istic.idm.swag.WrappedInt <em>Wrapped Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wrapped Int</em>'.
+   * @see fr.istic.idm.swag.WrappedInt
+   * @generated
+   */
+  EClass getWrappedInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.istic.idm.swag.WrappedInt#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Number</em>'.
+   * @see fr.istic.idm.swag.WrappedInt#getNumber()
+   * @see #getWrappedInt()
+   * @generated
+   */
+  EAttribute getWrappedInt_Number();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -861,12 +968,32 @@ public interface SwagPackage extends EPackage
     EClass PATH = eINSTANCE.getPath();
 
     /**
+     * The meta object literal for the '{@link fr.istic.idm.swag.impl.RootPathImpl <em>Root Path</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.istic.idm.swag.impl.RootPathImpl
+     * @see fr.istic.idm.swag.impl.SwagPackageImpl#getRootPath()
+     * @generated
+     */
+    EClass ROOT_PATH = eINSTANCE.getRootPath();
+
+    /**
+     * The meta object literal for the '{@link fr.istic.idm.swag.impl.ComplexPathImpl <em>Complex Path</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.istic.idm.swag.impl.ComplexPathImpl
+     * @see fr.istic.idm.swag.impl.SwagPackageImpl#getComplexPath()
+     * @generated
+     */
+    EClass COMPLEX_PATH = eINSTANCE.getComplexPath();
+
+    /**
      * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PATH__NODES = eINSTANCE.getPath_Nodes();
+    EReference COMPLEX_PATH__NODES = eINSTANCE.getComplexPath_Nodes();
 
     /**
      * The meta object literal for the '{@link fr.istic.idm.swag.impl.NodeImpl <em>Node</em>}' class.
@@ -1009,20 +1136,20 @@ public interface SwagPackage extends EPackage
     EClass BOUND_FILTER = eINSTANCE.getBoundFilter();
 
     /**
-     * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Min</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOUND_FILTER__MIN = eINSTANCE.getBoundFilter_Min();
+    EReference BOUND_FILTER__MIN = eINSTANCE.getBoundFilter_Min();
 
     /**
-     * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Max</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOUND_FILTER__MAX = eINSTANCE.getBoundFilter_Max();
+    EReference BOUND_FILTER__MAX = eINSTANCE.getBoundFilter_Max();
 
     /**
      * The meta object literal for the '{@link fr.istic.idm.swag.impl.ListFilterImpl <em>List Filter</em>}' class.
@@ -1115,6 +1242,24 @@ public interface SwagPackage extends EPackage
      * @generated
      */
     EAttribute JSON_STRING__VALUE = eINSTANCE.getJsonString_Value();
+
+    /**
+     * The meta object literal for the '{@link fr.istic.idm.swag.impl.WrappedIntImpl <em>Wrapped Int</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.istic.idm.swag.impl.WrappedIntImpl
+     * @see fr.istic.idm.swag.impl.SwagPackageImpl#getWrappedInt()
+     * @generated
+     */
+    EClass WRAPPED_INT = eINSTANCE.getWrappedInt();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WRAPPED_INT__NUMBER = eINSTANCE.getWrappedInt_Number();
 
   }
 

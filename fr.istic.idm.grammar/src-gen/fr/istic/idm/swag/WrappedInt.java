@@ -3,24 +3,25 @@
  */
 package fr.istic.idm.swag;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Json Number</b></em>'.
+ * A representation of the model object '<em><b>Wrapped Int</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.istic.idm.swag.JsonNumber#getNumber <em>Number</em>}</li>
+ *   <li>{@link fr.istic.idm.swag.WrappedInt#getNumber <em>Number</em>}</li>
  * </ul>
  *
- * @see fr.istic.idm.swag.SwagPackage#getJsonNumber()
+ * @see fr.istic.idm.swag.SwagPackage#getWrappedInt()
  * @model
  * @generated
  */
-public interface JsonNumber extends JsonValue
+public interface WrappedInt extends EObject
 {
   /**
    * Returns the value of the '<em><b>Number</b></em>' attribute.
@@ -28,14 +29,14 @@ public interface JsonNumber extends JsonValue
    * <!-- end-user-doc -->
    * @return the value of the '<em>Number</em>' attribute.
    * @see #setNumber(int)
-   * @see fr.istic.idm.swag.SwagPackage#getJsonNumber_Number()
+   * @see fr.istic.idm.swag.SwagPackage#getWrappedInt_Number()
    * @model
    * @generated
    */
   int getNumber();
 
   /**
-   * Sets the value of the '{@link fr.istic.idm.swag.JsonNumber#getNumber <em>Number</em>}' attribute.
+   * Sets the value of the '{@link fr.istic.idm.swag.WrappedInt#getNumber <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Number</em>' attribute.
@@ -44,4 +45,4 @@ public interface JsonNumber extends JsonValue
    */
   void setNumber(int value);
 
-} // JsonNumber
+} // WrappedInt

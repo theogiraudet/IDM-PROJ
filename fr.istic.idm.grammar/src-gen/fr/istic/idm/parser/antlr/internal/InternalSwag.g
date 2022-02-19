@@ -76,10 +76,76 @@ rulePath returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getPathAccess().getRootPathParserRuleCall_0());
+		}
+		this_RootPath_0=ruleRootPath
+		{
+			$current = $this_RootPath_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPathAccess().getComplexPathParserRuleCall_1());
+		}
+		this_ComplexPath_1=ruleComplexPath
+		{
+			$current = $this_ComplexPath_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleRootPath
+entryRuleRootPath returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRootPathRule()); }
+	iv_ruleRootPath=ruleRootPath
+	{ $current=$iv_ruleRootPath.current; }
+	EOF;
+
+// Rule RootPath
+ruleRootPath returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getPathAccess().getPathAction_0(),
+					grammarAccess.getRootPathAccess().getRootPathAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='.'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRootPathAccess().getFullStopKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleComplexPath
+entryRuleComplexPath returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComplexPathRule()); }
+	iv_ruleComplexPath=ruleComplexPath
+	{ $current=$iv_ruleComplexPath.current; }
+	EOF;
+
+// Rule ComplexPath
+ruleComplexPath returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getComplexPathAccess().getComplexPathAction_0(),
 					$current);
 			}
 		)
@@ -87,12 +153,12 @@ rulePath returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPathAccess().getNodesNodeParserRuleCall_1_0_0());
+						newCompositeNode(grammarAccess.getComplexPathAccess().getNodesNodeParserRuleCall_1_0_0());
 					}
 					lv_nodes_1_0=ruleNode
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPathRule());
+							$current = createModelElementForParent(grammarAccess.getComplexPathRule());
 						}
 						add(
 							$current,
@@ -106,17 +172,17 @@ rulePath returns [EObject current=null]
 			(
 				otherlv_2='.'
 				{
-					newLeafNode(otherlv_2, grammarAccess.getPathAccess().getFullStopKeyword_1_1_0());
+					newLeafNode(otherlv_2, grammarAccess.getComplexPathAccess().getFullStopKeyword_1_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPathAccess().getNodesNodeParserRuleCall_1_1_1_0());
+							newCompositeNode(grammarAccess.getComplexPathAccess().getNodesNodeParserRuleCall_1_1_1_0());
 						}
 						lv_nodes_3_0=ruleNode
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPathRule());
+								$current = createModelElementForParent(grammarAccess.getComplexPathRule());
 							}
 							add(
 								$current,
@@ -628,19 +694,20 @@ ruleBoundFilter returns [EObject current=null]
 			(
 				(
 					(
-						lv_min_1_0=RULE_INT
 						{
-							newLeafNode(lv_min_1_0, grammarAccess.getBoundFilterAccess().getMinINTTerminalRuleCall_0_1_0_0());
+							newCompositeNode(grammarAccess.getBoundFilterAccess().getMinWrappedIntParserRuleCall_0_1_0_0());
 						}
+						lv_min_1_0=ruleWrappedInt
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getBoundFilterRule());
+								$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
 							}
-							setWithLastConsumed(
+							set(
 								$current,
 								"min",
 								lv_min_1_0,
-								"org.eclipse.xtext.common.Terminals.INT");
+								"fr.istic.idm.Swag.WrappedInt");
+							afterParserOrEnumRuleCall();
 						}
 					)
 				)
@@ -650,19 +717,20 @@ ruleBoundFilter returns [EObject current=null]
 				}
 				(
 					(
-						lv_max_3_0=RULE_INT
 						{
-							newLeafNode(lv_max_3_0, grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_0_1_2_0());
+							newCompositeNode(grammarAccess.getBoundFilterAccess().getMaxWrappedIntParserRuleCall_0_1_2_0());
 						}
+						lv_max_3_0=ruleWrappedInt
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getBoundFilterRule());
+								$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
 							}
-							setWithLastConsumed(
+							set(
 								$current,
 								"max",
 								lv_max_3_0,
-								"org.eclipse.xtext.common.Terminals.INT");
+								"fr.istic.idm.Swag.WrappedInt");
+							afterParserOrEnumRuleCall();
 						}
 					)
 				)?
@@ -676,19 +744,20 @@ ruleBoundFilter returns [EObject current=null]
 			}
 			(
 				(
-					lv_max_5_0=RULE_INT
 					{
-						newLeafNode(lv_max_5_0, grammarAccess.getBoundFilterAccess().getMaxINTTerminalRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getBoundFilterAccess().getMaxWrappedIntParserRuleCall_1_1_0());
 					}
+					lv_max_5_0=ruleWrappedInt
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getBoundFilterRule());
+							$current = createModelElementForParent(grammarAccess.getBoundFilterRule());
 						}
-						setWithLastConsumed(
+						set(
 							$current,
 							"max",
 							lv_max_5_0,
-							"org.eclipse.xtext.common.Terminals.INT");
+							"fr.istic.idm.Swag.WrappedInt");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
@@ -995,6 +1064,50 @@ ruleJsonString returns [EObject current=null]
 						"value",
 						lv_value_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleWrappedInt
+entryRuleWrappedInt returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWrappedIntRule()); }
+	iv_ruleWrappedInt=ruleWrappedInt
+	{ $current=$iv_ruleWrappedInt.current; }
+	EOF;
+
+// Rule WrappedInt
+ruleWrappedInt returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getWrappedIntAccess().getWrappedIntAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_number_1_0=RULE_INT
+				{
+					newLeafNode(lv_number_1_0, grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWrappedIntRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"number",
+						lv_number_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)

@@ -3,26 +3,26 @@
  */
 package fr.istic.idm.swag.impl;
 
-import fr.istic.idm.swag.ExistFilter;
+import fr.istic.idm.swag.RootPath;
 import fr.istic.idm.swag.SwagPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Exist Filter</b></em>'.
+ * An implementation of the model object '<em><b>Root Path</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ExistFilterImpl extends PathFilterImpl implements ExistFilter
+public class RootPathImpl extends PathImpl implements RootPath
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExistFilterImpl()
+  protected RootPathImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class ExistFilterImpl extends PathFilterImpl implements ExistFilter
   @Override
   protected EClass eStaticClass()
   {
-    return SwagPackage.Literals.EXIST_FILTER;
+    return SwagPackage.Literals.ROOT_PATH;
   }
 
-} //ExistFilterImpl
+} //RootPathImpl

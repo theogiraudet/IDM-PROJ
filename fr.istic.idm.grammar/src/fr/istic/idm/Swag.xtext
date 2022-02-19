@@ -1,8 +1,16 @@
 grammar fr.istic.idm.Swag with org.eclipse.xtext.common.Terminals
 
 generate swag "http://www.istic.fr/idm/Swag"
-	
-Path: {Path} 
+
+Path:
+	RootPath | ComplexPath
+;
+
+RootPath: {RootPath}
+	'.'
+;
+
+ComplexPath: {ComplexPath} 
 	(nodes+=Node ('.' nodes+=Node)*)?
 ;	
 

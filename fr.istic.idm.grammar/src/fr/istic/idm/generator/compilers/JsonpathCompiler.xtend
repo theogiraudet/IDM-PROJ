@@ -96,7 +96,7 @@ class JsonpathCompiler implements Compiler {
 	}
 	
 	override getExtension() {
-		return ".jp"
+		return "jp"
 	}
 
 }

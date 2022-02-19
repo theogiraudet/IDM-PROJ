@@ -80,6 +80,22 @@ public class SwagSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SwagPackage.ROOT_PATH:
+      {
+        RootPath rootPath = (RootPath)theEObject;
+        T result = caseRootPath(rootPath);
+        if (result == null) result = casePath(rootPath);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SwagPackage.COMPLEX_PATH:
+      {
+        ComplexPath complexPath = (ComplexPath)theEObject;
+        T result = caseComplexPath(complexPath);
+        if (result == null) result = casePath(complexPath);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SwagPackage.NODE:
       {
         Node node = (Node)theEObject;
@@ -206,6 +222,13 @@ public class SwagSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SwagPackage.WRAPPED_INT:
+      {
+        WrappedInt wrappedInt = (WrappedInt)theEObject;
+        T result = caseWrappedInt(wrappedInt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -222,6 +245,38 @@ public class SwagSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePath(Path object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Root Path</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Root Path</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRootPath(RootPath object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Complex Path</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Complex Path</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComplexPath(ComplexPath object)
   {
     return null;
   }
@@ -478,6 +533,22 @@ public class SwagSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseJsonString(JsonString object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wrapped Int</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wrapped Int</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWrappedInt(WrappedInt object)
   {
     return null;
   }

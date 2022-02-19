@@ -3,56 +3,53 @@
  */
 package fr.istic.idm.swag.impl;
 
-import fr.istic.idm.swag.IndexFilter;
+import fr.istic.idm.swag.ComplexPath;
+import fr.istic.idm.swag.Node;
 import fr.istic.idm.swag.SwagPackage;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Index Filter</b></em>'.
+ * An implementation of the model object '<em><b>Complex Path</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.istic.idm.swag.impl.IndexFilterImpl#getIndex <em>Index</em>}</li>
+ *   <li>{@link fr.istic.idm.swag.impl.ComplexPathImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IndexFilterImpl extends FilterImpl implements IndexFilter
+public class ComplexPathImpl extends PathImpl implements ComplexPath
 {
   /**
-   * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
+   * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIndex()
+   * @see #getNodes()
    * @generated
    * @ordered
    */
-  protected static final int INDEX_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIndex()
-   * @generated
-   * @ordered
-   */
-  protected int index = INDEX_EDEFAULT;
+  protected EList<Node> nodes;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IndexFilterImpl()
+  protected ComplexPathImpl()
   {
     super();
   }
@@ -65,7 +62,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   @Override
   protected EClass eStaticClass()
   {
-    return SwagPackage.Literals.INDEX_FILTER;
+    return SwagPackage.Literals.COMPLEX_PATH;
   }
 
   /**
@@ -74,9 +71,13 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    */
   @Override
-  public int getIndex()
+  public EList<Node> getNodes()
   {
-    return index;
+    if (nodes == null)
+    {
+      nodes = new EObjectContainmentEList<Node>(Node.class, this, SwagPackage.COMPLEX_PATH__NODES);
+    }
+    return nodes;
   }
 
   /**
@@ -85,12 +86,14 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    */
   @Override
-  public void setIndex(int newIndex)
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    int oldIndex = index;
-    index = newIndex;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.INDEX_FILTER__INDEX, oldIndex, index));
+    switch (featureID)
+    {
+      case SwagPackage.COMPLEX_PATH__NODES:
+        return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -103,8 +106,8 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        return getIndex();
+      case SwagPackage.COMPLEX_PATH__NODES:
+        return getNodes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -114,13 +117,15 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        setIndex((Integer)newValue);
+      case SwagPackage.COMPLEX_PATH__NODES:
+        getNodes().clear();
+        getNodes().addAll((Collection<? extends Node>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +141,8 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        setIndex(INDEX_EDEFAULT);
+      case SwagPackage.COMPLEX_PATH__NODES:
+        getNodes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -153,27 +158,10 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        return index != INDEX_EDEFAULT;
+      case SwagPackage.COMPLEX_PATH__NODES:
+        return nodes != null && !nodes.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (index: ");
-    result.append(index);
-    result.append(')');
-    return result.toString();
-  }
-
-} //IndexFilterImpl
+} //ComplexPathImpl

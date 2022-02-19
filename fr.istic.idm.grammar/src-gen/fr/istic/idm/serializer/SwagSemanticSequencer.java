@@ -9,6 +9,7 @@ import fr.istic.idm.swag.AllFilter;
 import fr.istic.idm.swag.ArrayNode;
 import fr.istic.idm.swag.BasicNode;
 import fr.istic.idm.swag.BoundFilter;
+import fr.istic.idm.swag.ComplexPath;
 import fr.istic.idm.swag.EqualFilter;
 import fr.istic.idm.swag.ExistFilter;
 import fr.istic.idm.swag.IndexFilter;
@@ -17,8 +18,9 @@ import fr.istic.idm.swag.JsonNull;
 import fr.istic.idm.swag.JsonNumber;
 import fr.istic.idm.swag.JsonString;
 import fr.istic.idm.swag.ListFilter;
-import fr.istic.idm.swag.Path;
+import fr.istic.idm.swag.RootPath;
 import fr.istic.idm.swag.SwagPackage;
+import fr.istic.idm.swag.WrappedInt;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -56,6 +58,9 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SwagPackage.BOUND_FILTER:
 				sequence_BoundFilter(context, (BoundFilter) semanticObject); 
 				return; 
+			case SwagPackage.COMPLEX_PATH:
+				sequence_ComplexPath(context, (ComplexPath) semanticObject); 
+				return; 
 			case SwagPackage.EQUAL_FILTER:
 				sequence_EqualFilter(context, (EqualFilter) semanticObject); 
 				return; 
@@ -80,8 +85,11 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SwagPackage.LIST_FILTER:
 				sequence_ListFilter(context, (ListFilter) semanticObject); 
 				return; 
-			case SwagPackage.PATH:
-				sequence_Path(context, (Path) semanticObject); 
+			case SwagPackage.ROOT_PATH:
+				sequence_RootPath(context, (RootPath) semanticObject); 
+				return; 
+			case SwagPackage.WRAPPED_INT:
+				sequence_WrappedInt(context, (WrappedInt) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -133,9 +141,22 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BoundFilter returns BoundFilter
 	 *
 	 * Constraint:
-	 *     ((min=INT max=INT?) | max=INT)
+	 *     ((min=WrappedInt max=WrappedInt?) | max=WrappedInt)
 	 */
 	protected void sequence_BoundFilter(ISerializationContext context, BoundFilter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Path returns ComplexPath
+	 *     ComplexPath returns ComplexPath
+	 *
+	 * Constraint:
+	 *     (nodes+=Node nodes+=Node*)?
+	 */
+	protected void sequence_ComplexPath(ISerializationContext context, ComplexPath semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -280,13 +301,32 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Path returns Path
+	 *     Path returns RootPath
+	 *     RootPath returns RootPath
 	 *
 	 * Constraint:
-	 *     (nodes+=Node nodes+=Node*)?
+	 *     {RootPath}
 	 */
-	protected void sequence_Path(ISerializationContext context, Path semanticObject) {
+	protected void sequence_RootPath(ISerializationContext context, RootPath semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     WrappedInt returns WrappedInt
+	 *
+	 * Constraint:
+	 *     number=INT
+	 */
+	protected void sequence_WrappedInt(ISerializationContext context, WrappedInt semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SwagPackage.Literals.WRAPPED_INT__NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.WRAPPED_INT__NUMBER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0(), semanticObject.getNumber());
+		feeder.finish();
 	}
 	
 	

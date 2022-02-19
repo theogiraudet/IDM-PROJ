@@ -24,47 +24,47 @@ package fr.istic.idm.swag;
 public interface BoundFilter extends Filter
 {
   /**
-   * Returns the value of the '<em><b>Min</b></em>' attribute.
+   * Returns the value of the '<em><b>Min</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Min</em>' attribute.
-   * @see #setMin(int)
+   * @return the value of the '<em>Min</em>' containment reference.
+   * @see #setMin(WrappedInt)
    * @see fr.istic.idm.swag.SwagPackage#getBoundFilter_Min()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getMin();
+  WrappedInt getMin();
 
   /**
-   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}' attribute.
+   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMin <em>Min</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Min</em>' attribute.
+   * @param value the new value of the '<em>Min</em>' containment reference.
    * @see #getMin()
    * @generated
    */
-  void setMin(int value);
+  void setMin(WrappedInt value);
 
   /**
-   * Returns the value of the '<em><b>Max</b></em>' attribute.
+   * Returns the value of the '<em><b>Max</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Max</em>' attribute.
-   * @see #setMax(int)
+   * @return the value of the '<em>Max</em>' containment reference.
+   * @see #setMax(WrappedInt)
    * @see fr.istic.idm.swag.SwagPackage#getBoundFilter_Max()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getMax();
+  WrappedInt getMax();
 
   /**
-   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}' attribute.
+   * Sets the value of the '{@link fr.istic.idm.swag.BoundFilter#getMax <em>Max</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Max</em>' attribute.
+   * @param value the new value of the '<em>Max</em>' containment reference.
    * @see #getMax()
    * @generated
    */
-  void setMax(int value);
+  void setMax(WrappedInt value);
 
 } // BoundFilter

@@ -66,6 +66,8 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
     switch (eClass.getClassifierID())
     {
       case SwagPackage.PATH: return createPath();
+      case SwagPackage.ROOT_PATH: return createRootPath();
+      case SwagPackage.COMPLEX_PATH: return createComplexPath();
       case SwagPackage.NODE: return createNode();
       case SwagPackage.BASIC_NODE: return createBasicNode();
       case SwagPackage.ARRAY_NODE: return createArrayNode();
@@ -82,6 +84,7 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
       case SwagPackage.JSON_NUMBER: return createJsonNumber();
       case SwagPackage.JSON_BOOLEAN: return createJsonBoolean();
       case SwagPackage.JSON_STRING: return createJsonString();
+      case SwagPackage.WRAPPED_INT: return createWrappedInt();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -97,6 +100,30 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
   {
     PathImpl path = new PathImpl();
     return path;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RootPath createRootPath()
+  {
+    RootPathImpl rootPath = new RootPathImpl();
+    return rootPath;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComplexPath createComplexPath()
+  {
+    ComplexPathImpl complexPath = new ComplexPathImpl();
+    return complexPath;
   }
 
   /**
@@ -289,6 +316,18 @@ public class SwagFactoryImpl extends EFactoryImpl implements SwagFactory
   {
     JsonStringImpl jsonString = new JsonStringImpl();
     return jsonString;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WrappedInt createWrappedInt()
+  {
+    WrappedIntImpl wrappedInt = new WrappedIntImpl();
+    return wrappedInt;
   }
 
   /**

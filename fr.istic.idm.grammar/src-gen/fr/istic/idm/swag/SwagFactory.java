@@ -33,6 +33,24 @@ public interface SwagFactory extends EFactory
   Path createPath();
 
   /**
+   * Returns a new object of class '<em>Root Path</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Root Path</em>'.
+   * @generated
+   */
+  RootPath createRootPath();
+
+  /**
+   * Returns a new object of class '<em>Complex Path</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Complex Path</em>'.
+   * @generated
+   */
+  ComplexPath createComplexPath();
+
+  /**
    * Returns a new object of class '<em>Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -175,6 +193,15 @@ public interface SwagFactory extends EFactory
    * @generated
    */
   JsonString createJsonString();
+
+  /**
+   * Returns a new object of class '<em>Wrapped Int</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wrapped Int</em>'.
+   * @generated
+   */
+  WrappedInt createWrappedInt();
 
   /**
    * Returns the package supported by this factory.

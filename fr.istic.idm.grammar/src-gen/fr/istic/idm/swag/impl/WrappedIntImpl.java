@@ -3,56 +3,57 @@
  */
 package fr.istic.idm.swag.impl;
 
-import fr.istic.idm.swag.IndexFilter;
 import fr.istic.idm.swag.SwagPackage;
+import fr.istic.idm.swag.WrappedInt;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Index Filter</b></em>'.
+ * An implementation of the model object '<em><b>Wrapped Int</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.istic.idm.swag.impl.IndexFilterImpl#getIndex <em>Index</em>}</li>
+ *   <li>{@link fr.istic.idm.swag.impl.WrappedIntImpl#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IndexFilterImpl extends FilterImpl implements IndexFilter
+public class WrappedIntImpl extends MinimalEObjectImpl.Container implements WrappedInt
 {
   /**
-   * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
+   * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIndex()
+   * @see #getNumber()
    * @generated
    * @ordered
    */
-  protected static final int INDEX_EDEFAULT = 0;
+  protected static final int NUMBER_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
+   * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIndex()
+   * @see #getNumber()
    * @generated
    * @ordered
    */
-  protected int index = INDEX_EDEFAULT;
+  protected int number = NUMBER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IndexFilterImpl()
+  protected WrappedIntImpl()
   {
     super();
   }
@@ -65,7 +66,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   @Override
   protected EClass eStaticClass()
   {
-    return SwagPackage.Literals.INDEX_FILTER;
+    return SwagPackage.Literals.WRAPPED_INT;
   }
 
   /**
@@ -74,9 +75,9 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    */
   @Override
-  public int getIndex()
+  public int getNumber()
   {
-    return index;
+    return number;
   }
 
   /**
@@ -85,12 +86,12 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    */
   @Override
-  public void setIndex(int newIndex)
+  public void setNumber(int newNumber)
   {
-    int oldIndex = index;
-    index = newIndex;
+    int oldNumber = number;
+    number = newNumber;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.INDEX_FILTER__INDEX, oldIndex, index));
+      eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.WRAPPED_INT__NUMBER, oldNumber, number));
   }
 
   /**
@@ -103,8 +104,8 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        return getIndex();
+      case SwagPackage.WRAPPED_INT__NUMBER:
+        return getNumber();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +120,8 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        setIndex((Integer)newValue);
+      case SwagPackage.WRAPPED_INT__NUMBER:
+        setNumber((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +137,8 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        setIndex(INDEX_EDEFAULT);
+      case SwagPackage.WRAPPED_INT__NUMBER:
+        setNumber(NUMBER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +154,8 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
   {
     switch (featureID)
     {
-      case SwagPackage.INDEX_FILTER__INDEX:
-        return index != INDEX_EDEFAULT;
+      case SwagPackage.WRAPPED_INT__NUMBER:
+        return number != NUMBER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -170,10 +171,10 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (index: ");
-    result.append(index);
+    result.append(" (number: ");
+    result.append(number);
     result.append(')');
     return result.toString();
   }
 
-} //IndexFilterImpl
+} //WrappedIntImpl

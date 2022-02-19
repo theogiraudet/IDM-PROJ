@@ -31,6 +31,7 @@ public class SwagParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SwagGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getPathAccess().getAlternatives(), "rule__Path__Alternatives");
 			builder.put(grammarAccess.getNodeAccess().getAlternatives(), "rule__Node__Alternatives");
 			builder.put(grammarAccess.getBasicNodeAccess().getStrAlternatives_1_0(), "rule__BasicNode__StrAlternatives_1_0");
 			builder.put(grammarAccess.getArrayNodeAccess().getStrAlternatives_1_0(), "rule__ArrayNode__StrAlternatives_1_0");
@@ -39,9 +40,10 @@ public class SwagParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBoundFilterAccess().getAlternatives(), "rule__BoundFilter__Alternatives");
 			builder.put(grammarAccess.getJsonValueAccess().getAlternatives(), "rule__JsonValue__Alternatives");
 			builder.put(grammarAccess.getJsonBooleanAccess().getBoolAlternatives_1_0(), "rule__JsonBoolean__BoolAlternatives_1_0");
-			builder.put(grammarAccess.getPathAccess().getGroup(), "rule__Path__Group__0");
-			builder.put(grammarAccess.getPathAccess().getGroup_1(), "rule__Path__Group_1__0");
-			builder.put(grammarAccess.getPathAccess().getGroup_1_1(), "rule__Path__Group_1_1__0");
+			builder.put(grammarAccess.getRootPathAccess().getGroup(), "rule__RootPath__Group__0");
+			builder.put(grammarAccess.getComplexPathAccess().getGroup(), "rule__ComplexPath__Group__0");
+			builder.put(grammarAccess.getComplexPathAccess().getGroup_1(), "rule__ComplexPath__Group_1__0");
+			builder.put(grammarAccess.getComplexPathAccess().getGroup_1_1(), "rule__ComplexPath__Group_1_1__0");
 			builder.put(grammarAccess.getBasicNodeAccess().getGroup(), "rule__BasicNode__Group__0");
 			builder.put(grammarAccess.getArrayNodeAccess().getGroup(), "rule__ArrayNode__Group__0");
 			builder.put(grammarAccess.getAllFilterAccess().getGroup(), "rule__AllFilter__Group__0");
@@ -58,8 +60,9 @@ public class SwagParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJsonNumberAccess().getGroup_2(), "rule__JsonNumber__Group_2__0");
 			builder.put(grammarAccess.getJsonBooleanAccess().getGroup(), "rule__JsonBoolean__Group__0");
 			builder.put(grammarAccess.getJsonStringAccess().getGroup(), "rule__JsonString__Group__0");
-			builder.put(grammarAccess.getPathAccess().getNodesAssignment_1_0(), "rule__Path__NodesAssignment_1_0");
-			builder.put(grammarAccess.getPathAccess().getNodesAssignment_1_1_1(), "rule__Path__NodesAssignment_1_1_1");
+			builder.put(grammarAccess.getWrappedIntAccess().getGroup(), "rule__WrappedInt__Group__0");
+			builder.put(grammarAccess.getComplexPathAccess().getNodesAssignment_1_0(), "rule__ComplexPath__NodesAssignment_1_0");
+			builder.put(grammarAccess.getComplexPathAccess().getNodesAssignment_1_1_1(), "rule__ComplexPath__NodesAssignment_1_1_1");
 			builder.put(grammarAccess.getBasicNodeAccess().getStrAssignment_1(), "rule__BasicNode__StrAssignment_1");
 			builder.put(grammarAccess.getArrayNodeAccess().getStrAssignment_1(), "rule__ArrayNode__StrAssignment_1");
 			builder.put(grammarAccess.getArrayNodeAccess().getFilterAssignment_3(), "rule__ArrayNode__FilterAssignment_3");
@@ -75,6 +78,7 @@ public class SwagParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJsonNumberAccess().getNumberAssignment_1(), "rule__JsonNumber__NumberAssignment_1");
 			builder.put(grammarAccess.getJsonBooleanAccess().getBoolAssignment_1(), "rule__JsonBoolean__BoolAssignment_1");
 			builder.put(grammarAccess.getJsonStringAccess().getValueAssignment_1(), "rule__JsonString__ValueAssignment_1");
+			builder.put(grammarAccess.getWrappedIntAccess().getNumberAssignment_1(), "rule__WrappedInt__NumberAssignment_1");
 		}
 	}
 	
