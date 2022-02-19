@@ -96,7 +96,7 @@ class JsonpathCompiler implements Compiler {
 		var String rtn = ""
 		switch (value) {
 			JsonBoolean: rtn += value.bool
-			JsonNumber: rtn += value.number
+			JsonNumber: rtn += value.number.toString
 			JsonNull: rtn += "null"
 			JsonString: rtn += "'" + value.value + "'"
 			default: rtn += ""

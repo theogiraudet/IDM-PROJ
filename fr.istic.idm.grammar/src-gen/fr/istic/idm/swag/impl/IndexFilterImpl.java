@@ -35,7 +35,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    * @ordered
    */
-  protected static final int INDEX_EDEFAULT = 0;
+  protected static final String INDEX_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
@@ -45,7 +45,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    * @ordered
    */
-  protected int index = INDEX_EDEFAULT;
+  protected String index = INDEX_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    */
   @Override
-  public int getIndex()
+  public String getIndex()
   {
     return index;
   }
@@ -85,9 +85,9 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
    * @generated
    */
   @Override
-  public void setIndex(int newIndex)
+  public void setIndex(String newIndex)
   {
-    int oldIndex = index;
+    String oldIndex = index;
     index = newIndex;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.INDEX_FILTER__INDEX, oldIndex, index));
@@ -120,7 +120,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
     switch (featureID)
     {
       case SwagPackage.INDEX_FILTER__INDEX:
-        setIndex((Integer)newValue);
+        setIndex((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class IndexFilterImpl extends FilterImpl implements IndexFilter
     switch (featureID)
     {
       case SwagPackage.INDEX_FILTER__INDEX:
-        return index != INDEX_EDEFAULT;
+        return INDEX_EDEFAULT == null ? index != null : !INDEX_EDEFAULT.equals(index);
     }
     return super.eIsSet(featureID);
   }

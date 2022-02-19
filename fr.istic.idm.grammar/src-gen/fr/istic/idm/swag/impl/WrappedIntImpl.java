@@ -36,7 +36,7 @@ public class WrappedIntImpl extends MinimalEObjectImpl.Container implements Wrap
    * @generated
    * @ordered
    */
-  protected static final int NUMBER_EDEFAULT = 0;
+  protected static final String NUMBER_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
@@ -46,7 +46,7 @@ public class WrappedIntImpl extends MinimalEObjectImpl.Container implements Wrap
    * @generated
    * @ordered
    */
-  protected int number = NUMBER_EDEFAULT;
+  protected String number = NUMBER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class WrappedIntImpl extends MinimalEObjectImpl.Container implements Wrap
    * @generated
    */
   @Override
-  public int getNumber()
+  public String getNumber()
   {
     return number;
   }
@@ -86,9 +86,9 @@ public class WrappedIntImpl extends MinimalEObjectImpl.Container implements Wrap
    * @generated
    */
   @Override
-  public void setNumber(int newNumber)
+  public void setNumber(String newNumber)
   {
-    int oldNumber = number;
+    String oldNumber = number;
     number = newNumber;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.WRAPPED_INT__NUMBER, oldNumber, number));
@@ -121,7 +121,7 @@ public class WrappedIntImpl extends MinimalEObjectImpl.Container implements Wrap
     switch (featureID)
     {
       case SwagPackage.WRAPPED_INT__NUMBER:
-        setNumber((Integer)newValue);
+        setNumber((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -155,7 +155,7 @@ public class WrappedIntImpl extends MinimalEObjectImpl.Container implements Wrap
     switch (featureID)
     {
       case SwagPackage.WRAPPED_INT__NUMBER:
-        return number != NUMBER_EDEFAULT;
+        return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
     }
     return super.eIsSet(featureID);
   }

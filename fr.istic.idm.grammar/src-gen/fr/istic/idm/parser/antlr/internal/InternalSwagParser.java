@@ -22,25 +22,26 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalSwagParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'['", "']'", "'*'", "'='", "'?'", "'..'", "','", "'null'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_NATURAL_INT", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'['", "']'", "'*'", "'='", "'?'", "'..'", "','", "'null'", "'true'", "'false'"
     };
     public static final int RULE_STRING=5;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int RULE_INT=6;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_WS=10;
+    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_NATURAL_INT=6;
+    public static final int RULE_INT=7;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -144,10 +145,10 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==11) ) {
+            if ( (LA1_0==12) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==EOF||(LA1_0>=RULE_ID && LA1_0<=RULE_STRING)||(LA1_0>=15 && LA1_0<=16)) ) {
+            else if ( (LA1_0==EOF||(LA1_0>=RULE_ID && LA1_0<=RULE_STRING)||(LA1_0>=16 && LA1_0<=17)) ) {
                 alt1=2;
             }
             else {
@@ -296,7 +297,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,11,FOLLOW_2); if (state.failed) return current;
+            otherlv_1=(Token)match(input,12,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getRootPathAccess().getFullStopKeyword_1());
@@ -452,7 +453,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                         int alt2=2;
                         int LA2_0 = input.LA(1);
 
-                        if ( (LA2_0==11) ) {
+                        if ( (LA2_0==12) ) {
                             alt2=1;
                         }
 
@@ -461,7 +462,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalSwag.g:173:5: otherlv_2= '.' ( (lv_nodes_3_0= ruleNode ) )
                     	    {
-                    	    otherlv_2=(Token)match(input,11,FOLLOW_4); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,12,FOLLOW_4); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      					newLeafNode(otherlv_2, grammarAccess.getComplexPathAccess().getFullStopKeyword_1_1_0());
@@ -605,10 +606,10 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             if ( (LA4_0==RULE_ID) ) {
                 int LA4_1 = input.LA(2);
 
-                if ( (LA4_1==12) ) {
+                if ( (LA4_1==13) ) {
                     alt4=1;
                 }
-                else if ( (LA4_1==EOF||LA4_1==11||(LA4_1>=15 && LA4_1<=16)) ) {
+                else if ( (LA4_1==EOF||LA4_1==12||(LA4_1>=16 && LA4_1<=17)) ) {
                     alt4=2;
                 }
                 else {
@@ -622,10 +623,10 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             else if ( (LA4_0==RULE_STRING) ) {
                 int LA4_2 = input.LA(2);
 
-                if ( (LA4_2==EOF||LA4_2==11||(LA4_2>=15 && LA4_2<=16)) ) {
+                if ( (LA4_2==EOF||LA4_2==12||(LA4_2>=16 && LA4_2<=17)) ) {
                     alt4=2;
                 }
-                else if ( (LA4_2==12) ) {
+                else if ( (LA4_2==13) ) {
                     alt4=1;
                 }
                 else {
@@ -1044,7 +1045,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_6); if (state.failed) return current;
+            otherlv_2=(Token)match(input,13,FOLLOW_6); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getArrayNodeAccess().getLeftSquareBracketKeyword_2());
@@ -1054,7 +1055,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( ((LA7_0>=RULE_ID && LA7_0<=RULE_INT)||LA7_0==11||(LA7_0>=14 && LA7_0<=17)) ) {
+            if ( ((LA7_0>=RULE_ID && LA7_0<=RULE_NATURAL_INT)||LA7_0==12||(LA7_0>=15 && LA7_0<=18)) ) {
                 alt7=1;
             }
             switch (alt7) {
@@ -1096,7 +1097,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FOLLOW_2); if (state.failed) return current;
+            otherlv_4=(Token)match(input,14,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_4, grammarAccess.getArrayNodeAccess().getRightSquareBracketKeyword_4());
@@ -1190,14 +1191,14 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             // InternalSwag.g:401:2: (this_BoundFilter_0= ruleBoundFilter | this_IndexFilter_1= ruleIndexFilter | this_PathFilter_2= rulePathFilter | this_AllFilter_3= ruleAllFilter )
             int alt8=4;
             switch ( input.LA(1) ) {
-            case RULE_INT:
+            case RULE_NATURAL_INT:
                 {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1==EOF||LA8_1==13||LA8_1==18) ) {
+                if ( (LA8_1==EOF||LA8_1==14||LA8_1==19) ) {
                     alt8=2;
                 }
-                else if ( (LA8_1==17) ) {
+                else if ( (LA8_1==18) ) {
                     alt8=1;
                 }
                 else {
@@ -1209,21 +1210,21 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 17:
+            case 18:
                 {
                 alt8=1;
                 }
                 break;
             case RULE_ID:
             case RULE_STRING:
-            case 11:
-            case 15:
+            case 12:
             case 16:
+            case 17:
                 {
                 alt8=3;
                 }
                 break;
-            case 14:
+            case 15:
                 {
                 alt8=4;
                 }
@@ -1419,7 +1420,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,14,FOLLOW_2); if (state.failed) return current;
+            otherlv_1=(Token)match(input,15,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getAllFilterAccess().getAsteriskKeyword_1());
@@ -1510,7 +1511,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==11) ) {
+            if ( (LA9_0==12) ) {
                 int LA9_1 = input.LA(2);
 
                 if ( (synpred1_InternalSwag()) ) {
@@ -1561,10 +1562,10 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                     throw nvae;
                 }
             }
-            else if ( (LA9_0==16) && (synpred1_InternalSwag())) {
+            else if ( (LA9_0==17) && (synpred1_InternalSwag())) {
                 alt9=1;
             }
-            else if ( (LA9_0==15) ) {
+            else if ( (LA9_0==16) ) {
                 alt9=2;
             }
             else {
@@ -1758,7 +1759,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
+            otherlv_2=(Token)match(input,16,FOLLOW_9); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getEqualFilterAccess().getEqualsSignKeyword_2());
@@ -1930,7 +1931,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_2); if (state.failed) return current;
+            otherlv_2=(Token)match(input,17,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getExistFilterAccess().getQuestionMarkKeyword_2());
@@ -2001,7 +2002,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIndexFilter"
-    // InternalSwag.g:634:1: ruleIndexFilter returns [EObject current=null] : ( () ( (lv_index_1_0= RULE_INT ) ) ) ;
+    // InternalSwag.g:634:1: ruleIndexFilter returns [EObject current=null] : ( () ( (lv_index_1_0= RULE_NATURAL_INT ) ) ) ;
     public final EObject ruleIndexFilter() throws RecognitionException {
         EObject current = null;
 
@@ -2011,11 +2012,11 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSwag.g:640:2: ( ( () ( (lv_index_1_0= RULE_INT ) ) ) )
-            // InternalSwag.g:641:2: ( () ( (lv_index_1_0= RULE_INT ) ) )
+            // InternalSwag.g:640:2: ( ( () ( (lv_index_1_0= RULE_NATURAL_INT ) ) ) )
+            // InternalSwag.g:641:2: ( () ( (lv_index_1_0= RULE_NATURAL_INT ) ) )
             {
-            // InternalSwag.g:641:2: ( () ( (lv_index_1_0= RULE_INT ) ) )
-            // InternalSwag.g:642:3: () ( (lv_index_1_0= RULE_INT ) )
+            // InternalSwag.g:641:2: ( () ( (lv_index_1_0= RULE_NATURAL_INT ) ) )
+            // InternalSwag.g:642:3: () ( (lv_index_1_0= RULE_NATURAL_INT ) )
             {
             // InternalSwag.g:642:3: ()
             // InternalSwag.g:643:4: 
@@ -2030,16 +2031,16 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSwag.g:649:3: ( (lv_index_1_0= RULE_INT ) )
-            // InternalSwag.g:650:4: (lv_index_1_0= RULE_INT )
+            // InternalSwag.g:649:3: ( (lv_index_1_0= RULE_NATURAL_INT ) )
+            // InternalSwag.g:650:4: (lv_index_1_0= RULE_NATURAL_INT )
             {
-            // InternalSwag.g:650:4: (lv_index_1_0= RULE_INT )
-            // InternalSwag.g:651:5: lv_index_1_0= RULE_INT
+            // InternalSwag.g:650:4: (lv_index_1_0= RULE_NATURAL_INT )
+            // InternalSwag.g:651:5: lv_index_1_0= RULE_NATURAL_INT
             {
-            lv_index_1_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+            lv_index_1_0=(Token)match(input,RULE_NATURAL_INT,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(lv_index_1_0, grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0());
+              					newLeafNode(lv_index_1_0, grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0());
               				
             }
             if ( state.backtracking==0 ) {
@@ -2051,7 +2052,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
               						current,
               						"index",
               						lv_index_1_0,
-              						"org.eclipse.xtext.common.Terminals.INT");
+              						"fr.istic.idm.Swag.NATURAL_INT");
               				
             }
 
@@ -2149,10 +2150,10 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==RULE_INT) ) {
+            if ( (LA11_0==RULE_NATURAL_INT) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==17) ) {
+            else if ( (LA11_0==18) ) {
                 alt11=2;
             }
             else {
@@ -2220,7 +2221,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,17,FOLLOW_12); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,18,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_2, grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_0_1_1());
@@ -2230,7 +2231,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
-                    if ( (LA10_0==RULE_INT) ) {
+                    if ( (LA10_0==RULE_NATURAL_INT) ) {
                         alt10=1;
                     }
                     switch (alt10) {
@@ -2287,7 +2288,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                     // InternalSwag.g:740:3: (otherlv_4= '..' ( (lv_max_5_0= ruleWrappedInt ) ) )
                     // InternalSwag.g:741:4: otherlv_4= '..' ( (lv_max_5_0= ruleWrappedInt ) )
                     {
-                    otherlv_4=(Token)match(input,17,FOLLOW_13); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,18,FOLLOW_13); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_4, grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_1_0());
@@ -2473,7 +2474,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==18) ) {
+                if ( (LA12_0==19) ) {
                     alt12=1;
                 }
 
@@ -2482,7 +2483,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalSwag.g:811:4: otherlv_2= ',' ( (lv_filter_3_0= ruleFilter ) )
             	    {
-            	    otherlv_2=(Token)match(input,18,FOLLOW_15); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,19,FOLLOW_15); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getListFilterAccess().getCommaKeyword_2_0());
@@ -2620,18 +2621,18 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             // InternalSwag.g:853:2: (this_JsonBoolean_0= ruleJsonBoolean | this_JsonNumber_1= ruleJsonNumber | this_JsonNull_2= ruleJsonNull | this_JsonString_3= ruleJsonString )
             int alt13=4;
             switch ( input.LA(1) ) {
-            case 20:
             case 21:
+            case 22:
                 {
                 alt13=1;
                 }
                 break;
-            case RULE_INT:
+            case RULE_NATURAL_INT:
                 {
                 alt13=2;
                 }
                 break;
-            case 19:
+            case 20:
                 {
                 alt13=3;
                 }
@@ -2832,7 +2833,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_2); if (state.failed) return current;
+            otherlv_1=(Token)match(input,20,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getJsonNullAccess().getNullKeyword_1());
@@ -2903,7 +2904,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonNumber"
-    // InternalSwag.g:930:1: ruleJsonNumber returns [EObject current=null] : ( () ( (lv_number_1_0= RULE_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? ) ;
+    // InternalSwag.g:930:1: ruleJsonNumber returns [EObject current=null] : ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? ) ;
     public final EObject ruleJsonNumber() throws RecognitionException {
         EObject current = null;
 
@@ -2915,11 +2916,11 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSwag.g:936:2: ( ( () ( (lv_number_1_0= RULE_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? ) )
-            // InternalSwag.g:937:2: ( () ( (lv_number_1_0= RULE_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? )
+            // InternalSwag.g:936:2: ( ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? ) )
+            // InternalSwag.g:937:2: ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? )
             {
-            // InternalSwag.g:937:2: ( () ( (lv_number_1_0= RULE_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? )
-            // InternalSwag.g:938:3: () ( (lv_number_1_0= RULE_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )?
+            // InternalSwag.g:937:2: ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )? )
+            // InternalSwag.g:938:3: () ( (lv_number_1_0= RULE_NATURAL_INT ) ) (otherlv_2= '.' this_INT_3= RULE_INT )?
             {
             // InternalSwag.g:938:3: ()
             // InternalSwag.g:939:4: 
@@ -2934,16 +2935,16 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSwag.g:945:3: ( (lv_number_1_0= RULE_INT ) )
-            // InternalSwag.g:946:4: (lv_number_1_0= RULE_INT )
+            // InternalSwag.g:945:3: ( (lv_number_1_0= RULE_NATURAL_INT ) )
+            // InternalSwag.g:946:4: (lv_number_1_0= RULE_NATURAL_INT )
             {
-            // InternalSwag.g:946:4: (lv_number_1_0= RULE_INT )
-            // InternalSwag.g:947:5: lv_number_1_0= RULE_INT
+            // InternalSwag.g:946:4: (lv_number_1_0= RULE_NATURAL_INT )
+            // InternalSwag.g:947:5: lv_number_1_0= RULE_NATURAL_INT
             {
-            lv_number_1_0=(Token)match(input,RULE_INT,FOLLOW_3); if (state.failed) return current;
+            lv_number_1_0=(Token)match(input,RULE_NATURAL_INT,FOLLOW_3); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(lv_number_1_0, grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0());
+              					newLeafNode(lv_number_1_0, grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0());
               				
             }
             if ( state.backtracking==0 ) {
@@ -2955,7 +2956,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
               						current,
               						"number",
               						lv_number_1_0,
-              						"org.eclipse.xtext.common.Terminals.INT");
+              						"fr.istic.idm.Swag.NATURAL_INT");
               				
             }
 
@@ -2968,14 +2969,14 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==11) ) {
+            if ( (LA14_0==12) ) {
                 alt14=1;
             }
             switch (alt14) {
                 case 1 :
                     // InternalSwag.g:964:4: otherlv_2= '.' this_INT_3= RULE_INT
                     {
-                    otherlv_2=(Token)match(input,11,FOLLOW_13); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getJsonNumberAccess().getFullStopKeyword_2_0());
@@ -3098,10 +3099,10 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==20) ) {
+            if ( (LA15_0==21) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==21) ) {
+            else if ( (LA15_0==22) ) {
                 alt15=2;
             }
             else {
@@ -3115,7 +3116,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalSwag.g:1002:6: lv_bool_1_1= 'true'
                     {
-                    lv_bool_1_1=(Token)match(input,20,FOLLOW_2); if (state.failed) return current;
+                    lv_bool_1_1=(Token)match(input,21,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_bool_1_1, grammarAccess.getJsonBooleanAccess().getBoolTrueKeyword_1_0_0());
@@ -3135,7 +3136,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // InternalSwag.g:1013:6: lv_bool_1_2= 'false'
                     {
-                    lv_bool_1_2=(Token)match(input,21,FOLLOW_2); if (state.failed) return current;
+                    lv_bool_1_2=(Token)match(input,22,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_bool_1_2, grammarAccess.getJsonBooleanAccess().getBoolFalseKeyword_1_0_1());
@@ -3350,7 +3351,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWrappedInt"
-    // InternalSwag.g:1081:1: ruleWrappedInt returns [EObject current=null] : ( () ( (lv_number_1_0= RULE_INT ) ) ) ;
+    // InternalSwag.g:1081:1: ruleWrappedInt returns [EObject current=null] : ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) ) ;
     public final EObject ruleWrappedInt() throws RecognitionException {
         EObject current = null;
 
@@ -3360,11 +3361,11 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSwag.g:1087:2: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) )
-            // InternalSwag.g:1088:2: ( () ( (lv_number_1_0= RULE_INT ) ) )
+            // InternalSwag.g:1087:2: ( ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) ) )
+            // InternalSwag.g:1088:2: ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) )
             {
-            // InternalSwag.g:1088:2: ( () ( (lv_number_1_0= RULE_INT ) ) )
-            // InternalSwag.g:1089:3: () ( (lv_number_1_0= RULE_INT ) )
+            // InternalSwag.g:1088:2: ( () ( (lv_number_1_0= RULE_NATURAL_INT ) ) )
+            // InternalSwag.g:1089:3: () ( (lv_number_1_0= RULE_NATURAL_INT ) )
             {
             // InternalSwag.g:1089:3: ()
             // InternalSwag.g:1090:4: 
@@ -3379,16 +3380,16 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSwag.g:1096:3: ( (lv_number_1_0= RULE_INT ) )
-            // InternalSwag.g:1097:4: (lv_number_1_0= RULE_INT )
+            // InternalSwag.g:1096:3: ( (lv_number_1_0= RULE_NATURAL_INT ) )
+            // InternalSwag.g:1097:4: (lv_number_1_0= RULE_NATURAL_INT )
             {
-            // InternalSwag.g:1097:4: (lv_number_1_0= RULE_INT )
-            // InternalSwag.g:1098:5: lv_number_1_0= RULE_INT
+            // InternalSwag.g:1097:4: (lv_number_1_0= RULE_NATURAL_INT )
+            // InternalSwag.g:1098:5: lv_number_1_0= RULE_NATURAL_INT
             {
-            lv_number_1_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+            lv_number_1_0=(Token)match(input,RULE_NATURAL_INT,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(lv_number_1_0, grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0());
+              					newLeafNode(lv_number_1_0, grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0());
               				
             }
             if ( state.backtracking==0 ) {
@@ -3400,7 +3401,7 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
               						current,
               						"number",
               						lv_number_1_0,
-              						"org.eclipse.xtext.common.Terminals.INT");
+              						"fr.istic.idm.Swag.NATURAL_INT");
               				
             }
 
@@ -3469,18 +3470,19 @@ public class InternalSwagParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000026870L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000380060L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000004D070L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000700060L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000042L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000024870L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000049070L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000080L});
 
 }

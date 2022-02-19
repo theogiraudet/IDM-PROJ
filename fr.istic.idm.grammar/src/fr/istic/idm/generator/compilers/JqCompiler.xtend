@@ -22,6 +22,7 @@ import fr.istic.idm.swag.RootPath
 class JqCompiler implements Compiler {
 	
 	boolean needCloseBracket = false;
+	String prependNextNode = ""
 	
 	override compile(Path path) {
 		compilePath(path)
@@ -35,28 +36,30 @@ class JqCompiler implements Compiler {
 	}
 	
 	private def String compileComplexPath(ComplexPath path) {
-		val query = "." + path.nodes.map[compileNode].join(".")
+		val query = path.nodes.map[compileNode].join(" | ")
 		val end = needCloseBracket ? "]" : ""
 		needCloseBracket = false
 		return query + end
 	}
 	
 	private def String compileNode(Node node) {
+		val prepend = prependNextNode
+		prependNextNode = ""
 		return switch(node) {
-			BasicNode: node.str
-			ArrayNode: compileArrayNode(node)
+			BasicNode: prepend + "." + node.str
+			ArrayNode: prepend + "." + compileArrayNode(node)
 		}
 	}
 	
 	private def String compileArrayNode(ArrayNode node) {
 		val filters = node.filter?.filter?.map[compileFilter]?.join(" | ")
-		return node.str + (filters !=  "" && filters !== null ? filters : allFilterHandler())
+		return node.str + " | " + (filters !=  "" && filters !== null ? filters : allFilterHandler())
 	}
 	
 	private def String compileFilter(Filter filter) {
 		return switch(filter) {
-			IndexFilter: "[" + filter.index + "]"
-			BoundFilter: "[" + (filter.min === null ? "" : filter.min) + ":" + (filter.max === null ? "" : filter.max) + "]"
+			IndexFilter: ".[" + filter.index + "]"
+			BoundFilter: ".[" + (filter.min === null ? "" : filter.min) + ":" + (filter.max === null ? "" : filter.max) + "]"
 			AllFilter: allFilterHandler()
 			PathFilter: compilePathFilter(filter)
 		}
@@ -64,14 +67,16 @@ class JqCompiler implements Compiler {
 	
 	private def String allFilterHandler() {
 		needCloseBracket = true
-		return " | [ .[]"
+		return "[ .[]"
 	}
 	
 	private def String compilePathFilter(PathFilter filter) {
-		return " | map(select(" + switch(filter) {
+		val query = "map(select(" + switch(filter) {
 			ExistFilter: compilePath(filter.path) + "?"
 			EqualFilter: compilePath(filter.path) + " == " + compileJsonValue(filter.value) 
 		} + "))"
+		prependNextNode = ".[]"
+		return query
 	}
 	
 	private def String compileJsonValue(JsonValue value) {

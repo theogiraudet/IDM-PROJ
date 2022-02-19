@@ -1,0 +1,1 @@
+.variable | map(select(.type == "double")) | .[-1]

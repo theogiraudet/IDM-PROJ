@@ -27,12 +27,12 @@ public interface IndexFilter extends Filter
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Index</em>' attribute.
-   * @see #setIndex(int)
+   * @see #setIndex(String)
    * @see fr.istic.idm.swag.SwagPackage#getIndexFilter_Index()
    * @model
    * @generated
    */
-  int getIndex();
+  String getIndex();
 
   /**
    * Sets the value of the '{@link fr.istic.idm.swag.IndexFilter#getIndex <em>Index</em>}' attribute.
@@ -42,6 +42,6 @@ public interface IndexFilter extends Filter
    * @see #getIndex()
    * @generated
    */
-  void setIndex(int value);
+  void setIndex(String value);
 
 } // IndexFilter

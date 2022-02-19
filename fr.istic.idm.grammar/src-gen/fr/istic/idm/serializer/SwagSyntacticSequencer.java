@@ -62,7 +62,7 @@ public class SwagSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('.' INT)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     number=INT (ambiguity) (rule end)
+	 *     number=NATURAL_INT (ambiguity) (rule end)
 	 */
 	protected void emit_JsonNumber___FullStopKeyword_2_0_INTTerminalRuleCall_2_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

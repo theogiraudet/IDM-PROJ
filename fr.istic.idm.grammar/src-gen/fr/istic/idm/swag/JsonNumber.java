@@ -27,12 +27,12 @@ public interface JsonNumber extends JsonValue
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Number</em>' attribute.
-   * @see #setNumber(int)
+   * @see #setNumber(String)
    * @see fr.istic.idm.swag.SwagPackage#getJsonNumber_Number()
    * @model
    * @generated
    */
-  int getNumber();
+  String getNumber();
 
   /**
    * Sets the value of the '{@link fr.istic.idm.swag.JsonNumber#getNumber <em>Number</em>}' attribute.
@@ -42,6 +42,6 @@ public interface JsonNumber extends JsonValue
    * @see #getNumber()
    * @generated
    */
-  void setNumber(int value);
+  void setNumber(String value);
 
 } // JsonNumber

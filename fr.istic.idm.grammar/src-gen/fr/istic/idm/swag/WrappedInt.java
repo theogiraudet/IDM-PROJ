@@ -28,12 +28,12 @@ public interface WrappedInt extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Number</em>' attribute.
-   * @see #setNumber(int)
+   * @see #setNumber(String)
    * @see fr.istic.idm.swag.SwagPackage#getWrappedInt_Number()
    * @model
    * @generated
    */
-  int getNumber();
+  String getNumber();
 
   /**
    * Sets the value of the '{@link fr.istic.idm.swag.WrappedInt#getNumber <em>Number</em>}' attribute.
@@ -43,6 +43,6 @@ public interface WrappedInt extends EObject
    * @see #getNumber()
    * @generated
    */
-  void setNumber(int value);
+  void setNumber(String value);
 
 } // WrappedInt

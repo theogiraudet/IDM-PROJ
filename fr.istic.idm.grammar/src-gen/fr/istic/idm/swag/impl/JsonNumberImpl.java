@@ -35,7 +35,7 @@ public class JsonNumberImpl extends JsonValueImpl implements JsonNumber
    * @generated
    * @ordered
    */
-  protected static final int NUMBER_EDEFAULT = 0;
+  protected static final String NUMBER_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
@@ -45,7 +45,7 @@ public class JsonNumberImpl extends JsonValueImpl implements JsonNumber
    * @generated
    * @ordered
    */
-  protected int number = NUMBER_EDEFAULT;
+  protected String number = NUMBER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class JsonNumberImpl extends JsonValueImpl implements JsonNumber
    * @generated
    */
   @Override
-  public int getNumber()
+  public String getNumber()
   {
     return number;
   }
@@ -85,9 +85,9 @@ public class JsonNumberImpl extends JsonValueImpl implements JsonNumber
    * @generated
    */
   @Override
-  public void setNumber(int newNumber)
+  public void setNumber(String newNumber)
   {
-    int oldNumber = number;
+    String oldNumber = number;
     number = newNumber;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SwagPackage.JSON_NUMBER__NUMBER, oldNumber, number));
@@ -120,7 +120,7 @@ public class JsonNumberImpl extends JsonValueImpl implements JsonNumber
     switch (featureID)
     {
       case SwagPackage.JSON_NUMBER__NUMBER:
-        setNumber((Integer)newValue);
+        setNumber((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class JsonNumberImpl extends JsonValueImpl implements JsonNumber
     switch (featureID)
     {
       case SwagPackage.JSON_NUMBER__NUMBER:
-        return number != NUMBER_EDEFAULT;
+        return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
     }
     return super.eIsSet(featureID);
   }

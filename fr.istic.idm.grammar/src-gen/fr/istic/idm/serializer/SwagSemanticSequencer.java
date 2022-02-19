@@ -210,7 +210,7 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IndexFilter returns IndexFilter
 	 *
 	 * Constraint:
-	 *     index=INT
+	 *     index=NATURAL_INT
 	 */
 	protected void sequence_IndexFilter(ISerializationContext context, IndexFilter semanticObject) {
 		if (errorAcceptor != null) {
@@ -218,7 +218,7 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.INDEX_FILTER__INDEX));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0(), semanticObject.getIndex());
+		feeder.accept(grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0(), semanticObject.getIndex());
 		feeder.finish();
 	}
 	
@@ -255,7 +255,7 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     JsonNumber returns JsonNumber
 	 *
 	 * Constraint:
-	 *     number=INT
+	 *     number=NATURAL_INT
 	 */
 	protected void sequence_JsonNumber(ISerializationContext context, JsonNumber semanticObject) {
 		if (errorAcceptor != null) {
@@ -263,7 +263,7 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.JSON_NUMBER__NUMBER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0(), semanticObject.getNumber());
+		feeder.accept(grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0(), semanticObject.getNumber());
 		feeder.finish();
 	}
 	
@@ -317,7 +317,7 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     WrappedInt returns WrappedInt
 	 *
 	 * Constraint:
-	 *     number=INT
+	 *     number=NATURAL_INT
 	 */
 	protected void sequence_WrappedInt(ISerializationContext context, WrappedInt semanticObject) {
 		if (errorAcceptor != null) {
@@ -325,7 +325,7 @@ public class SwagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SwagPackage.Literals.WRAPPED_INT__NUMBER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0(), semanticObject.getNumber());
+		feeder.accept(grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0(), semanticObject.getNumber());
 		feeder.finish();
 	}
 	

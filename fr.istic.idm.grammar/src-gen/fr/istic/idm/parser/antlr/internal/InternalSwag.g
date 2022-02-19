@@ -648,9 +648,9 @@ ruleIndexFilter returns [EObject current=null]
 		)
 		(
 			(
-				lv_index_1_0=RULE_INT
+				lv_index_1_0=RULE_NATURAL_INT
 				{
-					newLeafNode(lv_index_1_0, grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0());
+					newLeafNode(lv_index_1_0, grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -660,7 +660,7 @@ ruleIndexFilter returns [EObject current=null]
 						$current,
 						"index",
 						lv_index_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"fr.istic.idm.Swag.NATURAL_INT");
 				}
 			)
 		)
@@ -944,9 +944,9 @@ ruleJsonNumber returns [EObject current=null]
 		)
 		(
 			(
-				lv_number_1_0=RULE_INT
+				lv_number_1_0=RULE_NATURAL_INT
 				{
-					newLeafNode(lv_number_1_0, grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0());
+					newLeafNode(lv_number_1_0, grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -956,7 +956,7 @@ ruleJsonNumber returns [EObject current=null]
 						$current,
 						"number",
 						lv_number_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"fr.istic.idm.Swag.NATURAL_INT");
 				}
 			)
 		)
@@ -1095,9 +1095,9 @@ ruleWrappedInt returns [EObject current=null]
 		)
 		(
 			(
-				lv_number_1_0=RULE_INT
+				lv_number_1_0=RULE_NATURAL_INT
 				{
-					newLeafNode(lv_number_1_0, grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0());
+					newLeafNode(lv_number_1_0, grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1107,12 +1107,14 @@ ruleWrappedInt returns [EObject current=null]
 						$current,
 						"number",
 						lv_number_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"fr.istic.idm.Swag.NATURAL_INT");
 				}
 			)
 		)
 	)
 ;
+
+RULE_NATURAL_INT : '-'? RULE_INT;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

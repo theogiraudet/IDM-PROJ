@@ -350,25 +350,25 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cIndexFilterAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cIndexAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIndexINTTerminalRuleCall_1_0 = (RuleCall)cIndexAssignment_1.eContents().get(0);
+		private final RuleCall cIndexNATURAL_INTTerminalRuleCall_1_0 = (RuleCall)cIndexAssignment_1.eContents().get(0);
 		
 		//IndexFilter: {IndexFilter}
-		//    index=INT
+		//    index=NATURAL_INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IndexFilter}
-		//   index=INT
+		//   index=NATURAL_INT
 		public Group getGroup() { return cGroup; }
 		
 		//{IndexFilter}
 		public Action getIndexFilterAction_0() { return cIndexFilterAction_0; }
 		
-		//index=INT
+		//index=NATURAL_INT
 		public Assignment getIndexAssignment_1() { return cIndexAssignment_1; }
 		
-		//INT
-		public RuleCall getIndexINTTerminalRuleCall_1_0() { return cIndexINTTerminalRuleCall_1_0; }
+		//NATURAL_INT
+		public RuleCall getIndexNATURAL_INTTerminalRuleCall_1_0() { return cIndexNATURAL_INTTerminalRuleCall_1_0; }
 	}
 	public class BoundFilterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.BoundFilter");
@@ -528,28 +528,28 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cJsonNumberAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNumberINTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
+		private final RuleCall cNumberNATURAL_INTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//JsonNumber: {JsonNumber}
-		//    number=INT ('.' INT)?
+		//    number=NATURAL_INT ('.' INT)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{JsonNumber}
-		//   number=INT ('.' INT)?
+		//   number=NATURAL_INT ('.' INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//{JsonNumber}
 		public Action getJsonNumberAction_0() { return cJsonNumberAction_0; }
 		
-		//number=INT
+		//number=NATURAL_INT
 		public Assignment getNumberAssignment_1() { return cNumberAssignment_1; }
 		
-		//INT
-		public RuleCall getNumberINTTerminalRuleCall_1_0() { return cNumberINTTerminalRuleCall_1_0; }
+		//NATURAL_INT
+		public RuleCall getNumberNATURAL_INTTerminalRuleCall_1_0() { return cNumberNATURAL_INTTerminalRuleCall_1_0; }
 		
 		//('.' INT)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -623,25 +623,25 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cWrappedIntAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNumberINTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
+		private final RuleCall cNumberNATURAL_INTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
 		
 		//WrappedInt: {WrappedInt}
-		//    number=INT
+		//    number=NATURAL_INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{WrappedInt}
-		//   number=INT
+		//   number=NATURAL_INT
 		public Group getGroup() { return cGroup; }
 		
 		//{WrappedInt}
 		public Action getWrappedIntAction_0() { return cWrappedIntAction_0; }
 		
-		//number=INT
+		//number=NATURAL_INT
 		public Assignment getNumberAssignment_1() { return cNumberAssignment_1; }
 		
-		//INT
-		public RuleCall getNumberINTTerminalRuleCall_1_0() { return cNumberINTTerminalRuleCall_1_0; }
+		//NATURAL_INT
+		public RuleCall getNumberNATURAL_INTTerminalRuleCall_1_0() { return cNumberNATURAL_INTTerminalRuleCall_1_0; }
 	}
 	
 	
@@ -665,6 +665,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final JsonBooleanElements pJsonBoolean;
 	private final JsonStringElements pJsonString;
 	private final WrappedIntElements pWrappedInt;
+	private final TerminalRule tNATURAL_INT;
 	
 	private final Grammar grammar;
 	
@@ -695,6 +696,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pJsonBoolean = new JsonBooleanElements();
 		this.pJsonString = new JsonStringElements();
 		this.pWrappedInt = new WrappedIntElements();
+		this.tNATURAL_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fr.istic.idm.Swag.NATURAL_INT");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -845,7 +847,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//IndexFilter: {IndexFilter}
-	//    index=INT
+	//    index=NATURAL_INT
 	//;
 	public IndexFilterElements getIndexFilterAccess() {
 		return pIndexFilter;
@@ -901,7 +903,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//JsonNumber: {JsonNumber}
-	//    number=INT ('.' INT)?
+	//    number=NATURAL_INT ('.' INT)?
 	//;
 	public JsonNumberElements getJsonNumberAccess() {
 		return pJsonNumber;
@@ -934,7 +936,7 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//WrappedInt: {WrappedInt}
-	//    number=INT
+	//    number=NATURAL_INT
 	//;
 	public WrappedIntElements getWrappedIntAccess() {
 		return pWrappedInt;
@@ -942,6 +944,11 @@ public class SwagGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getWrappedIntRule() {
 		return getWrappedIntAccess().getRule();
+	}
+	
+	//terminal NATURAL_INT: '-'? INT;
+	public TerminalRule getNATURAL_INTRule() {
+		return tNATURAL_INT;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

@@ -46,7 +46,7 @@ ExistFilter: {ExistFilter}
 ;
 
 IndexFilter: {IndexFilter}
-	index=INT
+	index=NATURAL_INT
 ;
 
 BoundFilter: {BoundFilter}
@@ -68,7 +68,7 @@ JsonNull: {JsonNull}
 ;
 
 JsonNumber: {JsonNumber}
-	number=INT ('.' INT)?
+	number=NATURAL_INT ('.' INT)?
 ;
 
 JsonBoolean: {JsonBoolean}
@@ -80,5 +80,7 @@ JsonString: {JsonString}
 ;
 
 WrappedInt: {WrappedInt}
-	number=INT
+	number=NATURAL_INT
 ;
+
+terminal NATURAL_INT: '-'? INT;
