@@ -6,4 +6,6 @@ interface Compiler {
 	
 	def String compile(Path path)
 	
+	def String getExtension()
+	
 }

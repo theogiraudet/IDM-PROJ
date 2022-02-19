@@ -18,8 +18,14 @@ import fr.istic.idm.swag.JsonString
 
 class JsonpathCompiler implements Compiler {
 
+	boolean piped = false;
+
 	override compile(Path path) {
-		compilePath(path)
+		var String rtn = compilePath(path)
+		if(piped) {
+			rtn = "// Piped queries\n" + rtn
+		}
+		return rtn
 	}
 
 	private def String compilePath(Path path) {
@@ -35,8 +41,13 @@ class JsonpathCompiler implements Compiler {
 	}
 
 	private def String compileFilter(ListFilter listFilter) {
-		var String rtn = "["
+		var String rtn = ""
 		for (filter : listFilter.filter) {
+			if(filter != listFilter.filter.head) {
+				piped = true
+				rtn += "\n$."
+			}
+			rtn += "["
 			switch (filter) {
 				AllFilter: rtn += "*"
 				BoundFilter: rtn += compileBoundFilter(filter)
@@ -45,8 +56,9 @@ class JsonpathCompiler implements Compiler {
 				IndexFilter: rtn += filter.index
 				default: rtn += ""
 			}
+			rtn += "]"
 		}
-		return rtn + "]"
+		return rtn
 	}
 	
 	private def String compileBoundFilter(BoundFilter boundFilter) {
@@ -60,7 +72,7 @@ class JsonpathCompiler implements Compiler {
 	}
 	
 	private def String compileEqualFilter(EqualFilter equalFilter) {
-		val String path = compile(equalFilter.path).substring(1)
+		val String path = compilePath(equalFilter.path).substring(1)
 		var rtn = "?(@" + path + " == "
 		val JsonValue value = equalFilter.value
 		switch (value) {
@@ -74,8 +86,12 @@ class JsonpathCompiler implements Compiler {
 	}
 	
 	private def String compileExistFilter(ExistFilter existFilter) {
-		val String path = compile(existFilter.path).substring(1)
+		val String path = compilePath(existFilter.path).substring(1)
 		return "?(@" + path + ")"
+	}
+	
+	override getExtension() {
+		return ".jp"
 	}
 
 }
