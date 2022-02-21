@@ -10,6 +10,7 @@ Compilé en JsonPath, cela donne :
 > $['foo']['bar'][0]['expression']
 
 Compilé en Jq, cela donne :
+> .["foo"] | .["bar"] | .[0] | .["expression"]
 
 L'expression retourne la valeur du nœud "expression" se trouvant dans le premier élément du tableau foo/bar.
 
