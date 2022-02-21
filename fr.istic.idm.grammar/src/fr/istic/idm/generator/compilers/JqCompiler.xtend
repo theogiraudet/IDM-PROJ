@@ -59,7 +59,7 @@ class JqCompiler implements Compiler {
 	private def String compileFilter(Filter filter) {
 		return switch(filter) {
 			IndexFilter: ".[" + filter.index + "]"
-			BoundFilter: ".[" + (filter.min === null ? "" : filter.min) + ":" + (filter.max === null ? "" : filter.max) + "]"
+			BoundFilter: ".[" + (filter.min === null ? "" : filter.min.number) + ":" + (filter.max === null ? "" : filter.max.number) + "]"
 			AllFilter: allFilterHandler()
 			PathFilter: compilePathFilter(filter)
 		}
