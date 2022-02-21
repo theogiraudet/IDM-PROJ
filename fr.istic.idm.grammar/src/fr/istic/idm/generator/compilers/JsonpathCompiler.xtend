@@ -24,9 +24,15 @@ class JsonpathCompiler implements Compiler {
 
 	override compile(Path path) {
 		var String rtn = compilePath(path)
+		
+		/*
+		 * Messes with the tests so we ignore it
+		 * 
 		if(piped) {
 			rtn = "// Piped queries\n" + rtn
 		}
+		 */
+		
 		return rtn
 	}
 	

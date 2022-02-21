@@ -21,6 +21,7 @@ class SwagCompilationTests {
 	
 	@Test
 	def void JqBaseTest() {
+		SwagGenerator.compiler = new JqCompiler
 		'''.'''.assertCompilesTo('''.''') 
 	}
 	
@@ -31,10 +32,10 @@ class SwagCompilationTests {
 	}
 	
 	@Test
-	def void JqSubitemsTest() {
-		SwagGenerator.compiler = new JqCompiler
-		'''item[*]'''.assertCompilesTo('''."item" | [ .[]]''') 
-	}
+    def void JqSubitemsTest() {
+        SwagGenerator.compiler = new JqCompiler
+        '''item[*]'''.assertCompilesTo('''.["item"] | [ .[]]''') 
+    }
 	
 	@Test
 	def void JpathSubitemsTest() {
@@ -45,7 +46,7 @@ class SwagCompilationTests {
 	@Test
 	def void JqSubitemLocationTest() {
 		SwagGenerator.compiler = new JqCompiler
-		'''item[..7]'''.assertCompilesTo('''.item | .[:7]''') 
+		'''item[..7]'''.assertCompilesTo('''.["item"] | .[:7]''') 
 	}
 	
 	@Test
@@ -54,5 +55,40 @@ class SwagCompilationTests {
 		'''item[..7]'''.assertCompilesTo('''$['item'][:7]''') 
 	}
 	
+	@Test
+	def void JqNamedItemTest() {
+		SwagGenerator.compiler = new JqCompiler
+		'''item[entry="value"]'''.assertCompilesTo('''.["item"] | map(select(.["entry"] == "value"))''') 
+	}
+	
+	@Test
+	def void JpathNamedItemTest() {
+		SwagGenerator.compiler = new JsonpathCompiler
+		'''item[entry="value"]'''.assertCompilesTo('''$['item'][?(@['entry'] == 'value')]''') 
+	}
+	
+	@Test
+	def void JqGetValueFromChosenItemTest() {
+		SwagGenerator.compiler = new JqCompiler
+		'''item[7].val'''.assertCompilesTo('''.["item"] | .[7] | .["val"]''') 
+	}
+	
+	@Test
+	def void JpathGetValueFromChosenItemTest() {
+		SwagGenerator.compiler = new JsonpathCompiler
+		'''item[7].val'''.assertCompilesTo('''$['item'][7]['val']''') 
+	}
+	
+	@Test
+	def void JqGetNthFromConditionTest() {
+		SwagGenerator.compiler = new JqCompiler
+		'''item[val=22, 0]'''.assertCompilesTo('''.["item"] | map(select(.["val"] == 22)) | .[0]''') 
+	}
+	
+	@Test
+	def void JpathGetNthFromConditionTest() {
+		SwagGenerator.compiler = new JsonpathCompiler
+		'''item[val=22, 0]'''.assertCompilesTo("$['item'][?(@['val'] == 22)]\n$[0]") 
+	}
 	
 }
