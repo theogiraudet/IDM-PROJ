@@ -24,7 +24,7 @@ Nous distingueront les filtres "chemin", permettant de se déplacer au sein de l
 
 | Filtre "conditionnel"                | Description                                                                                              |
 | ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| `````` ou ```*```                    | Sélectionne tous les éléments du tableau                                                                 |
+| ```laissé vide``` ou ```*```         | Sélectionne tous les éléments du tableau                                                                 |
 | ```n```                              | Sélectionne l'élément à l'index *n* du tableau, gère les nombres négatifs (partant de la fin du tableau) |
 | ```n..```                            | Sélectionne le sous tableau allant de l'index *n* jusqu'à la fin du tableau                              |
 | ```..n```                            | Sélectionne le sous tableau allant de l'index 0 à l'index *n*                                            |
