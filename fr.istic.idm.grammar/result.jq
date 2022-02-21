@@ -1,1 +1,1 @@
-.variable | map(select(.type == "double")) | .[-1]
+.["foo"] | .["bar"] | .[0] | .["expression"]

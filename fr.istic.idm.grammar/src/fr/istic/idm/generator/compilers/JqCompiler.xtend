@@ -46,14 +46,14 @@ class JqCompiler implements Compiler {
 		val prepend = prependNextNode
 		prependNextNode = ""
 		return switch(node) {
-			BasicNode: prepend + "." + node.str
+			BasicNode: prepend + ".[\"" + node.str + "\"]"
 			ArrayNode: prepend + "." + compileArrayNode(node)
 		}
 	}
 	
 	private def String compileArrayNode(ArrayNode node) {
 		val filters = node.filter?.filter?.map[compileFilter]?.join(" | ")
-		return node.str + " | " + (filters !=  "" && filters !== null ? filters : allFilterHandler())
+		return "[\"" + node.str + "\"]" + " | " + (filters !=  "" && filters !== null ? filters : allFilterHandler())
 	}
 	
 	private def String compileFilter(Filter filter) {
