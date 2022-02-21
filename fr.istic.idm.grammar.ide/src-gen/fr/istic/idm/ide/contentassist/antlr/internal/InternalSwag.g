@@ -2266,9 +2266,9 @@ rule__IndexFilter__IndexAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0()); }
-		RULE_INT
-		{ after(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0()); }
+		RULE_NATURAL_INT
+		{ after(grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -2356,9 +2356,9 @@ rule__JsonNumber__NumberAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0()); }
-		RULE_INT
-		{ after(grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); }
+		RULE_NATURAL_INT
+		{ after(grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -2401,14 +2401,16 @@ rule__WrappedInt__NumberAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0()); }
-		RULE_INT
-		{ after(grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); }
+		RULE_NATURAL_INT
+		{ after(grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+RULE_NATURAL_INT : '-'? RULE_INT;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

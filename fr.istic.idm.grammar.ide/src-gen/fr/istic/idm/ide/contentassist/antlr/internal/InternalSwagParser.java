@@ -23,25 +23,26 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalSwagParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'.'", "'['", "']'", "'*'", "'='", "'?'", "'..'", "','", "'null'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_NATURAL_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'.'", "'['", "']'", "'*'", "'='", "'?'", "'..'", "','", "'null'"
     };
     public static final int RULE_STRING=5;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_WS=10;
+    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_NATURAL_INT=7;
     public static final int RULE_INT=6;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -1791,10 +1792,10 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==13) ) {
+            if ( (LA1_0==14) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==EOF||(LA1_0>=RULE_ID && LA1_0<=RULE_STRING)||(LA1_0>=17 && LA1_0<=18)) ) {
+            else if ( (LA1_0==EOF||(LA1_0>=RULE_ID && LA1_0<=RULE_STRING)||(LA1_0>=18 && LA1_0<=19)) ) {
                 alt1=2;
             }
             else {
@@ -1882,10 +1883,10 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( (LA2_0==RULE_ID) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==EOF||LA2_1==13||(LA2_1>=17 && LA2_1<=18)) ) {
+                if ( (LA2_1==EOF||LA2_1==14||(LA2_1>=18 && LA2_1<=19)) ) {
                     alt2=2;
                 }
-                else if ( (LA2_1==14) ) {
+                else if ( (LA2_1==15) ) {
                     alt2=1;
                 }
                 else {
@@ -1899,10 +1900,10 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             else if ( (LA2_0==RULE_STRING) ) {
                 int LA2_2 = input.LA(2);
 
-                if ( (LA2_2==EOF||LA2_2==13||(LA2_2>=17 && LA2_2<=18)) ) {
+                if ( (LA2_2==EOF||LA2_2==14||(LA2_2>=18 && LA2_2<=19)) ) {
                     alt2=2;
                 }
-                else if ( (LA2_2==14) ) {
+                else if ( (LA2_2==15) ) {
                     alt2=1;
                 }
                 else {
@@ -2154,14 +2155,14 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             // InternalSwag.g:641:1: ( ( ruleBoundFilter ) | ( ruleIndexFilter ) | ( rulePathFilter ) | ( ruleAllFilter ) )
             int alt5=4;
             switch ( input.LA(1) ) {
-            case RULE_INT:
+            case RULE_NATURAL_INT:
                 {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==19) ) {
+                if ( (LA5_1==20) ) {
                     alt5=1;
                 }
-                else if ( (LA5_1==EOF||LA5_1==15||LA5_1==20) ) {
+                else if ( (LA5_1==EOF||LA5_1==16||LA5_1==21) ) {
                     alt5=2;
                 }
                 else {
@@ -2173,21 +2174,21 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                 }
                 }
                 break;
-            case 19:
+            case 20:
                 {
                 alt5=1;
                 }
                 break;
             case RULE_ID:
             case RULE_STRING:
-            case 13:
-            case 17:
+            case 14:
             case 18:
+            case 19:
                 {
                 alt5=3;
                 }
                 break;
-            case 16:
+            case 17:
                 {
                 alt5=4;
                 }
@@ -2320,7 +2321,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             // InternalSwag.g:674:1: ( ( ( ruleExistFilter ) ) | ( ruleEqualFilter ) )
             int alt6=2;
             switch ( input.LA(1) ) {
-            case 13:
+            case 14:
                 {
                 int LA6_1 = input.LA(2);
 
@@ -2377,12 +2378,12 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                 }
                 }
                 break;
-            case 18:
+            case 19:
                 {
                 alt6=1;
                 }
                 break;
-            case 17:
+            case 18:
                 {
                 alt6=2;
                 }
@@ -2476,10 +2477,10 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_INT) ) {
+            if ( (LA7_0==RULE_NATURAL_INT) ) {
                 alt7=1;
             }
-            else if ( (LA7_0==19) ) {
+            else if ( (LA7_0==20) ) {
                 alt7=2;
             }
             else {
@@ -2575,18 +2576,18 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             // InternalSwag.g:716:1: ( ( ruleJsonBoolean ) | ( ruleJsonNumber ) | ( ruleJsonNull ) | ( ruleJsonString ) )
             int alt8=4;
             switch ( input.LA(1) ) {
-            case 11:
             case 12:
+            case 13:
                 {
                 alt8=1;
                 }
                 break;
-            case RULE_INT:
+            case RULE_NATURAL_INT:
                 {
                 alt8=2;
                 }
                 break;
-            case 21:
+            case 22:
                 {
                 alt8=3;
                 }
@@ -2725,10 +2726,10 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==11) ) {
+            if ( (LA9_0==12) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==12) ) {
+            else if ( (LA9_0==13) ) {
                 alt9=2;
             }
             else {
@@ -2748,7 +2749,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getJsonBooleanAccess().getBoolTrueKeyword_1_0_0()); 
                     }
-                    match(input,11,FOLLOW_2); if (state.failed) return ;
+                    match(input,12,FOLLOW_2); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getJsonBooleanAccess().getBoolTrueKeyword_1_0_0()); 
                     }
@@ -2767,7 +2768,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getJsonBooleanAccess().getBoolFalseKeyword_1_0_1()); 
                     }
-                    match(input,12,FOLLOW_2); if (state.failed) return ;
+                    match(input,13,FOLLOW_2); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getJsonBooleanAccess().getBoolFalseKeyword_1_0_1()); 
                     }
@@ -2922,7 +2923,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRootPathAccess().getFullStopKeyword_1()); 
             }
-            match(input,13,FOLLOW_2); if (state.failed) return ;
+            match(input,14,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRootPathAccess().getFullStopKeyword_1()); 
             }
@@ -3265,7 +3266,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==13) ) {
+                if ( (LA11_0==14) ) {
                     alt11=1;
                 }
 
@@ -3366,7 +3367,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComplexPathAccess().getFullStopKeyword_1_1_0()); 
             }
-            match(input,13,FOLLOW_2); if (state.failed) return ;
+            match(input,14,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getComplexPathAccess().getFullStopKeyword_1_1_0()); 
             }
@@ -3860,7 +3861,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArrayNodeAccess().getLeftSquareBracketKeyword_2()); 
             }
-            match(input,14,FOLLOW_2); if (state.failed) return ;
+            match(input,15,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArrayNodeAccess().getLeftSquareBracketKeyword_2()); 
             }
@@ -3943,7 +3944,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==EOF||(LA12_0>=RULE_ID && LA12_0<=RULE_INT)||LA12_0==13||(LA12_0>=16 && LA12_0<=19)) ) {
+            if ( (LA12_0==EOF||(LA12_0>=RULE_ID && LA12_0<=RULE_STRING)||LA12_0==RULE_NATURAL_INT||LA12_0==14||(LA12_0>=17 && LA12_0<=20)) ) {
                 alt12=1;
             }
             switch (alt12) {
@@ -4034,7 +4035,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArrayNodeAccess().getRightSquareBracketKeyword_4()); 
             }
-            match(input,15,FOLLOW_2); if (state.failed) return ;
+            match(input,16,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArrayNodeAccess().getRightSquareBracketKeyword_4()); 
             }
@@ -4187,7 +4188,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAllFilterAccess().getAsteriskKeyword_1()); 
             }
-            match(input,16,FOLLOW_2); if (state.failed) return ;
+            match(input,17,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAllFilterAccess().getAsteriskKeyword_1()); 
             }
@@ -4434,7 +4435,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEqualFilterAccess().getEqualsSignKeyword_2()); 
             }
-            match(input,17,FOLLOW_2); if (state.failed) return ;
+            match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getEqualFilterAccess().getEqualsSignKeyword_2()); 
             }
@@ -4760,7 +4761,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExistFilterAccess().getQuestionMarkKeyword_2()); 
             }
-            match(input,18,FOLLOW_2); if (state.failed) return ;
+            match(input,19,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExistFilterAccess().getQuestionMarkKeyword_2()); 
             }
@@ -5254,7 +5255,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_0_1_1()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_0_1_1()); 
             }
@@ -5332,7 +5333,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==RULE_INT) ) {
+            if ( (LA13_0==RULE_NATURAL_INT) ) {
                 alt13=1;
             }
             switch (alt13) {
@@ -5428,7 +5429,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_1_0()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getBoundFilterAccess().getFullStopFullStopKeyword_1_0()); 
             }
@@ -5760,7 +5761,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==20) ) {
+                if ( (LA14_0==21) ) {
                     alt14=1;
                 }
 
@@ -5861,7 +5862,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getListFilterAccess().getCommaKeyword_2_0()); 
             }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
+            match(input,21,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getListFilterAccess().getCommaKeyword_2_0()); 
             }
@@ -6098,7 +6099,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJsonNullAccess().getNullKeyword_1()); 
             }
-            match(input,21,FOLLOW_2); if (state.failed) return ;
+            match(input,22,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJsonNullAccess().getNullKeyword_1()); 
             }
@@ -6344,7 +6345,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==13) ) {
+            if ( (LA15_0==14) ) {
                 alt15=1;
             }
             switch (alt15) {
@@ -6396,7 +6397,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             // InternalSwag.g:1931:1: ( rule__JsonNumber__Group_2__0__Impl rule__JsonNumber__Group_2__1 )
             // InternalSwag.g:1932:2: rule__JsonNumber__Group_2__0__Impl rule__JsonNumber__Group_2__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_18);
             rule__JsonNumber__Group_2__0__Impl();
 
             state._fsp--;
@@ -6440,7 +6441,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJsonNumberAccess().getFullStopKeyword_2_0()); 
             }
-            match(input,13,FOLLOW_2); if (state.failed) return ;
+            match(input,14,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJsonNumberAccess().getFullStopKeyword_2_0()); 
             }
@@ -6549,7 +6550,7 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
             // InternalSwag.g:1985:1: ( rule__JsonBoolean__Group__0__Impl rule__JsonBoolean__Group__1 )
             // InternalSwag.g:1986:2: rule__JsonBoolean__Group__0__Impl rule__JsonBoolean__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__JsonBoolean__Group__0__Impl();
 
             state._fsp--;
@@ -7401,24 +7402,24 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IndexFilter__IndexAssignment_1"
-    // InternalSwag.g:2263:1: rule__IndexFilter__IndexAssignment_1 : ( RULE_INT ) ;
+    // InternalSwag.g:2263:1: rule__IndexFilter__IndexAssignment_1 : ( RULE_NATURAL_INT ) ;
     public final void rule__IndexFilter__IndexAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2267:1: ( ( RULE_INT ) )
-            // InternalSwag.g:2268:2: ( RULE_INT )
+            // InternalSwag.g:2267:1: ( ( RULE_NATURAL_INT ) )
+            // InternalSwag.g:2268:2: ( RULE_NATURAL_INT )
             {
-            // InternalSwag.g:2268:2: ( RULE_INT )
-            // InternalSwag.g:2269:3: RULE_INT
+            // InternalSwag.g:2268:2: ( RULE_NATURAL_INT )
+            // InternalSwag.g:2269:3: RULE_NATURAL_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0()); 
+               before(grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_NATURAL_INT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getIndexFilterAccess().getIndexINTTerminalRuleCall_1_0()); 
+               after(grammarAccess.getIndexFilterAccess().getIndexNATURAL_INTTerminalRuleCall_1_0()); 
             }
 
             }
@@ -7667,24 +7668,24 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JsonNumber__NumberAssignment_1"
-    // InternalSwag.g:2353:1: rule__JsonNumber__NumberAssignment_1 : ( RULE_INT ) ;
+    // InternalSwag.g:2353:1: rule__JsonNumber__NumberAssignment_1 : ( RULE_NATURAL_INT ) ;
     public final void rule__JsonNumber__NumberAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2357:1: ( ( RULE_INT ) )
-            // InternalSwag.g:2358:2: ( RULE_INT )
+            // InternalSwag.g:2357:1: ( ( RULE_NATURAL_INT ) )
+            // InternalSwag.g:2358:2: ( RULE_NATURAL_INT )
             {
-            // InternalSwag.g:2358:2: ( RULE_INT )
-            // InternalSwag.g:2359:3: RULE_INT
+            // InternalSwag.g:2358:2: ( RULE_NATURAL_INT )
+            // InternalSwag.g:2359:3: RULE_NATURAL_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0()); 
+               before(grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_NATURAL_INT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getJsonNumberAccess().getNumberINTTerminalRuleCall_1_0()); 
+               after(grammarAccess.getJsonNumberAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); 
             }
 
             }
@@ -7800,24 +7801,24 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WrappedInt__NumberAssignment_1"
-    // InternalSwag.g:2398:1: rule__WrappedInt__NumberAssignment_1 : ( RULE_INT ) ;
+    // InternalSwag.g:2398:1: rule__WrappedInt__NumberAssignment_1 : ( RULE_NATURAL_INT ) ;
     public final void rule__WrappedInt__NumberAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSwag.g:2402:1: ( ( RULE_INT ) )
-            // InternalSwag.g:2403:2: ( RULE_INT )
+            // InternalSwag.g:2402:1: ( ( RULE_NATURAL_INT ) )
+            // InternalSwag.g:2403:2: ( RULE_NATURAL_INT )
             {
-            // InternalSwag.g:2403:2: ( RULE_INT )
-            // InternalSwag.g:2404:3: RULE_INT
+            // InternalSwag.g:2403:2: ( RULE_NATURAL_INT )
+            // InternalSwag.g:2404:3: RULE_NATURAL_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0()); 
+               before(grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_NATURAL_INT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getWrappedIntAccess().getNumberINTTerminalRuleCall_1_0()); 
+               after(grammarAccess.getWrappedIntAccess().getNumberNATURAL_INTTerminalRuleCall_1_0()); 
             }
 
             }
@@ -7891,21 +7892,22 @@ public class InternalSwagParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000009A070L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000092070L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000002030L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000201860L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000001340B0L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000001240B0L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000004030L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00000000004030A0L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000003000L});
 
 }

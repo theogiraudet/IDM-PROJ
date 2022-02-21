@@ -3,6 +3,13 @@
  */
 package fr.istic.idm.validation;
 
+import java.util.Optional;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.validation.Check;
+import fr.istic.idm.swag.BoundFilter;
+import fr.istic.idm.swag.IndexFilter;
+import fr.istic.idm.swag.SwagPackage;
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +18,31 @@ package fr.istic.idm.validation;
  */
 public class SwagValidator extends AbstractSwagValidator {
 	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					SwagPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	@Check
+	public void checkIndexValidity(IndexFilter filter) {
+		checkNumberValidity(filter.getIndex(), SwagPackage.Literals.INDEX_FILTER__INDEX);
+	}
+	
+	@Check
+	public void checkMinBoundLowerThanMaxBound(BoundFilter filter) {
+		final var optMin = checkNumberValidity(filter.getMin().getNumber(), SwagPackage.Literals.BOUND_FILTER__MIN);
+		final var optMax = checkNumberValidity(filter.getMax().getNumber(), SwagPackage.Literals.BOUND_FILTER__MAX);
+		if(optMin.isEmpty() || optMax.isEmpty())
+			return;
+		
+		if (optMin.get() > optMax.get()) {
+			error("Min bound must be lower than max bound.",
+					SwagPackage.Literals.BOUND_FILTER__MIN);
+		}
+	}
+	
+	private Optional<Integer> checkNumberValidity(String number, EStructuralFeature literal) {
+		try {
+			return Optional.of(Integer.parseInt(number));
+		} catch(NumberFormatException e) {
+			error("'" + number + "' is not a valid integer.", literal);
+			return Optional.empty();
+		}
+	}
 	
 }

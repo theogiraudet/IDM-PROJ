@@ -127,4 +127,7 @@ public abstract class AbstractSwagProposalProvider extends TerminalsProposalProv
 	public void complete_WrappedInt(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
+	public void complete_NATURAL_INT(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
 }
